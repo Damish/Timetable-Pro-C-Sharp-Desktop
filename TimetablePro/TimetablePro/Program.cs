@@ -16,7 +16,7 @@ namespace TimetablePro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new studentGroupsManagement());
+            Application.Run(new NA_Times());
         }
     }
 }
