@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GroupID_Settings\GroupID_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupID_Settings\GroupID_Settings.Designer.cs">
+      <DependentUpon>GroupID_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\AddNewLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer\AddNewLecturer.designer.cs">
+      <DependentUpon>AddNewLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\ViewEditLeturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer\ViewEditLeturer.designer.cs">
+      <DependentUpon>ViewEditLeturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Students\Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +78,33 @@
     <Compile Include="NA_Times\NA_Times.Designer.cs">
       <DependentUpon>NA_Times.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subjects\AddSubjectDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\AddSubjectDetails.designer.cs">
+      <DependentUpon>AddSubjectDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\ViewEditSubjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\ViewEditSubjects.designer.cs">
+      <DependentUpon>ViewEditSubjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tags\Tags.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tags\Tags.Designer.cs">
       <DependentUpon>Tags.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GroupID_Settings\GroupID_Settings.resx">
+      <DependentUpon>GroupID_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer\AddNewLecturer.resx">
+      <DependentUpon>AddNewLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer\ViewEditLeturer.resx">
+      <DependentUpon>ViewEditLeturer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Students\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NA_Times\NA_Times.resx">
       <DependentUpon>NA_Times.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\AddSubjectDetails.resx">
+      <DependentUpon>AddSubjectDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\ViewEditSubjects.resx">
+      <DependentUpon>ViewEditSubjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tags\Tags.resx">
       <DependentUpon>Tags.cs</DependentUpon>
