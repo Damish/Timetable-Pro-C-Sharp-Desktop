@@ -1,6 +1,9 @@
 ﻿namespace TimetablePro
 {
-    partial class TagsManagement
+
+
+    //change class name
+    partial class StatisticsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +31,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTagName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
@@ -49,59 +48,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.labelCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.btnsub3 = new System.Windows.Forms.Button();
+            this.btnstudent2 = new System.Windows.Forms.Button();
+            this.btnlec1 = new System.Windows.Forms.Button();
+            this.userControl31 = new TimetablePro.UserControl3();
+            this.userControl21 = new TimetablePro.UserControl2();
+            this.userControl11 = new TimetablePro.UserControl1();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(495, 404);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(306, 270);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tag Name :";
-            // 
-            // txtTagName
-            // 
-            this.txtTagName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTagName.Location = new System.Drawing.Point(430, 267);
-            this.txtTagName.Name = "txtTagName";
-            this.txtTagName.Size = new System.Drawing.Size(201, 27);
-            this.txtTagName.TabIndex = 5;
-            this.txtTagName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(287, 154);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Create New";
             // 
             // label8
             // 
@@ -109,9 +64,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(269, 145);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(251, 32);
+            this.label8.Size = new System.Drawing.Size(130, 32);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Tags Management";
+            this.label8.Text = "Statistics";
             // 
             // btnOpt1
             // 
@@ -166,6 +121,7 @@
             this.btnOpt5.TabIndex = 6;
             this.btnOpt5.Text = "Tags Management";
             this.btnOpt5.UseVisualStyleBackColor = true;
+            this.btnOpt5.Click += new System.EventHandler(this.btnOpt5_Click);
             // 
             // btnOpt6
             // 
@@ -197,7 +153,6 @@
             this.btnOpt9.TabIndex = 6;
             this.btnOpt9.Text = "Statistics";
             this.btnOpt9.UseVisualStyleBackColor = true;
-            this.btnOpt9.Click += new System.EventHandler(this.btnOpt9_Click);
             // 
             // btnOpt7
             // 
@@ -281,125 +236,69 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnsub3
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(703, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 382);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.btnsub3.Location = new System.Drawing.Point(871, 135);
+            this.btnsub3.Name = "btnsub3";
+            this.btnsub3.Size = new System.Drawing.Size(136, 42);
+            this.btnsub3.TabIndex = 9;
+            this.btnsub3.Text = "Statistics of Subjects";
+            this.btnsub3.UseVisualStyleBackColor = true;
+            this.btnsub3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnCancel
+            // btnstudent2
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(721, 571);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(232, 33);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnstudent2.Location = new System.Drawing.Point(653, 135);
+            this.btnstudent2.Name = "btnstudent2";
+            this.btnstudent2.Size = new System.Drawing.Size(125, 42);
+            this.btnstudent2.TabIndex = 10;
+            this.btnstudent2.Text = "Statistics of students";
+            this.btnstudent2.UseVisualStyleBackColor = true;
+            this.btnstudent2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnDelete
+            // btnlec1
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(1035, 571);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(232, 33);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Visible = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnlec1.Location = new System.Drawing.Point(435, 135);
+            this.btnlec1.Name = "btnlec1";
+            this.btnlec1.Size = new System.Drawing.Size(121, 42);
+            this.btnlec1.TabIndex = 11;
+            this.btnlec1.Text = "Statistics of Lecturers";
+            this.btnlec1.UseVisualStyleBackColor = true;
+            this.btnlec1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnUpdate
+            // userControl31
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(430, 404);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(90, 35);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.userControl31.Location = new System.Drawing.Point(359, 194);
+            this.userControl31.Name = "userControl31";
+            this.userControl31.Size = new System.Drawing.Size(745, 478);
+            this.userControl31.TabIndex = 14;
             // 
-            // txtDescription
+            // userControl21
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(430, 330);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(201, 27);
-            this.txtDescription.TabIndex = 12;
-            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userControl21.Location = new System.Drawing.Point(306, 183);
+            this.userControl21.Name = "userControl21";
+            this.userControl21.Size = new System.Drawing.Size(760, 483);
+            this.userControl21.TabIndex = 13;
             // 
-            // label1
+            // userControl11
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 337);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Description :";
+            this.userControl11.Location = new System.Drawing.Point(391, 194);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(675, 478);
+            this.userControl11.TabIndex = 12;
             // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(550, 404);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(81, 35);
-            this.btnNew.TabIndex = 28;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Visible = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // labelCode
-            // 
-            this.labelCode.AutoSize = true;
-            this.labelCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCode.Location = new System.Drawing.Point(306, 221);
-            this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(63, 20);
-            this.labelCode.TabIndex = 30;
-            this.labelCode.Text = "Code : ";
-            this.labelCode.Visible = false;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(430, 214);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(201, 27);
-            this.txtCode.TabIndex = 29;
-            this.txtCode.Text = "Auto-Generate";
-            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCode.Visible = false;
-            // 
-            // TagsManagement
+            // StatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.labelCode);
-            this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.btnNew);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.userControl31);
+            this.Controls.Add(this.userControl21);
+            this.Controls.Add(this.userControl11);
+            this.Controls.Add(this.btnsub3);
+            this.Controls.Add(this.btnstudent2);
+            this.Controls.Add(this.btnlec1);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -412,30 +311,19 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Controls.Add(this.txtTagName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Name = "TagsManagement";
+            this.Name = "StatisticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
-            this.Load += new System.EventHandler(this.TagsManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTagName;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnOpt1;
         private System.Windows.Forms.Button btnOpt2;
@@ -452,16 +340,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label labelCode;
-        private System.Windows.Forms.TextBox txtCode;
+        private UserControl3 userControl31;
+        private UserControl2 userControl21;
+        private UserControl1 userControl11;
+        private System.Windows.Forms.Button btnsub3;
+        private System.Windows.Forms.Button btnstudent2;
+        private System.Windows.Forms.Button btnlec1;
     }
 }
 

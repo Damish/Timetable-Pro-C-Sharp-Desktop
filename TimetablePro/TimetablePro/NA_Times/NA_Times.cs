@@ -17,9 +17,10 @@ namespace TimetablePro
 
         public NA_Times()
         {
-            InitializeComponent();
-            DisplayData();
-
+           
+                InitializeComponent();
+                DisplayData();
+          
         }
 
         private void DisplayData()
@@ -140,7 +141,7 @@ namespace TimetablePro
 
                 if (count > 0)
                 {
-                    
+                    clearAll();
                     MessageBox.Show("Data Deleted Sucessfully");
                   
                 }
@@ -149,6 +150,7 @@ namespace TimetablePro
                     MessageBox.Show("Failed to Delete!!!");
                 }
                 sqlcon.Close();
+                
                 DisplayData_selected_category();
            
         }
@@ -211,8 +213,42 @@ namespace TimetablePro
 
         }
 
-      
+        private void btnOpt2_Click(object sender, EventArgs e)
+        {
 
-       
+            studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
+
+            this.Hide();
+            studentGroupsManagement.Show();
+
+
+        }
+
+        private void btnOpt5_Click(object sender, EventArgs e)
+        {
+
+            TagsManagement tagsManagement = new TagsManagement();
+
+            this.Hide();
+            tagsManagement.Show();
+
+        }
+
+        private void btnOpt6_Click(object sender, EventArgs e)
+        {
+            Location1 location1 = new Location1();
+
+            this.Hide();
+            location1.Show();
+        }
+
+        private void btnOpt9_Click(object sender, EventArgs e)
+        {
+            StatisticsForm statisticsForm = new StatisticsForm();
+
+            this.Hide();
+            statisticsForm.Show();
+
+        }
     }
 }

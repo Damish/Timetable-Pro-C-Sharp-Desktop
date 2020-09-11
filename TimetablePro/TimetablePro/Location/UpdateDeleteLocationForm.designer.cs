@@ -1,6 +1,9 @@
 ﻿namespace TimetablePro
 {
-    partial class TagsManagement
+
+
+    //change class name
+    partial class UpdateDeleteLocationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +31,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTagName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
@@ -49,59 +48,25 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewLocation = new System.Windows.Forms.DataGridView();
+            this.btnremloc = new System.Windows.Forms.Button();
+            this.btnUpdateloc = new System.Windows.Forms.Button();
+            this.radioBtnuplab = new System.Windows.Forms.RadioButton();
+            this.textBoxspecupd = new System.Windows.Forms.TextBox();
+            this.radioBtnuplec = new System.Windows.Forms.RadioButton();
+            this.textBoxupCap = new System.Windows.Forms.TextBox();
+            this.textBoxupdateRoom = new System.Windows.Forms.TextBox();
+            this.comboupdatebuilding1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.labelCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocation)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(495, 404);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(306, 270);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tag Name :";
-            // 
-            // txtTagName
-            // 
-            this.txtTagName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTagName.Location = new System.Drawing.Point(430, 267);
-            this.txtTagName.Name = "txtTagName";
-            this.txtTagName.Size = new System.Drawing.Size(201, 27);
-            this.txtTagName.TabIndex = 5;
-            this.txtTagName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(287, 154);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Create New";
             // 
             // label8
             // 
@@ -109,9 +74,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(269, 145);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(251, 32);
+            this.label8.Size = new System.Drawing.Size(371, 32);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Tags Management";
+            this.label8.Text = "Update And Delete Location";
             // 
             // btnOpt1
             // 
@@ -122,7 +87,6 @@
             this.btnOpt1.TabIndex = 6;
             this.btnOpt1.Text = "Home";
             this.btnOpt1.UseVisualStyleBackColor = true;
-            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // btnOpt2
             // 
@@ -133,7 +97,7 @@
             this.btnOpt2.TabIndex = 6;
             this.btnOpt2.Text = "Student Management";
             this.btnOpt2.UseVisualStyleBackColor = true;
-            this.btnOpt2.Click += new System.EventHandler(this.btnOpt2_Click);
+            this.btnOpt2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnOpt3
             // 
@@ -166,6 +130,7 @@
             this.btnOpt5.TabIndex = 6;
             this.btnOpt5.Text = "Tags Management";
             this.btnOpt5.UseVisualStyleBackColor = true;
+            this.btnOpt5.Click += new System.EventHandler(this.btnOpt5_Click);
             // 
             // btnOpt6
             // 
@@ -281,125 +246,186 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // label2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(703, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 382);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(532, 179);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
             // 
-            // btnCancel
+            // dataGridViewLocation
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(721, 571);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(232, 33);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.dataGridViewLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLocation.Location = new System.Drawing.Point(753, 179);
+            this.dataGridViewLocation.Name = "dataGridViewLocation";
+            this.dataGridViewLocation.RowTemplate.Height = 24;
+            this.dataGridViewLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLocation.Size = new System.Drawing.Size(597, 336);
+            this.dataGridViewLocation.TabIndex = 46;
+            this.dataGridViewLocation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLocation_CellClick);
             // 
-            // btnDelete
+            // btnremloc
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(1035, 571);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(232, 33);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Visible = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnremloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnremloc.Location = new System.Drawing.Point(561, 585);
+            this.btnremloc.Name = "btnremloc";
+            this.btnremloc.Size = new System.Drawing.Size(131, 48);
+            this.btnremloc.TabIndex = 44;
+            this.btnremloc.Text = "Remove";
+            this.btnremloc.UseVisualStyleBackColor = true;
+            this.btnremloc.Click += new System.EventHandler(this.btnremloc_Click);
             // 
-            // btnUpdate
+            // btnUpdateloc
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(430, 404);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(90, 35);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdateloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateloc.Location = new System.Drawing.Point(389, 585);
+            this.btnUpdateloc.Name = "btnUpdateloc";
+            this.btnUpdateloc.Size = new System.Drawing.Size(131, 48);
+            this.btnUpdateloc.TabIndex = 45;
+            this.btnUpdateloc.Text = "Update";
+            this.btnUpdateloc.UseVisualStyleBackColor = true;
+            this.btnUpdateloc.Click += new System.EventHandler(this.btnUpdateloc_Click);
             // 
-            // txtDescription
+            // radioBtnuplab
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(430, 330);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(201, 27);
-            this.txtDescription.TabIndex = 12;
-            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.radioBtnuplab.AutoSize = true;
+            this.radioBtnuplab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnuplab.Location = new System.Drawing.Point(621, 375);
+            this.radioBtnuplab.Name = "radioBtnuplab";
+            this.radioBtnuplab.Size = new System.Drawing.Size(110, 24);
+            this.radioBtnuplab.TabIndex = 42;
+            this.radioBtnuplab.TabStop = true;
+            this.radioBtnuplab.Text = "Laboratory";
+            this.radioBtnuplab.UseVisualStyleBackColor = true;
+            // 
+            // textBoxspecupd
+            // 
+            this.textBoxspecupd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxspecupd.Location = new System.Drawing.Point(467, 512);
+            this.textBoxspecupd.Name = "textBoxspecupd";
+            this.textBoxspecupd.Size = new System.Drawing.Size(205, 27);
+            this.textBoxspecupd.TabIndex = 39;
+            // 
+            // radioBtnuplec
+            // 
+            this.radioBtnuplec.AutoSize = true;
+            this.radioBtnuplec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnuplec.Location = new System.Drawing.Point(467, 375);
+            this.radioBtnuplec.Name = "radioBtnuplec";
+            this.radioBtnuplec.Size = new System.Drawing.Size(131, 24);
+            this.radioBtnuplec.TabIndex = 43;
+            this.radioBtnuplec.TabStop = true;
+            this.radioBtnuplec.Text = "LectureRoom";
+            this.radioBtnuplec.UseVisualStyleBackColor = true;
+            this.radioBtnuplec.CheckedChanged += new System.EventHandler(this.radioBtnuplec_CheckedChanged);
+            // 
+            // textBoxupCap
+            // 
+            this.textBoxupCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxupCap.Location = new System.Drawing.Point(467, 438);
+            this.textBoxupCap.Name = "textBoxupCap";
+            this.textBoxupCap.Size = new System.Drawing.Size(205, 27);
+            this.textBoxupCap.TabIndex = 40;
+            this.textBoxupCap.TextChanged += new System.EventHandler(this.textBoxupCap_TextChanged);
+            // 
+            // textBoxupdateRoom
+            // 
+            this.textBoxupdateRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxupdateRoom.Location = new System.Drawing.Point(467, 303);
+            this.textBoxupdateRoom.Name = "textBoxupdateRoom";
+            this.textBoxupdateRoom.Size = new System.Drawing.Size(205, 27);
+            this.textBoxupdateRoom.TabIndex = 41;
+            this.textBoxupdateRoom.TextChanged += new System.EventHandler(this.textBoxupdateRoom_TextChanged);
+            // 
+            // comboupdatebuilding1
+            // 
+            this.comboupdatebuilding1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboupdatebuilding1.FormattingEnabled = true;
+            this.comboupdatebuilding1.Items.AddRange(new object[] {
+            "Main Building",
+            "New Building",
+            "management Building",
+            "CAHM Building"});
+            this.comboupdatebuilding1.Location = new System.Drawing.Point(467, 241);
+            this.comboupdatebuilding1.Name = "comboupdatebuilding1";
+            this.comboupdatebuilding1.Size = new System.Drawing.Size(205, 28);
+            this.comboupdatebuilding1.TabIndex = 38;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(273, 370);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 20);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Select Room Type:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(273, 515);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 20);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Any specialty(Optional):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(273, 441);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Enter the Capacity:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 337);
+            this.label1.Location = new System.Drawing.Point(273, 303);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Description :";
+            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Enter the Room:";
             // 
-            // btnNew
+            // label6
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(550, 404);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(81, 35);
-            this.btnNew.TabIndex = 28;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Visible = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(273, 241);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 20);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Enter the Building:";
             // 
-            // labelCode
-            // 
-            this.labelCode.AutoSize = true;
-            this.labelCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCode.Location = new System.Drawing.Point(306, 221);
-            this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(63, 20);
-            this.labelCode.TabIndex = 30;
-            this.labelCode.Text = "Code : ";
-            this.labelCode.Visible = false;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(430, 214);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(201, 27);
-            this.txtCode.TabIndex = 29;
-            this.txtCode.Text = "Auto-Generate";
-            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCode.Visible = false;
-            // 
-            // TagsManagement
+            // UpdateDeleteLocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.labelCode);
-            this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridViewLocation);
+            this.Controls.Add(this.btnremloc);
+            this.Controls.Add(this.btnUpdateloc);
+            this.Controls.Add(this.radioBtnuplab);
+            this.Controls.Add(this.textBoxspecupd);
+            this.Controls.Add(this.radioBtnuplec);
+            this.Controls.Add(this.textBoxupCap);
+            this.Controls.Add(this.textBoxupdateRoom);
+            this.Controls.Add(this.comboupdatebuilding1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -412,30 +438,21 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Controls.Add(this.txtTagName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Name = "TagsManagement";
+            this.Name = "UpdateDeleteLocationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
-            this.Load += new System.EventHandler(this.TagsManagement_Load);
+            this.Load += new System.EventHandler(this.UpdateDeleteLocationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTagName;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnOpt1;
         private System.Windows.Forms.Button btnOpt2;
@@ -452,16 +469,22 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridViewLocation;
+        private System.Windows.Forms.Button btnremloc;
+        private System.Windows.Forms.Button btnUpdateloc;
+        private System.Windows.Forms.RadioButton radioBtnuplab;
+        private System.Windows.Forms.TextBox textBoxspecupd;
+        private System.Windows.Forms.RadioButton radioBtnuplec;
+        private System.Windows.Forms.TextBox textBoxupCap;
+        private System.Windows.Forms.TextBox textBoxupdateRoom;
+        private System.Windows.Forms.ComboBox comboupdatebuilding1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label labelCode;
-        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label6;
     }
 }
 
