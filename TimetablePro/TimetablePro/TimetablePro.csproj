@@ -139,6 +139,48 @@
     <Compile Include="Tags\Tags.Designer.cs">
       <DependentUpon>Tags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Working_Days\AddWorkingDaysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Working_Days\AddWorkingDaysForm.designer.cs">
+      <DependentUpon>AddWorkingDaysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\UpdateDeleteworkingDays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Working_Days\UpdateDeleteworkingDays.designer.cs">
+      <DependentUpon>UpdateDeleteworkingDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\UserControlViewweekdays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Working_Days\UserControlViewweekdays.designer.cs">
+      <DependentUpon>UserControlViewweekdays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\UserControlViewweekends.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Working_Days\UserControlViewweekends.designer.cs">
+      <DependentUpon>UserControlViewweekends.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\UserControlWeekday.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Working_Days\UserControlWeekday.designer.cs">
+      <DependentUpon>UserControlWeekday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\UserControlWeekEnds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Working_Days\UserControlWeekEnds.designer.cs">
+      <DependentUpon>UserControlWeekEnds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Working_Days\WorkingDays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Working_Days\WorkingDays.designer.cs">
+      <DependentUpon>WorkingDays.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GroupID_Settings\GroupID_Settings.resx">
       <DependentUpon>GroupID_Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +230,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tags\Tags.resx">
       <DependentUpon>Tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\AddWorkingDaysForm.resx">
+      <DependentUpon>AddWorkingDaysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\UpdateDeleteworkingDays.resx">
+      <DependentUpon>UpdateDeleteworkingDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\UserControlViewweekdays.resx">
+      <DependentUpon>UserControlViewweekdays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\UserControlViewweekends.resx">
+      <DependentUpon>UserControlViewweekends.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\UserControlWeekday.resx">
+      <DependentUpon>UserControlWeekday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\UserControlWeekEnds.resx">
+      <DependentUpon>UserControlWeekEnds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Working_Days\WorkingDays.resx">
+      <DependentUpon>WorkingDays.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -123,6 +123,7 @@
             resources.ApplyResources(this.btnOpt8, "btnOpt8");
             this.btnOpt8.Name = "btnOpt8";
             this.btnOpt8.UseVisualStyleBackColor = true;
+            this.btnOpt8.Click += new System.EventHandler(this.btnOpt8_Click);
             // 
             // btnOpt9
             // 

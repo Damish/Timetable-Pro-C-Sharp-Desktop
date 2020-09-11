@@ -11,43 +11,48 @@ using System.Windows.Forms;
 
 namespace TimetablePro
 {
-    public partial class Location1 : Form
+    public partial class UpdateDeleteworkingDays : Form
     {
+
         SqlConnection sqlcon = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-        public Location1()
+        public UpdateDeleteworkingDays()
         {
             InitializeComponent();
            
 
         }
-        private void btnAddlocation_Click(object sender, EventArgs e)
+
+        
+
+        private void btnviewWD_Click(object sender, EventArgs e)
         {
-            AddLocationForm ar = new AddLocationForm();
-            this.Hide();
-            ar.Show();
+            userControlViewweekdays2.Show();
+            userControlViewweekends1.Hide();
+
+            userControlViewweekdays2.BringToFront();
         }
 
-        private void btnUpReRoom_Click(object sender, EventArgs e)
+        private void btnViewWe_Click(object sender, EventArgs e)
         {
-            UpdateDeleteLocationForm urr = new UpdateDeleteLocationForm();
-            this.Hide();
-            urr.Show();
+            userControlViewweekdays2.Hide();
+            userControlViewweekends1.Show();
+
+            userControlViewweekdays2.BringToFront();
         }
 
-      
 
-        private void Location1_Load(object sender, EventArgs e)
+        private void btnOpt2_Click(object sender, EventArgs e)
         {
-
-        }
-     
-        private void button2_Click(object sender, EventArgs e)
-        {
-            studentGroupsManagement studentGroupsManagement1 = new studentGroupsManagement();
+            studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
 
             this.Hide();
-            studentGroupsManagement1.Show();
+            studentGroupsManagement.Show();
+        }
+
+        private void btnOpt1_Click(object sender, EventArgs e)
+        {
+
         }
         private void btnOpt3_Click(object sender, EventArgs e)
         {
@@ -64,23 +69,20 @@ namespace TimetablePro
             this.Hide();
             addSubjectDetails.Show();
         }
-        private void btnOpt5_Click(object sender, EventArgs e)
-        {
-            TagsManagement tagsManagement = new TagsManagement();
 
-            this.Hide();
-            tagsManagement.Show();
-        }
+
         private void btnOpt6_Click(object sender, EventArgs e)
         {
-            Location1 locationForm = new Location1();
-            this.Hide();
-            locationForm.Show();
+            Location1 location1 = new Location1();
 
+            this.Hide();
+            location1.Show();
         }
+
         private void btnOpt9_Click(object sender, EventArgs e)
         {
             StatisticsForm statisticsForm = new StatisticsForm();
+
             this.Hide();
             statisticsForm.Show();
 
@@ -93,5 +95,14 @@ namespace TimetablePro
             this.Hide();
             workingDays.Show();
         }
+
+        private void btnOpt5_Click(object sender, EventArgs e)
+        {
+            TagsManagement tagsManagement = new TagsManagement();
+
+            this.Hide();
+            tagsManagement.Show();
+        }
     }
 }
+

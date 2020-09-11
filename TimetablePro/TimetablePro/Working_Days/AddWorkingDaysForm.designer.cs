@@ -1,9 +1,6 @@
 ﻿namespace TimetablePro
 {
-
-
-    //change class name
-    partial class StatisticsForm
+    partial class AddWorkingDays
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label8 = new System.Windows.Forms.Label();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -48,25 +44,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.btnsub3 = new System.Windows.Forms.Button();
-            this.btnstudent2 = new System.Windows.Forms.Button();
-            this.btnlec1 = new System.Windows.Forms.Button();
-            this.userControl31 = new TimetablePro.UserControl3();
-            this.userControl21 = new TimetablePro.UserControl2();
-            this.userControl11 = new TimetablePro.UserControl1();
+            this.btn2addwe = new System.Windows.Forms.Button();
+            this.btn1addwd = new System.Windows.Forms.Button();
+            this.userControlWeekEnds1 = new TimetablePro.UserControlWeekEnds();
+            this.userControlWeekday1 = new TimetablePro.UserControlWeekday();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(269, 145);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 32);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Statistics";
             // 
             // btnOpt1
             // 
@@ -77,7 +61,6 @@
             this.btnOpt1.TabIndex = 6;
             this.btnOpt1.Text = "Home";
             this.btnOpt1.UseVisualStyleBackColor = true;
-            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // btnOpt2
             // 
@@ -154,6 +137,7 @@
             this.btnOpt9.TabIndex = 6;
             this.btnOpt9.Text = "Statistics";
             this.btnOpt9.UseVisualStyleBackColor = true;
+            this.btnOpt9.Click += new System.EventHandler(this.btnOpt9_Click);
             // 
             // btnOpt7
             // 
@@ -237,69 +221,55 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // btnsub3
+            // btn2addwe
             // 
-            this.btnsub3.Location = new System.Drawing.Point(871, 135);
-            this.btnsub3.Name = "btnsub3";
-            this.btnsub3.Size = new System.Drawing.Size(136, 42);
-            this.btnsub3.TabIndex = 9;
-            this.btnsub3.Text = "Statistics of Subjects";
-            this.btnsub3.UseVisualStyleBackColor = true;
-            this.btnsub3.Click += new System.EventHandler(this.button3_Click);
+            this.btn2addwe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2addwe.Location = new System.Drawing.Point(775, 119);
+            this.btn2addwe.Name = "btn2addwe";
+            this.btn2addwe.Size = new System.Drawing.Size(162, 27);
+            this.btn2addwe.TabIndex = 14;
+            this.btn2addwe.Text = "Weekend";
+            this.btn2addwe.UseVisualStyleBackColor = true;
+            this.btn2addwe.Click += new System.EventHandler(this.btn2addwe_Click);
             // 
-            // btnstudent2
+            // btn1addwd
             // 
-            this.btnstudent2.Location = new System.Drawing.Point(653, 135);
-            this.btnstudent2.Name = "btnstudent2";
-            this.btnstudent2.Size = new System.Drawing.Size(125, 42);
-            this.btnstudent2.TabIndex = 10;
-            this.btnstudent2.Text = "Statistics of students";
-            this.btnstudent2.UseVisualStyleBackColor = true;
-            this.btnstudent2.Click += new System.EventHandler(this.button2_Click);
+            this.btn1addwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1addwd.Location = new System.Drawing.Point(475, 119);
+            this.btn1addwd.Name = "btn1addwd";
+            this.btn1addwd.Size = new System.Drawing.Size(183, 27);
+            this.btn1addwd.TabIndex = 13;
+            this.btn1addwd.Text = "Week Day";
+            this.btn1addwd.UseVisualStyleBackColor = true;
+            this.btn1addwd.Click += new System.EventHandler(this.btn1addwd_Click);
             // 
-            // btnlec1
+            // userControlWeekEnds1
             // 
-            this.btnlec1.Location = new System.Drawing.Point(435, 135);
-            this.btnlec1.Name = "btnlec1";
-            this.btnlec1.Size = new System.Drawing.Size(121, 42);
-            this.btnlec1.TabIndex = 11;
-            this.btnlec1.Text = "Statistics of Lecturers";
-            this.btnlec1.UseVisualStyleBackColor = true;
-            this.btnlec1.Click += new System.EventHandler(this.button1_Click);
+            this.userControlWeekEnds1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlWeekEnds1.Location = new System.Drawing.Point(339, 167);
+            this.userControlWeekEnds1.Name = "userControlWeekEnds1";
+            this.userControlWeekEnds1.Size = new System.Drawing.Size(927, 499);
+            this.userControlWeekEnds1.TabIndex = 16;
             // 
-            // userControl31
+            // userControlWeekday1
             // 
-            this.userControl31.Location = new System.Drawing.Point(359, 194);
-            this.userControl31.Name = "userControl31";
-            this.userControl31.Size = new System.Drawing.Size(745, 478);
-            this.userControl31.TabIndex = 14;
+            this.userControlWeekday1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.userControlWeekday1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlWeekday1.Location = new System.Drawing.Point(324, 165);
+            this.userControlWeekday1.Name = "userControlWeekday1";
+            this.userControlWeekday1.Size = new System.Drawing.Size(927, 486);
+            this.userControlWeekday1.TabIndex = 15;
             // 
-            // userControl21
-            // 
-            this.userControl21.Location = new System.Drawing.Point(306, 183);
-            this.userControl21.Name = "userControl21";
-            this.userControl21.Size = new System.Drawing.Size(760, 483);
-            this.userControl21.TabIndex = 13;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(391, 194);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(675, 478);
-            this.userControl11.TabIndex = 12;
-            // 
-            // StatisticsForm
+            // AddWorkingDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.userControl31);
-            this.Controls.Add(this.userControl21);
-            this.Controls.Add(this.userControl11);
-            this.Controls.Add(this.btnsub3);
-            this.Controls.Add(this.btnstudent2);
-            this.Controls.Add(this.btnlec1);
+            this.Controls.Add(this.userControlWeekEnds1);
+            this.Controls.Add(this.btn2addwe);
+            this.Controls.Add(this.btn1addwd);
+            this.Controls.Add(this.userControlWeekday1);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -312,20 +282,17 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Controls.Add(this.label8);
-            this.Name = "StatisticsForm";
+            this.Name = "AddWorkingDays";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnOpt1;
         private System.Windows.Forms.Button btnOpt2;
         private System.Windows.Forms.Button btnOpt3;
@@ -342,12 +309,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private UserControl3 userControl31;
-        private UserControl2 userControl21;
-        private UserControl1 userControl11;
-        private System.Windows.Forms.Button btnsub3;
-        private System.Windows.Forms.Button btnstudent2;
-        private System.Windows.Forms.Button btnlec1;
+        private UserControlWeekEnds userControlWeekEnds1;
+        private System.Windows.Forms.Button btn2addwe;
+        private System.Windows.Forms.Button btn1addwd;
+        private UserControlWeekday userControlWeekday1;
     }
 }
 

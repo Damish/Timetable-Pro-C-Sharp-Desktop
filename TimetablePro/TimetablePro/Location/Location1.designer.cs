@@ -135,6 +135,7 @@
             this.btnOpt8.TabIndex = 6;
             this.btnOpt8.Text = "Working days/Hours";
             this.btnOpt8.UseVisualStyleBackColor = true;
+            this.btnOpt8.Click += new System.EventHandler(this.btnOpt8_Click);
             // 
             // btnOpt9
             // 

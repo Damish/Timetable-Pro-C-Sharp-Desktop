@@ -338,6 +338,12 @@ namespace TimetablePro
             location1.Show();
         }
 
-       
+        private void btnOpt8_Click(object sender, EventArgs e)
+        {
+            WorkingDays workingDays = new WorkingDays();
+
+            this.Hide();
+            workingDays.Show();
+        }
     }
 }
