@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,48 @@
     </Compile>
     <Compile Include="Lecturer\ViewEditLeturer.designer.cs">
       <DependentUpon>ViewEditLeturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\AddLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\AddLocationForm.designer.cs">
+      <DependentUpon>AddLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\Location1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\Location1.designer.cs">
+      <DependentUpon>Location1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\UpdateDeleteLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
+      <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\StatisticsForm.designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics\UserControl1.designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics\UserControl2.designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics\UserControl3.designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
     </Compile>
     <Compile Include="Students\Student.cs">
       <SubType>Form</SubType>
@@ -105,6 +148,27 @@
     <EmbeddedResource Include="Lecturer\ViewEditLeturer.resx">
       <DependentUpon>ViewEditLeturer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Location\AddLocationForm.resx">
+      <DependentUpon>AddLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\Location1.resx">
+      <DependentUpon>Location1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
+      <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Students\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\I21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

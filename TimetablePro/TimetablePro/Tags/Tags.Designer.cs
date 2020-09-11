@@ -176,6 +176,7 @@
             this.btnOpt6.TabIndex = 6;
             this.btnOpt6.Text = "Location Management";
             this.btnOpt6.UseVisualStyleBackColor = true;
+            this.btnOpt6.Click += new System.EventHandler(this.btnOpt6_Click);
             // 
             // btnOpt8
             // 
@@ -196,6 +197,7 @@
             this.btnOpt9.TabIndex = 6;
             this.btnOpt9.Text = "Statistics";
             this.btnOpt9.UseVisualStyleBackColor = true;
+            this.btnOpt9.Click += new System.EventHandler(this.btnOpt9_Click);
             // 
             // btnOpt7
             // 

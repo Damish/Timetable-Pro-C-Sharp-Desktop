@@ -239,5 +239,23 @@ private void btnCancel_Click(object sender, EventArgs e)
             this.Hide();
             addSubjectDetails.Show();
         }
+
+
+        private void btnOpt6_Click(object sender, EventArgs e)
+        {
+            Location1 location1 = new Location1();
+
+            this.Hide();
+            location1.Show();
+        }
+
+        private void btnOpt9_Click(object sender, EventArgs e)
+        {
+            StatisticsForm statisticsForm = new StatisticsForm();
+
+            this.Hide();
+            statisticsForm.Show();
+
+        }
     }
 }

@@ -137,6 +137,7 @@
             this.btnOpt6.TabIndex = 6;
             this.btnOpt6.Text = "Location Management";
             this.btnOpt6.UseVisualStyleBackColor = true;
+            this.btnOpt6.Click += new System.EventHandler(this.btnOpt6_Click);
             // 
             // btnOpt8
             // 
@@ -159,6 +160,7 @@
             this.btnOpt9.TabIndex = 6;
             this.btnOpt9.Text = "Statistics";
             this.btnOpt9.UseVisualStyleBackColor = true;
+            this.btnOpt9.Click += new System.EventHandler(this.btnOpt9_Click);
             // 
             // btnOpt7
             // 
@@ -259,7 +261,7 @@
             "6",
             "7"});
             this.dropdLevel.Location = new System.Drawing.Point(1089, 434);
-            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4);
             this.dropdLevel.Name = "dropdLevel";
             this.dropdLevel.Size = new System.Drawing.Size(160, 24);
             this.dropdLevel.TabIndex = 43;
@@ -272,7 +274,7 @@
             "New Building",
             "Engineering"});
             this.dropdBuild.Location = new System.Drawing.Point(593, 505);
-            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4);
             this.dropdBuild.Name = "dropdBuild";
             this.dropdBuild.Size = new System.Drawing.Size(160, 24);
             this.dropdBuild.TabIndex = 42;
@@ -288,7 +290,7 @@
             "Kurunegala",
             "Matara"});
             this.dropdCent.Location = new System.Drawing.Point(593, 436);
-            this.dropdCent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdCent.Margin = new System.Windows.Forms.Padding(4);
             this.dropdCent.Name = "dropdCent";
             this.dropdCent.Size = new System.Drawing.Size(160, 24);
             this.dropdCent.TabIndex = 41;
@@ -311,7 +313,7 @@
             "Architectuer",
             "Quantity Surveying"});
             this.dropdDept.Location = new System.Drawing.Point(1089, 362);
-            this.dropdDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdDept.Margin = new System.Windows.Forms.Padding(4);
             this.dropdDept.Name = "dropdDept";
             this.dropdDept.Size = new System.Drawing.Size(160, 24);
             this.dropdDept.TabIndex = 40;
@@ -329,7 +331,7 @@
             "Law",
             "Hospitality & Culinary"});
             this.dropdFac.Location = new System.Drawing.Point(1089, 295);
-            this.dropdFac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdFac.Margin = new System.Windows.Forms.Padding(4);
             this.dropdFac.Name = "dropdFac";
             this.dropdFac.Size = new System.Drawing.Size(160, 24);
             this.dropdFac.TabIndex = 39;
@@ -340,7 +342,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Location = new System.Drawing.Point(763, 590);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 44);
             this.btnSave.TabIndex = 38;
@@ -352,7 +354,7 @@
             // 
             this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewList.Location = new System.Drawing.Point(639, 153);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewList.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewList.Name = "btnViewList";
             this.btnViewList.Size = new System.Drawing.Size(136, 32);
             this.btnViewList.TabIndex = 37;
@@ -364,7 +366,7 @@
             // 
             this.btnAddLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLec.Location = new System.Drawing.Point(397, 153);
-            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddLec.Name = "btnAddLec";
             this.btnAddLec.Size = new System.Drawing.Size(233, 32);
             this.btnAddLec.TabIndex = 36;
@@ -375,7 +377,7 @@
             // txtRank
             // 
             this.txtRank.Location = new System.Drawing.Point(1089, 507);
-            this.txtRank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRank.Margin = new System.Windows.Forms.Padding(4);
             this.txtRank.Name = "txtRank";
             this.txtRank.Size = new System.Drawing.Size(160, 22);
             this.txtRank.TabIndex = 35;
@@ -383,7 +385,7 @@
             // txtEmpId
             // 
             this.txtEmpId.Location = new System.Drawing.Point(593, 367);
-            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.Size = new System.Drawing.Size(160, 22);
             this.txtEmpId.TabIndex = 34;
@@ -391,7 +393,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(593, 298);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 22);
             this.txtName.TabIndex = 33;
