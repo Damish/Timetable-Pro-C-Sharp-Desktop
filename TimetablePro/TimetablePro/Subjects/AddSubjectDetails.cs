@@ -50,26 +50,38 @@ namespace TimetablePro
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SqlCommand cmdSave = new SqlCommand("Insert into Subjects(OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs)Values(@OfferedYr,@OfferedSem,@SubName,@SubCode,@LecHrs,@TuteHrs,@LabHrs,@EvalHrs)", sqlcon);
+            if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
+            {
 
 
-            cmdSave.Parameters.AddWithValue("@OfferedYr", comboBoxYr.Text);
-            cmdSave.Parameters.AddWithValue("@OfferedSem", dropdSem.Text);
-            cmdSave.Parameters.AddWithValue("@SubName", txtSubName.Text);
-            cmdSave.Parameters.AddWithValue("@SubCode", txtSubCode.Text);
-            cmdSave.Parameters.AddWithValue("@LecHrs", numericUpDownLec.Text);
-            cmdSave.Parameters.AddWithValue("@TuteHrs", numericUpDownTute.Text);
-            cmdSave.Parameters.AddWithValue("@LabHrs", numericUpDownLab.Text);
-            cmdSave.Parameters.AddWithValue("@EvalHrs", numericUpDownEval.Text);
+                SqlCommand cmdSave = new SqlCommand("Insert into Subjects(OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs)Values(@OfferedYr,@OfferedSem,@SubName,@SubCode,@LecHrs,@TuteHrs,@LabHrs,@EvalHrs)", sqlcon);
+
+
+                cmdSave.Parameters.AddWithValue("@OfferedYr", comboBoxYr.Text);
+                cmdSave.Parameters.AddWithValue("@OfferedSem", dropdSem.Text);
+                cmdSave.Parameters.AddWithValue("@SubName", txtSubName.Text);
+                cmdSave.Parameters.AddWithValue("@SubCode", txtSubCode.Text);
+                cmdSave.Parameters.AddWithValue("@LecHrs", numericUpDownLec.Text);
+                cmdSave.Parameters.AddWithValue("@TuteHrs", numericUpDownTute.Text);
+                cmdSave.Parameters.AddWithValue("@LabHrs", numericUpDownLab.Text);
+                cmdSave.Parameters.AddWithValue("@EvalHrs", numericUpDownEval.Text);
 
 
 
-            sqlcon.Open();
-            cmdSave.ExecuteNonQuery();
-            MessageBox.Show("Data Saved Sucessfully");
-            sqlcon.Close();
+                sqlcon.Open();
+                cmdSave.ExecuteNonQuery();
+                
+                sqlcon.Close();
 
-            clearForm();
+                clearForm();
+                MessageBox.Show("Subject's Data saved sucessfully.");
+            }
+            else
+            {
+
+                MessageBox.Show("Fill all the blanks!");
+
+            }
         }
         private void clearForm()
         {

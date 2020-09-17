@@ -124,7 +124,9 @@ namespace TimetablePro
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string selected_id = dataGridView1.CurrentRow.Cells["Subject_ID"].Value.ToString();
+            if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
+            {
+                string selected_id = dataGridView1.CurrentRow.Cells["Subject_ID"].Value.ToString();
             //OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs
             SqlCommand cmd = new SqlCommand("Update Subjects set OfferedYr = @OfferedYr,OfferedSem = @OfferedSem, SubName = @SubName," +
                 " SubCode = @SubCode, LecHrs = @LecHrs, TuteHrs = @TuteHrs, LabHrs = @LabHrs, EvalHrs = @EvalHrs WHERE Subject_ID = @Subject_ID ", sqlcon);
@@ -144,8 +146,16 @@ namespace TimetablePro
             //DisplayData();
             sqlcon.Close();
 
-            MessageBox.Show("Data Updated Sucessfully!");
+           // MessageBox.Show("Data Updated Sucessfully!");
             DisplayData();
+                MessageBox.Show("Subject Data Updated sucessfully.");
+            }
+            else
+            {
+
+                MessageBox.Show("Fill all the blanks!");
+
+            }
         }
         private void clearData()
         {

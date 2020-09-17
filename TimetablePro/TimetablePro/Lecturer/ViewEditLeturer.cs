@@ -30,22 +30,22 @@ namespace TimetablePro
         private void btnOpt4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //AddSubjectDetails Addsubj = new AddSubjectDetails();
-            //Addsubj.ShowDialog();
+            AddSubjectDetails Addsubj = new AddSubjectDetails();
+            Addsubj.Show();
         }
 
         private void btnOpt3_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewLecturer Addlec = new AddNewLecturer();
-            Addlec.ShowDialog();
+            Addlec.Show();
         }
 
         private void btnAddLec_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewLecturer Addlec = new AddNewLecturer();
-            Addlec.ShowDialog();
+            Addlec.Show();
         }
 
         private void btnViewList_Click(object sender, EventArgs e)
@@ -138,6 +138,9 @@ namespace TimetablePro
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtEmpId.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != "" && dropdBuild.Text != "" && dropdLevel.Text != "" && txtRank.Text != "")
+            {
+
             string selected_id = dataGridView1.CurrentRow.Cells["Emp_ID"].Value.ToString();
             //Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No 
             SqlCommand cmd = new SqlCommand("Update Lecturer set Lecturer_Name = @Lecturer_Name,Faculty_Name = @Faculty_Name, Department_Name = @Department_Name," +
@@ -157,8 +160,16 @@ namespace TimetablePro
             //DisplayData();
             sqlcon.Close();
 
-            MessageBox.Show("Data Updated Sucessfully!");
+            //MessageBox.Show("Data Updated Sucessfully!");
             DisplayData();
+                MessageBox.Show("Lecturer Data Updated sucessfully.");
+            }
+            else
+            {
+
+                MessageBox.Show("Fill all the blanks!");
+
+            }
         }
 
         private void btnOpt2_Click(object sender, EventArgs e)

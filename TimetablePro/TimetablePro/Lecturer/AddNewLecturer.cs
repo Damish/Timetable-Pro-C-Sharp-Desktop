@@ -37,29 +37,42 @@ namespace TimetablePro
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            SqlCommand cmdSave = new SqlCommand("Insert into Lecturer(Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No)Values(@Emp_ID,@Lecturer_Name,@Faculty_Name,@Department_Name,@Center_Name,@Building_Name,@LNo,@Rank_No)", sqlcon);
-
-            cmdSave.Parameters.AddWithValue("@Emp_ID", txtEmpId.Text);
-            cmdSave.Parameters.AddWithValue("@Lecturer_Name", txtName.Text);
-            cmdSave.Parameters.AddWithValue("@Faculty_Name", dropdFac.Text);
-            cmdSave.Parameters.AddWithValue("@Department_Name", dropdDept.Text);
-            cmdSave.Parameters.AddWithValue("@Center_Name", dropdCent.Text);
-            cmdSave.Parameters.AddWithValue("@Building_Name", dropdBuild.Text);
-            cmdSave.Parameters.AddWithValue("@LNo", dropdLevel.Text);
-            cmdSave.Parameters.AddWithValue("@Rank_No", txtRank.Text);
+            if (txtEmpId.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != "" && dropdBuild.Text != "" && dropdLevel.Text != "" && txtRank.Text != "")
+            {
 
 
+                SqlCommand cmdSave = new SqlCommand("Insert into Lecturer(Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No)Values(@Emp_ID,@Lecturer_Name,@Faculty_Name,@Department_Name,@Center_Name,@Building_Name,@LNo,@Rank_No)", sqlcon);
 
-            sqlcon.Open();
-            cmdSave.ExecuteNonQuery();
-
-            MessageBox.Show("Data Saved Sucessfully");
+                cmdSave.Parameters.AddWithValue("@Emp_ID", txtEmpId.Text);
+                cmdSave.Parameters.AddWithValue("@Lecturer_Name", txtName.Text);
+                cmdSave.Parameters.AddWithValue("@Faculty_Name", dropdFac.Text);
+                cmdSave.Parameters.AddWithValue("@Department_Name", dropdDept.Text);
+                cmdSave.Parameters.AddWithValue("@Center_Name", dropdCent.Text);
+                cmdSave.Parameters.AddWithValue("@Building_Name", dropdBuild.Text);
+                cmdSave.Parameters.AddWithValue("@LNo", dropdLevel.Text);
+                cmdSave.Parameters.AddWithValue("@Rank_No", txtRank.Text);
 
 
 
-            sqlcon.Close();
+                sqlcon.Open();
+                cmdSave.ExecuteNonQuery();
 
-            clearForm();
+
+
+                sqlcon.Close();
+
+                clearForm();
+
+
+                MessageBox.Show("Lecturer's Data saved sucessfully.");
+            }
+            else
+            {
+
+                MessageBox.Show("Fill all the blanks!");
+
+            }
+
         }
         private void clearForm()
         {
