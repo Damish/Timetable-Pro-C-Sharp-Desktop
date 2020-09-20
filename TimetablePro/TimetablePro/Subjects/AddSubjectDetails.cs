@@ -50,7 +50,11 @@ namespace TimetablePro
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
+            if (txtSubCode.Text.Length != 6 && txtSubCode.Text != "")
+            {
+                MessageBox.Show("Enter a valid subject code!");
+            }
+            else if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
             {
 
 

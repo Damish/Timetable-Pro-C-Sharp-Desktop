@@ -152,7 +152,7 @@ namespace TimetablePro
             cmd.Parameters.AddWithValue("@Center_Name", dropdCent.Text);
             cmd.Parameters.AddWithValue("@Building_Name", dropdBuild.Text);
             cmd.Parameters.AddWithValue("@LNo", dropdLevel.Text);
-            cmd.Parameters.AddWithValue("@Rank_No", txtRank.Text);
+            cmd.Parameters.AddWithValue("@Rank_No", dropdLevel.Text+"."+ selected_id);
             cmd.Parameters.AddWithValue("@Emp_ID", selected_id);
 
             sqlcon.Open();
@@ -215,6 +215,15 @@ namespace TimetablePro
 
             this.Hide();
             workingDays.Show();
+        }
+
+        private void dropdLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
