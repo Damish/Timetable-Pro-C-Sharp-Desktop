@@ -49,46 +49,106 @@ namespace TimetablePro
             sqlcon.Open();
             SqlDataReader reader = sqlcomm.ExecuteReader(); //DataReader
             
-            int remainingTime = 9;
+            int remainingTimeMonday = 10;
+            int remainingTimeTuesday = 8;
 
             if (reader.HasRows)
             {
+                //variables to save previous session data
                 int prevId = 1;
-                int prevOrderNo=1;
+                int prevOrderNo=0;
                 string prevSData ="";
                 while (reader.Read())
                 {
                     // Console.WriteLine("{0}\n{1}\n{2}\n{3}\n", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
-                    
-                    if (remainingTime >= reader.GetInt32(3)) { 
-                      
+                    //int s_new = reader.GetInt32(2);
+                    if (remainingTimeMonday >= reader.GetInt32(3) )
+                    {  //Monday fill
+
                         int s_id = reader.GetInt32(0);
                         string s_data = reader.GetString(1);
                         int s_order = reader.GetInt32(2);
                         int s_duration = reader.GetInt32(3);
 
+
                         if (s_order == prevOrderNo)//if parallel
                         {
                             UpdateParallelMonday(prevId, prevSData, s_data);
+                            //remainingTimeMonday += s_duration;
+                            //prevOrderNo = reader.GetInt32(2);
                         }
-                        else {
+                        else
+                        {
                             prevId = reader.GetInt32(0);
                             prevOrderNo = reader.GetInt32(2);
                             prevSData = reader.GetString(1);
 
 
                             InsertToMonday(s_id, s_data, s_order, s_duration); //insert to table method (monday)
-                            remainingTime -= s_duration;
+                            remainingTimeMonday -= s_duration;
+                        }
+                    }
+                    
+                    else if (remainingTimeTuesday >= reader.GetInt32(3) )
+                    {//Tuesday fill
+
+
+                        int s_id = reader.GetInt32(0);
+                        string s_data = reader.GetString(1);
+                        int s_order = reader.GetInt32(2);
+                        int s_duration = reader.GetInt32(3);
+
+
+
+                        if (s_order == prevOrderNo)//if parallel
+                        {
+                            UpdateParallelTuesday(prevId, prevSData, s_data);
+                            // remainingTimeTuesday += s_duration;
+                            //prevOrderNo = reader.GetInt32(2);
+                        }
+                        else
+                        {
+                            prevId = reader.GetInt32(0);
+                            prevOrderNo = reader.GetInt32(2);
+                            prevSData = reader.GetString(1);
+
+
+                            InsertToTuesday(s_id, s_data, s_order, s_duration); //insert to table method (monday)
+                            remainingTimeTuesday -= s_duration;
                         }
 
-
-                        
-
                     }
+                    
                     else
                     {
+
+                        ////.......................
+                        //while (remainingTimeMonday >= 1)
+                        //{
+                        //    InsertToMonday(0, "-x-", 0, 0); //insert to (monday) -x-
+                        //    remainingTimeMonday -= 1;
+
+                        //}
+                        ////.......................
+                        ////.......................
+                        //while (remainingTimeTuesday >= 1)
+                        //{
+                        //    InsertToTuesday(0, "-x-", 0, 0); //insert to (monday) -x-
+                        //    remainingTimeTuesday -= 1;
+                        //}
+                        ////.......................
+
                         break;
+
                     }
+
+
+
+                    
+
+
+
+
                 }
             }
             else
@@ -98,7 +158,7 @@ namespace TimetablePro
             sqlcon.Close();
 
             displayMondayTable();
-
+            displayTuesdayTable();
         }
 
         public void displayMondayTable() {
@@ -115,6 +175,21 @@ namespace TimetablePro
         }
 
 
+        public void displayTuesdayTable()
+        {
+
+            string query = "Select * from tuesday_table";
+            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
+            DataTable dt = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
+
+            sda.Fill(dt);
+
+            dataGridView3.DataSource = dt;
+            sqlcon.Close();
+        }
+
+        //--------Methods for Monday--------
 
 
         public void InsertToMonday(int s_id, string s_data, int s_order, int s_duration)
@@ -153,6 +228,56 @@ namespace TimetablePro
                 }
             }
         }
+
+        
+        
+        
+        //--------Methods for Tuesday--------
+
+
+
+        public void InsertToTuesday(int s_id, string s_data, int s_order, int s_duration)
+        {
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                con1.Open();
+                string insertoMonday = "Insert into tuesday_table values(@record_id,@s_data,@order,@duration)";
+                using (SqlCommand sqlcomm1 = new SqlCommand(insertoMonday, con1))
+                {
+                    sqlcomm1.Parameters.AddWithValue("@record_id", s_id);
+                    sqlcomm1.Parameters.AddWithValue("@s_data", s_data);
+                    sqlcomm1.Parameters.AddWithValue("@order", s_order);
+                    sqlcomm1.Parameters.AddWithValue("@duration", s_duration);
+                    sqlcomm1.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public void UpdateParallelTuesday(int s_id, string s_data_prev, string s_data_now)
+        {
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                con1.Open();
+                string updateParallelMonday = "UPDATE tuesday_table SET s_data=@newData WHERE record_id = @record_id; ";
+                using (SqlCommand sqlcomm1 = new SqlCommand(updateParallelMonday, con1))
+                {
+
+                    string newSessionData = s_data_prev + "--parallel--" + s_data_now;
+
+                    sqlcomm1.Parameters.AddWithValue("@newData", newSessionData);
+                    sqlcomm1.Parameters.AddWithValue("@record_id", s_id);
+
+                    sqlcomm1.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
+
 
 
         private void btnOpt2_Click(object sender, EventArgs e)
