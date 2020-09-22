@@ -345,5 +345,18 @@ namespace TimetablePro
             this.Hide();
             workingDays.Show();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
+        }
     }
 }

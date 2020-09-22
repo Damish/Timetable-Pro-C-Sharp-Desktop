@@ -363,6 +363,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // dataGridView1
             // 
@@ -418,6 +419,7 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSettings
             // 

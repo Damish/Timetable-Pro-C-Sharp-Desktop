@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generate\Generate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generate\Generate.Designer.cs">
+      <DependentUpon>Generate.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupID_Settings\GroupID_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="Working_Days\WorkingDays.designer.cs">
       <DependentUpon>WorkingDays.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Generate\Generate.resx">
+      <DependentUpon>Generate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupID_Settings\GroupID_Settings.resx">
       <DependentUpon>GroupID_Settings.cs</DependentUpon>
     </EmbeddedResource>
