@@ -23,8 +23,9 @@ namespace TimetablePro
                 string cleardata = "" +
                     "DELETE FROM monday_table  WHERE s_data Like @id ;" +
                     "DELETE FROM tuesday_table  WHERE s_data Like @id ;" +
-                    "DELETE FROM wednesday_table  WHERE s_data Like @id ;" +
-                    "DELETE FROM thursday_table  WHERE s_data Like @id ;";
+                    "DELETE FROM wednesday_table  WHERE s_data Like @id ;"+
+                    "DELETE FROM thursday_table  WHERE s_data Like @id ;"+
+                    "DELETE FROM friday_table  WHERE s_data Like @id ;";
                 using (SqlCommand sqlcomm1 = new SqlCommand(cleardata, con1))
                 {
                     sqlcomm1.Parameters.AddWithValue("@id", final_group_id);
