@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generate\GroupTimetableUpdateCells.cs" />
     <Compile Include="Generate\SessionsDataReset.cs" />
     <Compile Include="Generate\SevenDaysTablesClear.cs" />
     <Compile Include="Generate\SevenDaysTableInsertions.cs" />
