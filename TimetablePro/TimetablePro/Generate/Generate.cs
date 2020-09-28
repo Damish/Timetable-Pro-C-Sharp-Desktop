@@ -21,12 +21,7 @@ namespace TimetablePro
         public Generate()
         {
             InitializeComponent();
-
-            displayMondayTable();
-            displayTuesdayTable();
-            displayWednesdayTable();
-            displayThursdayTable();
-            displayFridayTable();
+            
 
             displayFullTimetable();
         }
@@ -155,7 +150,6 @@ namespace TimetablePro
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
 
-                        SevenDaysTableInsertions sdti = new SevenDaysTableInsertions();
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
                         
                         int count = 1;
@@ -165,7 +159,6 @@ namespace TimetablePro
                             gtuc.InsertCellsMonday(s_data, MondayStartTime);
                             count += 1;
                         }
-                        sdti.InsertToMonday(s_id, s_data, s_order, s_duration); //insert to table method (monday) //in Sevendaystableinsertions class
                         remainingTimeMonday -= s_duration; //decrement remaining time available to add new sessions
                         
                        
@@ -183,7 +176,6 @@ namespace TimetablePro
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
                         
-                        SevenDaysTableInsertions sdti = new SevenDaysTableInsertions();
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
                         int count = 1;
@@ -193,7 +185,6 @@ namespace TimetablePro
                             gtuc.InsertCellsTuesday(s_data, TuesdayStartTime);
                             count += 1;
                         }
-                        sdti.InsertToTuesday(s_id, s_data, s_order, s_duration); //insert to table method (tuesday) //in Sevendaystableinsertions class
                         remainingTimeTuesday -= s_duration; //decrement remaining time available to add new sessions
                     }
 
@@ -209,7 +200,6 @@ namespace TimetablePro
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
 
-                        SevenDaysTableInsertions sdti = new SevenDaysTableInsertions();
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
                         int count = 1;
@@ -219,7 +209,6 @@ namespace TimetablePro
                             gtuc.InsertCellsWednesday(s_data, WednesdayStartTime);
                             count += 1;
                         }
-                        sdti.InsertToWednesday(s_id, s_data, s_order, s_duration); //insert to table method (tuesday) //in Sevendaystableinsertions class
                         remainingTimeWednesday -= s_duration; //decrement remaining time available to add new sessions
                     }
 
@@ -235,7 +224,6 @@ namespace TimetablePro
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
 
-                        SevenDaysTableInsertions sdti = new SevenDaysTableInsertions();
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
                         int count = 1;
@@ -245,7 +233,6 @@ namespace TimetablePro
                             gtuc.InsertCellsThursday(s_data, ThursdayStartTime);
                             count += 1;
                         }
-                        sdti.InsertToThursday(s_id, s_data, s_order, s_duration); //insert to table method (tuesday) //in Sevendaystableinsertions class
                         remainingTimeThursday -= s_duration; //decrement remaining time available to add new sessions
                     }
                     else if (remainingTimeFriday >= reader2.GetInt32(3))
@@ -260,7 +247,6 @@ namespace TimetablePro
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
 
-                        SevenDaysTableInsertions sdti = new SevenDaysTableInsertions();
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
                         int count = 1;
@@ -270,25 +256,17 @@ namespace TimetablePro
                             gtuc.InsertCellsFriday(s_data, FridayStartTime);
                             count += 1;
                         }
-                        sdti.InsertToFriday(s_id, s_data, s_order, s_duration); //insert to table method (tuesday) //in Sevendaystableinsertions class
                         remainingTimeFriday -= s_duration; //decrement remaining time available to add new sessions
                     }
                     else
                     {
-                        Console.WriteLine("Can't map all Days full : \n" +
-                           "Remaining TimeMonday :" +remainingTimeMonday +"\n"+
-                           "Remaining TimeTuesday :" + remainingTimeTuesday + "\n" +
-                           "Remaining TimeWednesday :" + remainingTimeWednesday + "\n" +
-                           "Remaining TimeThursday :" + remainingTimeThursday + "\n" +
-                           "Remaining TimeFriday :" + remainingTimeFriday + "\n" +
-                            "" + reader2.GetInt32(0)+" " +reader2.GetString(1)+" "+ reader2.GetInt32(2)+ " "+ reader2.GetInt32(3)+" \n");
-
+                        
                         MessageBox.Show("Can't map following Data all Days full : \n" +
-                           "Remaining TimeMonday :" + remainingTimeMonday + "\n" +
-                           "Remaining TimeTuesday :" + remainingTimeTuesday + "\n" +
-                           "Remaining TimeWednesday :" + remainingTimeWednesday + "\n" +
-                           "Remaining TimeThursday :" + remainingTimeThursday + "\n" +
-                           "Remaining TimeFriday :" + remainingTimeFriday + "\n" +
+                           "Remaining TimeMonday :" + remainingTimeMonday + "hours\n" +
+                           "Remaining TimeTuesday :" + remainingTimeTuesday + "hours\n" +
+                           "Remaining TimeWednesday :" + remainingTimeWednesday + "hours\n" +
+                           "Remaining TimeThursday :" + remainingTimeThursday + "hours\n" +
+                           "Remaining TimeFriday :" + remainingTimeFriday + "hours\n" +
                             "" + reader2.GetInt32(0) + " " + reader2.GetString(1) + " " + reader2.GetInt32(2) + " " + reader2.GetInt32(3) + " \n");
 
                         break;
@@ -301,12 +279,7 @@ namespace TimetablePro
             }
             sqlcon2.Close();
 
-            displayMondayTable();
-            displayTuesdayTable();
-            displayWednesdayTable();
-            displayThursdayTable();
-            displayFridayTable();
-
+           
             displayFullTimetable();
 
            remainingTimeMonday = 5; //reset time durations
@@ -327,63 +300,7 @@ namespace TimetablePro
             sqlcon.Close();
         }
 
-
-        public void displayMondayTable()
-        {
-            string query = "Select record_id,s_data from monday_table";
-            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            sda.Fill(dt);
-            dataGridView2.DataSource = dt;
-            sqlcon.Close();
-        }
-
-
-        public void displayTuesdayTable()
-        {
-            string query = "Select record_id,s_data from tuesday_table";
-            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            sda.Fill(dt);
-            dataGridView3.DataSource = dt;
-            sqlcon.Close();
-        }
-
-        public void displayWednesdayTable()
-        {
-            string query = "Select record_id,s_data from wednesday_table";
-            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            sda.Fill(dt);
-            dataGridView4.DataSource = dt;
-            sqlcon.Close();
-        }
-
-        public void displayThursdayTable()
-        {
-            string query = "Select record_id,s_data from thursday_table";
-            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            sda.Fill(dt);
-            dataGridView5.DataSource = dt;
-            sqlcon.Close();
-        }
-
-        public void displayFridayTable()
-        {
-            string query = "Select record_id,s_data from friday_table";
-            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
-            sda.Fill(dt);
-            dataGridView6.DataSource = dt;
-            sqlcon.Close();
-        }
-
+        
 
         //---------UpdateParallelAll---in sessions_test_2222 table-----
 
@@ -397,14 +314,12 @@ namespace TimetablePro
                     "DELETE From sessions_test_2222 where record_id = @current_record_id;";
                 using (SqlCommand sqlcomm1 = new SqlCommand(updateParallelAll, con2))
                 {
-
-                    string newSessionData = "-p- "+ s_data_prev + "\n" + "-p- " + s_data_now;
+                    string newSessionData = "Parallel sessions available \n"+s_data_prev + "\n" + s_data_now;
 
                     sqlcomm1.Parameters.AddWithValue("@newData", newSessionData);
                     sqlcomm1.Parameters.AddWithValue("@record_id", s_id);
                     sqlcomm1.Parameters.AddWithValue("@current_record_id", c_record_id);
-
-
+                    
                     sqlcomm1.ExecuteNonQuery();
                 }
             }
@@ -425,7 +340,6 @@ namespace TimetablePro
         private void btnOpt2_Click(object sender, EventArgs e)
         {
             studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
-
             this.Hide();
             studentGroupsManagement.Show();
         }
@@ -437,7 +351,6 @@ namespace TimetablePro
         private void btnOpt3_Click(object sender, EventArgs e)
         {
             AddNewLecturer addNewLecturer = new AddNewLecturer();
-
             this.Hide();
             addNewLecturer.Show();
         }
@@ -445,7 +358,6 @@ namespace TimetablePro
         private void btnOpt4_Click(object sender, EventArgs e)
         {
             AddSubjectDetails addSubjectDetails = new AddSubjectDetails();
-
             this.Hide();
             addSubjectDetails.Show();
         }
@@ -454,7 +366,6 @@ namespace TimetablePro
         private void btnOpt6_Click(object sender, EventArgs e)
         {
             Location1 location1 = new Location1();
-
             this.Hide();
             location1.Show();
         }
@@ -462,10 +373,8 @@ namespace TimetablePro
         private void btnOpt9_Click(object sender, EventArgs e)
         {
             StatisticsForm statisticsForm = new StatisticsForm();
-
             this.Hide();
             statisticsForm.Show();
-
         }
 
         private void btnOpt8_Click(object sender, EventArgs e)
@@ -497,29 +406,20 @@ namespace TimetablePro
             InsertDatatoSevenDays();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            string finalString = "";
-            if (comboBoxID.Text != "")
-            {
-                finalString = "%" + comboBoxID.Text + "%";
-            }
-
-
-            SevenDaysTablesClear sdtc = new SevenDaysTablesClear();
-            sdtc.clearAllDays(finalString);
-            displayMondayTable();
-            displayTuesdayTable();
-            displayWednesdayTable();
-            displayThursdayTable();
-            displayFridayTable();
-
-
-            displayFullTimetable();
-
-
-        }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    string finalString = "";
+        //    if (comboBoxID.Text != "")
+        //    {
+        //        finalString = "%" + comboBoxID.Text + "%";
+        //    }
+            
+        //    SevenDaysTablesClear sdtc = new SevenDaysTablesClear();
+        //    sdtc.clearAllDays(finalString);
+            
+        //    displayFullTimetable();
+            
+        //}
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -528,16 +428,12 @@ namespace TimetablePro
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
             string finalString = "";
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
             }
-
-
-
+            
             SessionsDataReset sdr = new SessionsDataReset();
             sdr.reverseAllParallelSessions(finalString);
             DisplayData();
