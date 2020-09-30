@@ -62,6 +62,8 @@
             this.lLevel = new System.Windows.Forms.Label();
             this.lBuild = new System.Windows.Forms.Label();
             this.lCent = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dropSubject = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -469,12 +471,32 @@
             this.lCent.TabIndex = 24;
             this.lCent.Text = "Center :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(669, 413);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 18);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Subject :";
+            // 
+            // dropSubject
+            // 
+            this.dropSubject.FormattingEnabled = true;
+            this.dropSubject.Location = new System.Drawing.Point(817, 410);
+            this.dropSubject.Name = "dropSubject";
+            this.dropSubject.Size = new System.Drawing.Size(121, 21);
+            this.dropSubject.TabIndex = 46;
+            // 
             // AddNewLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(995, 551);
+            this.Controls.Add(this.dropSubject);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dropdLevel);
             this.Controls.Add(this.dropdBuild);
             this.Controls.Add(this.dropdCent);
@@ -552,6 +574,8 @@
         private System.Windows.Forms.Label lBuild;
         private System.Windows.Forms.Label lCent;
         private System.Windows.Forms.ComboBox dropdCent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox dropSubject;
     }
 }
 

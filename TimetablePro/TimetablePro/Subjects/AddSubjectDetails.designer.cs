@@ -76,7 +76,7 @@
             // 
             this.btnOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt1.Location = new System.Drawing.Point(9, 120);
-            this.btnOpt1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt1.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt1.Name = "btnOpt1";
             this.btnOpt1.Size = new System.Drawing.Size(179, 28);
             this.btnOpt1.TabIndex = 6;
@@ -87,7 +87,7 @@
             // 
             this.btnOpt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt2.Location = new System.Drawing.Point(9, 158);
-            this.btnOpt2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt2.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt2.Name = "btnOpt2";
             this.btnOpt2.Size = new System.Drawing.Size(179, 28);
             this.btnOpt2.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             this.btnOpt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt3.Location = new System.Drawing.Point(9, 196);
-            this.btnOpt3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt3.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt3.Name = "btnOpt3";
             this.btnOpt3.Size = new System.Drawing.Size(179, 28);
             this.btnOpt3.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             this.btnOpt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt4.Location = new System.Drawing.Point(9, 234);
-            this.btnOpt4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt4.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt4.Name = "btnOpt4";
             this.btnOpt4.Size = new System.Drawing.Size(179, 28);
             this.btnOpt4.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             this.btnOpt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt5.Location = new System.Drawing.Point(9, 271);
-            this.btnOpt5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt5.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt5.Name = "btnOpt5";
             this.btnOpt5.Size = new System.Drawing.Size(179, 28);
             this.btnOpt5.TabIndex = 6;
@@ -134,7 +134,7 @@
             // 
             this.btnOpt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt6.Location = new System.Drawing.Point(9, 310);
-            this.btnOpt6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt6.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt6.Name = "btnOpt6";
             this.btnOpt6.Size = new System.Drawing.Size(179, 28);
             this.btnOpt6.TabIndex = 6;
@@ -146,7 +146,7 @@
             // 
             this.btnOpt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt8.Location = new System.Drawing.Point(9, 379);
-            this.btnOpt8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt8.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt8.Name = "btnOpt8";
             this.btnOpt8.Size = new System.Drawing.Size(179, 28);
             this.btnOpt8.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             this.btnOpt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt9.Location = new System.Drawing.Point(9, 413);
-            this.btnOpt9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt9.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt9.Name = "btnOpt9";
             this.btnOpt9.Size = new System.Drawing.Size(179, 28);
             this.btnOpt9.TabIndex = 6;
@@ -170,7 +170,7 @@
             // 
             this.btnOpt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt7.Location = new System.Drawing.Point(9, 343);
-            this.btnOpt7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt7.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt7.Name = "btnOpt7";
             this.btnOpt7.Size = new System.Drawing.Size(179, 28);
             this.btnOpt7.TabIndex = 6;
@@ -181,7 +181,7 @@
             // 
             this.btnOpt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt10.Location = new System.Drawing.Point(9, 446);
-            this.btnOpt10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt10.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt10.Name = "btnOpt10";
             this.btnOpt10.Size = new System.Drawing.Size(179, 28);
             this.btnOpt10.TabIndex = 6;
@@ -195,7 +195,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(938, 91);
             this.panel1.TabIndex = 7;
@@ -204,7 +204,7 @@
             // 
             this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -249,7 +249,7 @@
             this.btnOpt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpt11.Location = new System.Drawing.Point(9, 479);
-            this.btnOpt11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt11.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt11.Name = "btnOpt11";
             this.btnOpt11.Size = new System.Drawing.Size(179, 31);
             this.btnOpt11.TabIndex = 8;
@@ -259,11 +259,6 @@
             // comboBoxYr
             // 
             this.comboBoxYr.FormattingEnabled = true;
-            this.comboBoxYr.Items.AddRange(new object[] {
-            "1st Year",
-            "2nd Year",
-            "3rd Year",
-            "4th Year"});
             this.comboBoxYr.Location = new System.Drawing.Point(471, 255);
             this.comboBoxYr.Name = "comboBoxYr";
             this.comboBoxYr.Size = new System.Drawing.Size(121, 21);
@@ -273,9 +268,6 @@
             // 
             this.dropdSem.FormattingEnabled = true;
             this.dropdSem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dropdSem.Items.AddRange(new object[] {
-            "Semester 1",
-            "Semester 2"});
             this.dropdSem.Location = new System.Drawing.Point(825, 259);
             this.dropdSem.Name = "dropdSem";
             this.dropdSem.Size = new System.Drawing.Size(121, 21);
@@ -487,7 +479,7 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSubjectDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";

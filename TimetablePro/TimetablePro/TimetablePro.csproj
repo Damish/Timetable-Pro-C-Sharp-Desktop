@@ -83,6 +83,12 @@
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sessions\ViewEditSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sessions\ViewEditSessions.Designer.cs">
+      <DependentUpon>ViewEditSessions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sessions\Sessions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sessions\ViewEditSessions.resx">
+      <DependentUpon>ViewEditSessions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sessions\Sessions.resx">
       <DependentUpon>Sessions.cs</DependentUpon>

@@ -87,7 +87,7 @@
             this.btnReset.BackColor = System.Drawing.Color.White;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(250, 419);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(58, 28);
             this.btnReset.TabIndex = 1;
@@ -101,7 +101,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSave.Location = new System.Drawing.Point(413, 419);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 28);
             this.btnSave.TabIndex = 1;
@@ -113,7 +113,7 @@
             // 
             this.txtStudentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentCount.Location = new System.Drawing.Point(364, 332);
-            this.txtStudentCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStudentCount.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentCount.Name = "txtStudentCount";
             this.txtStudentCount.Size = new System.Drawing.Size(148, 23);
             this.txtStudentCount.TabIndex = 5;
@@ -180,7 +180,7 @@
             // 
             this.txtSubGroupCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubGroupCount.Location = new System.Drawing.Point(364, 362);
-            this.txtSubGroupCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSubGroupCount.Margin = new System.Windows.Forms.Padding(2);
             this.txtSubGroupCount.Name = "txtSubGroupCount";
             this.txtSubGroupCount.Size = new System.Drawing.Size(148, 23);
             this.txtSubGroupCount.TabIndex = 5;
@@ -212,7 +212,7 @@
             // 
             this.btnOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt1.Location = new System.Drawing.Point(9, 120);
-            this.btnOpt1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt1.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt1.Name = "btnOpt1";
             this.btnOpt1.Size = new System.Drawing.Size(179, 28);
             this.btnOpt1.TabIndex = 6;
@@ -223,7 +223,7 @@
             // 
             this.btnOpt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt2.Location = new System.Drawing.Point(9, 158);
-            this.btnOpt2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt2.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt2.Name = "btnOpt2";
             this.btnOpt2.Size = new System.Drawing.Size(179, 28);
             this.btnOpt2.TabIndex = 6;
@@ -234,7 +234,7 @@
             // 
             this.btnOpt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt3.Location = new System.Drawing.Point(9, 196);
-            this.btnOpt3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt3.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt3.Name = "btnOpt3";
             this.btnOpt3.Size = new System.Drawing.Size(179, 28);
             this.btnOpt3.TabIndex = 6;
@@ -246,7 +246,7 @@
             // 
             this.btnOpt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt4.Location = new System.Drawing.Point(9, 234);
-            this.btnOpt4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt4.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt4.Name = "btnOpt4";
             this.btnOpt4.Size = new System.Drawing.Size(179, 28);
             this.btnOpt4.TabIndex = 6;
@@ -258,7 +258,7 @@
             // 
             this.btnOpt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt5.Location = new System.Drawing.Point(9, 271);
-            this.btnOpt5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt5.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt5.Name = "btnOpt5";
             this.btnOpt5.Size = new System.Drawing.Size(179, 28);
             this.btnOpt5.TabIndex = 6;
@@ -270,7 +270,7 @@
             // 
             this.btnOpt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt6.Location = new System.Drawing.Point(9, 310);
-            this.btnOpt6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt6.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt6.Name = "btnOpt6";
             this.btnOpt6.Size = new System.Drawing.Size(179, 28);
             this.btnOpt6.TabIndex = 6;
@@ -282,7 +282,7 @@
             // 
             this.btnOpt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt8.Location = new System.Drawing.Point(9, 379);
-            this.btnOpt8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt8.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt8.Name = "btnOpt8";
             this.btnOpt8.Size = new System.Drawing.Size(179, 28);
             this.btnOpt8.TabIndex = 6;
@@ -294,7 +294,7 @@
             // 
             this.btnOpt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt9.Location = new System.Drawing.Point(9, 413);
-            this.btnOpt9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt9.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt9.Name = "btnOpt9";
             this.btnOpt9.Size = new System.Drawing.Size(179, 28);
             this.btnOpt9.TabIndex = 6;
@@ -306,7 +306,7 @@
             // 
             this.btnOpt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt7.Location = new System.Drawing.Point(9, 343);
-            this.btnOpt7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt7.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt7.Name = "btnOpt7";
             this.btnOpt7.Size = new System.Drawing.Size(179, 28);
             this.btnOpt7.TabIndex = 6;
@@ -318,7 +318,7 @@
             // 
             this.btnOpt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt10.Location = new System.Drawing.Point(9, 446);
-            this.btnOpt10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt10.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt10.Name = "btnOpt10";
             this.btnOpt10.Size = new System.Drawing.Size(179, 28);
             this.btnOpt10.TabIndex = 6;
@@ -332,7 +332,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(938, 91);
             this.panel1.TabIndex = 7;
@@ -341,7 +341,7 @@
             // 
             this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -386,7 +386,7 @@
             this.btnOpt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpt11.Location = new System.Drawing.Point(9, 479);
-            this.btnOpt11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpt11.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt11.Name = "btnOpt11";
             this.btnOpt11.Size = new System.Drawing.Size(179, 31);
             this.btnOpt11.TabIndex = 8;
@@ -401,7 +401,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(527, 131);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -415,7 +415,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(552, 460);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(174, 27);
             this.btnCancel.TabIndex = 14;
@@ -429,7 +429,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(788, 460);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(174, 27);
             this.btnDelete.TabIndex = 12;
@@ -444,7 +444,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.Location = new System.Drawing.Point(395, 419);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 28);
             this.btnUpdate.TabIndex = 13;
@@ -456,7 +456,7 @@
             // 
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.Location = new System.Drawing.Point(448, 146);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(75, 26);
             this.btnSettings.TabIndex = 1;
@@ -470,7 +470,7 @@
             this.comboBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxYear.FormattingEnabled = true;
             this.comboBoxYear.Location = new System.Drawing.Point(364, 199);
-            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(148, 25);
             this.comboBoxYear.TabIndex = 15;
@@ -481,10 +481,11 @@
             this.comboBoxSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSemester.FormattingEnabled = true;
             this.comboBoxSemester.Location = new System.Drawing.Point(364, 231);
-            this.comboBoxSemester.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxSemester.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSemester.Name = "comboBoxSemester";
             this.comboBoxSemester.Size = new System.Drawing.Size(148, 25);
             this.comboBoxSemester.TabIndex = 16;
+            //this.comboBoxSemester.SelectedIndexChanged += new System.EventHandler(this.comboBoxSemester_SelectedIndexChanged);
             // 
             // comboBoxProgramme
             // 
@@ -492,7 +493,7 @@
             this.comboBoxProgramme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProgramme.FormattingEnabled = true;
             this.comboBoxProgramme.Location = new System.Drawing.Point(364, 263);
-            this.comboBoxProgramme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxProgramme.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxProgramme.Name = "comboBoxProgramme";
             this.comboBoxProgramme.Size = new System.Drawing.Size(148, 25);
             this.comboBoxProgramme.TabIndex = 17;
@@ -501,7 +502,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(364, 296);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 23);
             this.textBox1.TabIndex = 19;
@@ -511,7 +512,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(348, 146);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 26);
             this.button1.TabIndex = 20;
@@ -559,7 +560,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "studentGroupsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";

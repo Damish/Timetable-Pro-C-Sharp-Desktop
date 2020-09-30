@@ -24,9 +24,48 @@ namespace TimetablePro
         public AddSubjectDetails()
         {
             InitializeComponent();
-            
+            FillComboYear();
+            FillComboSemester();
 
         }
+
+
+        private void FillComboYear()
+        {
+
+            string query = "Select * from groupID_option_year";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                comboBoxYr.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+        private void FillComboSemester()
+        {
+
+            string query = "Select * from groupID_option_Semester";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                dropdSem.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+
+
 
         private void AddSubjectDetails_Load(object sender, EventArgs e)
         {

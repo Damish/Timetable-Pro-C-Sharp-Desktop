@@ -184,11 +184,6 @@
             // comboBoxYr
             // 
             this.comboBoxYr.FormattingEnabled = true;
-            this.comboBoxYr.Items.AddRange(new object[] {
-            resources.GetString("comboBoxYr.Items"),
-            resources.GetString("comboBoxYr.Items1"),
-            resources.GetString("comboBoxYr.Items2"),
-            resources.GetString("comboBoxYr.Items3")});
             resources.ApplyResources(this.comboBoxYr, "comboBoxYr");
             this.comboBoxYr.Name = "comboBoxYr";
             // 
@@ -254,9 +249,6 @@
             // 
             this.dropdSem.FormattingEnabled = true;
             resources.ApplyResources(this.dropdSem, "dropdSem");
-            this.dropdSem.Items.AddRange(new object[] {
-            resources.GetString("dropdSem.Items"),
-            resources.GetString("dropdSem.Items1")});
             this.dropdSem.Name = "dropdSem";
             // 
             // txtSubCode

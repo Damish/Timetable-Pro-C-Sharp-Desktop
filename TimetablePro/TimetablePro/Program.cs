@@ -31,7 +31,7 @@ namespace TimetablePro
             catch (SqlException e)
             {
 
-                MessageBox.Show("Cant connect to Azure cloud Database \n Check your Internet Connection!");
+                MessageBox.Show("Cant connect to Azure cloud Database \n Check your Internet Connection!" + e);
 
             }
 

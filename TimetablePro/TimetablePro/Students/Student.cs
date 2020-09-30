@@ -353,5 +353,7 @@ namespace TimetablePro
             this.Hide();
             sessionsManagement.Show();
         }
+
+        
     }
 }
