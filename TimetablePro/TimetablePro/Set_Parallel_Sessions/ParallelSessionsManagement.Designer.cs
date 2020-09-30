@@ -1,6 +1,6 @@
 ﻿namespace TimetablePro
 {
-    partial class Generate
+    partial class ParallelSessionsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -42,23 +41,20 @@
             this.btnOpt7 = new System.Windows.Forms.Button();
             this.btnOpt10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxID = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboBoxTag = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpt1
@@ -179,6 +175,16 @@
             this.panel1.Size = new System.Drawing.Size(1251, 112);
             this.panel1.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -223,108 +229,18 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 643);
+            this.dataGridView1.Location = new System.Drawing.Point(316, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(239, 204);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(380, 492);
+            this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(429, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 39);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Update All Parallel Sessions";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btn_UpdateParallelAll_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(653, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(241, 39);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Insert To Group_time_table";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btn_InsertToSevenDays_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(927, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(235, 39);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Remove Parallel Sessions";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView7.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView7.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView7.Location = new System.Drawing.Point(286, 209);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.RowHeadersVisible = false;
-            this.dataGridView7.RowTemplate.Height = 24;
-            this.dataGridView7.Size = new System.Drawing.Size(1244, 617);
-            this.dataGridView7.TabIndex = 20;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1195, 164);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(241, 39);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Reset Group_Timetable";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(429, 119);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 32);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Set Parallel Sessions Form";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // comboBoxID
             // 
@@ -333,27 +249,63 @@
             "Y3.S2.IT.03",
             "Y3.S2.IT.04",
             "Y3.S2.IT.05"});
-            this.comboBoxID.Location = new System.Drawing.Point(286, 172);
+            this.comboBoxID.Location = new System.Drawing.Point(316, 119);
             this.comboBoxID.Name = "comboBoxID";
-            this.comboBoxID.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxID.TabIndex = 10;
+            this.comboBoxID.Size = new System.Drawing.Size(205, 24);
+            this.comboBoxID.TabIndex = 12;
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
-            // Generate
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(894, 148);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(372, 492);
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // comboBoxTag
+            // 
+            this.comboBoxTag.FormattingEnabled = true;
+            this.comboBoxTag.Items.AddRange(new object[] {
+            "Lecture",
+            "Lab",
+            "Tutorial"});
+            this.comboBoxTag.Location = new System.Drawing.Point(527, 119);
+            this.comboBoxTag.Name = "comboBoxTag";
+            this.comboBoxTag.Size = new System.Drawing.Size(169, 24);
+            this.comboBoxTag.TabIndex = 15;
+            this.comboBoxTag.SelectedIndexChanged += new System.EventHandler(this.comboBoxTag_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(740, 523);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 61);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Set Selected sessions Parallel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ParallelSessionsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1562, 877);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataGridView7);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1327, 678);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxTag);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.btnOpt11);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
             this.Controls.Add(this.btnOpt7);
             this.Controls.Add(this.btnOpt9);
@@ -364,15 +316,16 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Controls.Add(this.panel1);
-            this.Name = "Generate";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "ParallelSessionsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
+            this.Load += new System.EventHandler(this.TagsManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,13 +348,10 @@
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBoxID;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBoxTag;
+        private System.Windows.Forms.Button button1;
     }
 }
 

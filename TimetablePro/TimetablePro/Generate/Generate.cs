@@ -78,6 +78,7 @@ namespace TimetablePro
                     {
                         //Console.WriteLine(reader.GetInt32(0) + " <<  Now in update Parallel All "+prevId + " "+ prevSData + "   " + reader.GetString(1) + " \n");
                         UpdateParallelAll(reader.GetInt32(0), prevId, prevSData, reader.GetString(1));
+                        
                     }
                     else
                     {
@@ -96,11 +97,11 @@ namespace TimetablePro
         }
 
 
-        int remainingTimeMonday = 5;
-        int remainingTimeTuesday = 5;
-        int remainingTimeWednesday = 10;
-        int remainingTimeThursday = 5;
-        int remainingTimeFriday = 9;
+        int remainingTimeMonday = 3;
+        int remainingTimeTuesday = 3;
+        int remainingTimeWednesday = 3;
+        int remainingTimeThursday = 10;
+        int remainingTimeFriday = 10;
 
 
         private void InsertDatatoSevenDays()
@@ -121,9 +122,9 @@ namespace TimetablePro
             SqlDataReader reader2 = sqlcomm2.ExecuteReader(); //DataReader for inserting to monday,tuesday tables
 
 
-            int MondayStartTime = 830;
-            int TuesdayStartTime = 830;
-            int WednesdayStartTime = 830;
+            int MondayStartTime = 1830;
+            int TuesdayStartTime = 1830;
+            int WednesdayStartTime = 1830;
             int ThursdayStartTime = 830;
             int FridayStartTime = 830;
 
@@ -282,11 +283,11 @@ namespace TimetablePro
            
             displayFullTimetable();
 
-           remainingTimeMonday = 5; //reset time durations
-           remainingTimeTuesday = 5; //reset time durations
-           remainingTimeWednesday = 10;
-           remainingTimeThursday = 5;
-           remainingTimeFriday = 9;
+           remainingTimeMonday = 3; //reset time durations
+           remainingTimeTuesday = 3; //reset time durations
+           remainingTimeWednesday = 3;
+           remainingTimeThursday = 10;
+           remainingTimeFriday = 10;
         }
 
         public void displayFullTimetable()
@@ -445,6 +446,13 @@ namespace TimetablePro
             gtuc.ResetALLCellsToNull();
 
             displayFullTimetable();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            this.Hide();
+            psm.Show();
         }
     }
 }
