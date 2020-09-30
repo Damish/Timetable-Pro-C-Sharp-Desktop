@@ -46,7 +46,7 @@ namespace TimetablePro
 
         }
 
-
+        int orderNo = 0; //Manually Incrementing orderNo
 
         public void AddToSessions() {
 
@@ -86,8 +86,13 @@ namespace TimetablePro
 
                 SqlDataReader dataReader = sqlcomm.ExecuteReader();
 
+                
+
                 while (dataReader.Read())
                 {
+
+                    
+
                     string subjectCode = dataReader.GetString(0);
                     string subname = dataReader.GetString(1);
                     string lecturerName = dataReader.GetString(2);
@@ -97,30 +102,34 @@ namespace TimetablePro
 
                     //Console.WriteLine("subcode: " + subjectCode + " subname: " + subname+ " LecturerName: " + lecturerName + " LecHrs: " + lecHrs + " tuteHrs: " + tuteHrs + " LabHrs: " + labHrs + "\n");
 
-                        string sessionString = lecturerName + "\n" + subname +"("+subjectCode+")"+"\n";
+                        string sessionString = GroupID+"\n"+lecturerName + "\n" + subname +"("+subjectCode+")"+"\n";
                         //Console.WriteLine(sessionString);
 
                         if (lecHrs >= 1)
                         {
                             //create lecture sessions
+                            orderNo += 1; //Incrementing orderNo by 1
                             string sessionString1 = sessionString + "Lecture\n" + lecHrs+"hours";
                             Console.WriteLine(sessionString1);
+                            InsertToSessionTable(sessionString1, orderNo, lecHrs, subjectCode, subname, lecturerName, GroupID,120, "Lecture");
                         }
 
                         if (labHrs >= 1)
                         {
-
                             //create lab sessions
+                            orderNo += 1;//Incrementing orderNo by 1
                             string sessionString2 = sessionString + "Lab\n" + labHrs + "hours";
                             Console.WriteLine(sessionString2);
+                            InsertToSessionTable(sessionString2, orderNo, labHrs, subjectCode, subname, lecturerName, GroupID, 120, "Lab");
                         }
 
                         if (tuteHrs >= 1)
                         {
-
                             //create lab sessions
+                            orderNo += 1;//Incrementing orderNo by 1
                             string sessionString3 = sessionString + "Tute\n" + tuteHrs + "hours";
                             Console.WriteLine(sessionString3);
+                            InsertToSessionTable(sessionString3, orderNo, tuteHrs, subjectCode, subname, lecturerName, GroupID, 120, "Tute");
                         }
 
 
@@ -134,16 +143,11 @@ namespace TimetablePro
             using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con4.Open();
-                string query2 = "Select SubCode,SubName,Lecturer_Name,LecHrs,TuteHrs,LabHrs" +
-                " from subjects s, lecturer l " +
-                "where s.SubCode = l.Subject " +
-                "AND offeredYr LIKE @year " +
-                "AND offeredSem LIKE @semester";
+                string query2 = "Select record_id,session_data,sort_order" +
+                " from Sessions ";
 
                 SqlCommand sqlcomm2 = new SqlCommand(query2, sqlcon);
-                sqlcomm2.Parameters.AddWithValue("@year", substrYear);
-                sqlcomm2.Parameters.AddWithValue("@semester", substrSemester);
-
+               
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(sqlcomm2);
                 sda.Fill(dt);
@@ -154,11 +158,36 @@ namespace TimetablePro
         }
 
 
+        public void InsertToSessionTable(string session_data1, int sort_order1, int duration1, string s_subject_code1, string s_subject_name1, string s_lecturer_name1, string s_group_id1, int s_student_count1, string s_tag1) {
+
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                con3.Open();
+
+                string query = "Insert into sessions(session_data,sort_order,duration,s_subject_code,s_subject_name,s_lecturer_name,s_group_id,s_student_count,s_tag)" +
+                    "values(@session_data,@sort_order,@duration,@s_subject_code,@s_subject_name,@s_lecturer_name,@s_group_id,@s_student_count,@s_tag)";
+
+                SqlCommand sqlcomm = new SqlCommand(query, con3);
+               
+                sqlcomm.Parameters.AddWithValue("@session_data", session_data1);
+                sqlcomm.Parameters.AddWithValue("@sort_order", sort_order1);
+                sqlcomm.Parameters.AddWithValue("@duration", duration1);
+                sqlcomm.Parameters.AddWithValue("@s_subject_code", s_subject_code1);
+                sqlcomm.Parameters.AddWithValue("@s_subject_name", s_subject_name1);
+                sqlcomm.Parameters.AddWithValue("@s_lecturer_name", s_lecturer_name1);
+                sqlcomm.Parameters.AddWithValue("@s_group_id", s_group_id1);
+                sqlcomm.Parameters.AddWithValue("@s_student_count", s_student_count1);
+                sqlcomm.Parameters.AddWithValue("@s_tag", s_tag1);
+
+                sqlcomm.ExecuteNonQuery();
+
+            }
+            
+        }
 
 
 
-
-        private void btnOpt2_Click(object sender, EventArgs e)
+            private void btnOpt2_Click(object sender, EventArgs e)
         {
             studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
 
