@@ -1,6 +1,6 @@
 ﻿namespace TimetablePro
 {
-    partial class AddSubjectDetails
+    partial class SessionsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -44,37 +45,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.comboBoxYr = new System.Windows.Forms.ComboBox();
-            this.dropdSem = new System.Windows.Forms.ComboBox();
-            this.numericUpDownEval = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownLab = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownTute = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownLec = new System.Windows.Forms.NumericUpDown();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnViewListSubj = new System.Windows.Forms.Button();
-            this.btnAddSub = new System.Windows.Forms.Button();
-            this.txtSubCode = new System.Windows.Forms.TextBox();
-            this.txtSubName = new System.Windows.Forms.TextBox();
-            this.lSubName = new System.Windows.Forms.Label();
-            this.lSubCode = new System.Windows.Forms.Label();
+            this.saddbtn = new System.Windows.Forms.Button();
+            this.sviewbtn = new System.Windows.Forms.Button();
             this.ltitle = new System.Windows.Forms.Label();
-            this.lYr = new System.Windows.Forms.Label();
-            this.lSem = new System.Windows.Forms.Label();
-            this.lEvalHurs = new System.Windows.Forms.Label();
-            this.lLabHurs = new System.Windows.Forms.Label();
-            this.lTuteHurs = new System.Windows.Forms.Label();
-            this.lLecHurs = new System.Windows.Forms.Label();
+            this.lEmp = new System.Windows.Forms.Label();
+            this.btnGroupID = new System.Windows.Forms.Button();
+            this.comboBoxGroupID = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpt1
             // 
-            this.btnOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpt1.Location = new System.Drawing.Point(9, 120);
             this.btnOpt1.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpt1.Name = "btnOpt1";
@@ -82,6 +67,7 @@
             this.btnOpt1.TabIndex = 6;
             this.btnOpt1.Text = "Home";
             this.btnOpt1.UseVisualStyleBackColor = true;
+            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // btnOpt2
             // 
@@ -117,6 +103,7 @@
             this.btnOpt4.TabIndex = 6;
             this.btnOpt4.Text = "Subject Management";
             this.btnOpt4.UseVisualStyleBackColor = true;
+            this.btnOpt4.Click += new System.EventHandler(this.btnOpt4_Click);
             // 
             // btnOpt5
             // 
@@ -128,7 +115,6 @@
             this.btnOpt5.TabIndex = 6;
             this.btnOpt5.Text = "Tags Management";
             this.btnOpt5.UseVisualStyleBackColor = true;
-            this.btnOpt5.Click += new System.EventHandler(this.btnOpt5_Click);
             // 
             // btnOpt6
             // 
@@ -176,6 +162,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -256,217 +243,97 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // comboBoxYr
+            // saddbtn
             // 
-            this.comboBoxYr.FormattingEnabled = true;
-            this.comboBoxYr.Location = new System.Drawing.Point(471, 255);
-            this.comboBoxYr.Name = "comboBoxYr";
-            this.comboBoxYr.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxYr.TabIndex = 67;
+            this.saddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saddbtn.Location = new System.Drawing.Point(238, 121);
+            this.saddbtn.Name = "saddbtn";
+            this.saddbtn.Size = new System.Drawing.Size(101, 29);
+            this.saddbtn.TabIndex = 9;
+            this.saddbtn.Text = "Add Sessions";
+            this.saddbtn.UseVisualStyleBackColor = true;
+            this.saddbtn.Click += new System.EventHandler(this.saddbtn_Click);
             // 
-            // dropdSem
+            // sviewbtn
             // 
-            this.dropdSem.FormattingEnabled = true;
-            this.dropdSem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dropdSem.Location = new System.Drawing.Point(825, 259);
-            this.dropdSem.Name = "dropdSem";
-            this.dropdSem.Size = new System.Drawing.Size(121, 21);
-            this.dropdSem.TabIndex = 66;
-            // 
-            // numericUpDownEval
-            // 
-            this.numericUpDownEval.Location = new System.Drawing.Point(827, 418);
-            this.numericUpDownEval.Name = "numericUpDownEval";
-            this.numericUpDownEval.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownEval.TabIndex = 65;
-            // 
-            // numericUpDownLab
-            // 
-            this.numericUpDownLab.Location = new System.Drawing.Point(827, 362);
-            this.numericUpDownLab.Name = "numericUpDownLab";
-            this.numericUpDownLab.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownLab.TabIndex = 64;
-            // 
-            // numericUpDownTute
-            // 
-            this.numericUpDownTute.Location = new System.Drawing.Point(474, 420);
-            this.numericUpDownTute.Name = "numericUpDownTute";
-            this.numericUpDownTute.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTute.TabIndex = 63;
-            // 
-            // numericUpDownLec
-            // 
-            this.numericUpDownLec.Location = new System.Drawing.Point(474, 364);
-            this.numericUpDownLec.Name = "numericUpDownLec";
-            this.numericUpDownLec.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownLec.TabIndex = 62;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.DimGray;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(562, 495);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 31);
-            this.btnSave.TabIndex = 61;
-            this.btnSave.Text = "Save Details";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnViewListSubj
-            // 
-            this.btnViewListSubj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewListSubj.Location = new System.Drawing.Point(471, 125);
-            this.btnViewListSubj.Name = "btnViewListSubj";
-            this.btnViewListSubj.Size = new System.Drawing.Size(99, 32);
-            this.btnViewListSubj.TabIndex = 60;
-            this.btnViewListSubj.Text = "View List";
-            this.btnViewListSubj.UseVisualStyleBackColor = true;
-            this.btnViewListSubj.Click += new System.EventHandler(this.btnViewListSubj_Click);
-            // 
-            // btnAddSub
-            // 
-            this.btnAddSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSub.Location = new System.Drawing.Point(288, 125);
-            this.btnAddSub.Name = "btnAddSub";
-            this.btnAddSub.Size = new System.Drawing.Size(177, 32);
-            this.btnAddSub.TabIndex = 59;
-            this.btnAddSub.Text = "Add Subject Details";
-            this.btnAddSub.UseVisualStyleBackColor = true;
-            this.btnAddSub.Click += new System.EventHandler(this.btnAddSub_Click);
-            // 
-            // txtSubCode
-            // 
-            this.txtSubCode.Location = new System.Drawing.Point(826, 308);
-            this.txtSubCode.Name = "txtSubCode";
-            this.txtSubCode.Size = new System.Drawing.Size(121, 20);
-            this.txtSubCode.TabIndex = 58;
-            // 
-            // txtSubName
-            // 
-            this.txtSubName.Location = new System.Drawing.Point(471, 311);
-            this.txtSubName.Name = "txtSubName";
-            this.txtSubName.Size = new System.Drawing.Size(123, 20);
-            this.txtSubName.TabIndex = 57;
-            // 
-            // lSubName
-            // 
-            this.lSubName.AutoSize = true;
-            this.lSubName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSubName.Location = new System.Drawing.Point(285, 310);
-            this.lSubName.Name = "lSubName";
-            this.lSubName.Size = new System.Drawing.Size(109, 18);
-            this.lSubName.TabIndex = 55;
-            this.lSubName.Text = "Subject Name :";
-            // 
-            // lSubCode
-            // 
-            this.lSubCode.AutoSize = true;
-            this.lSubCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSubCode.Location = new System.Drawing.Point(684, 311);
-            this.lSubCode.Name = "lSubCode";
-            this.lSubCode.Size = new System.Drawing.Size(105, 18);
-            this.lSubCode.TabIndex = 54;
-            this.lSubCode.Text = "Subject Code :";
+            this.sviewbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sviewbtn.Location = new System.Drawing.Point(387, 122);
+            this.sviewbtn.Name = "sviewbtn";
+            this.sviewbtn.Size = new System.Drawing.Size(128, 28);
+            this.sviewbtn.TabIndex = 10;
+            this.sviewbtn.Text = "View Sessions";
+            this.sviewbtn.UseVisualStyleBackColor = true;
+            this.sviewbtn.Click += new System.EventHandler(this.sviewbtn_Click);
             // 
             // ltitle
             // 
             this.ltitle.AutoSize = true;
             this.ltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltitle.Location = new System.Drawing.Point(284, 196);
+            this.ltitle.Location = new System.Drawing.Point(612, 185);
             this.ltitle.Name = "ltitle";
-            this.ltitle.Size = new System.Drawing.Size(190, 20);
-            this.ltitle.TabIndex = 53;
-            this.ltitle.Text = "Enter Relevant Details";
+            this.ltitle.Size = new System.Drawing.Size(175, 20);
+            this.ltitle.TabIndex = 54;
+            this.ltitle.Text = "Generated sessions ";
             // 
-            // lYr
+            // lEmp
             // 
-            this.lYr.AutoSize = true;
-            this.lYr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lYr.Location = new System.Drawing.Point(285, 258);
-            this.lYr.Name = "lYr";
-            this.lYr.Size = new System.Drawing.Size(91, 18);
-            this.lYr.TabIndex = 52;
-            this.lYr.Text = "Offerd Year :";
-            this.lYr.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lEmp.AutoSize = true;
+            this.lEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEmp.Location = new System.Drawing.Point(235, 201);
+            this.lEmp.Name = "lEmp";
+            this.lEmp.Size = new System.Drawing.Size(115, 18);
+            this.lEmp.TabIndex = 102;
+            this.lEmp.Text = "Enter Group ID :";
             // 
-            // lSem
+            // btnGroupID
             // 
-            this.lSem.AutoSize = true;
-            this.lSem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSem.Location = new System.Drawing.Point(656, 258);
-            this.lSem.Name = "lSem";
-            this.lSem.Size = new System.Drawing.Size(133, 18);
-            this.lSem.TabIndex = 51;
-            this.lSem.Text = "Offered Semester :\r\n";
+            this.btnGroupID.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGroupID.Location = new System.Drawing.Point(387, 234);
+            this.btnGroupID.Name = "btnGroupID";
+            this.btnGroupID.Size = new System.Drawing.Size(77, 24);
+            this.btnGroupID.TabIndex = 114;
+            this.btnGroupID.Text = "Select";
+            this.btnGroupID.UseVisualStyleBackColor = false;
+            this.btnGroupID.Click += new System.EventHandler(this.btnGroupID_Click);
             // 
-            // lEvalHurs
+            // comboBoxGroupID
             // 
-            this.lEvalHurs.AutoSize = true;
-            this.lEvalHurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEvalHurs.Location = new System.Drawing.Point(628, 420);
-            this.lEvalHurs.Name = "lEvalHurs";
-            this.lEvalHurs.Size = new System.Drawing.Size(192, 18);
-            this.lEvalHurs.TabIndex = 50;
-            this.lEvalHurs.Text = "Number of Evalution hours :";
+            this.comboBoxGroupID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGroupID.FormattingEnabled = true;
+            this.comboBoxGroupID.Location = new System.Drawing.Point(238, 234);
+            this.comboBoxGroupID.Name = "comboBoxGroupID";
+            this.comboBoxGroupID.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGroupID.TabIndex = 117;
             // 
-            // lLabHurs
+            // dataGridView1
             // 
-            this.lLabHurs.AutoSize = true;
-            this.lLabHurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLabHurs.Location = new System.Drawing.Point(633, 364);
-            this.lLabHurs.Name = "lLabHurs";
-            this.lLabHurs.Size = new System.Drawing.Size(156, 18);
-            this.lLabHurs.TabIndex = 49;
-            this.lLabHurs.Text = "Number of Lab hours :";
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(525, 221);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Size = new System.Drawing.Size(388, 318);
+            this.dataGridView1.TabIndex = 121;
             // 
-            // lTuteHurs
-            // 
-            this.lTuteHurs.AutoSize = true;
-            this.lTuteHurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTuteHurs.Location = new System.Drawing.Point(285, 418);
-            this.lTuteHurs.Name = "lTuteHurs";
-            this.lTuteHurs.Size = new System.Drawing.Size(189, 18);
-            this.lTuteHurs.TabIndex = 56;
-            this.lTuteHurs.Text = "Number of Tutorials hours :";
-            // 
-            // lLecHurs
-            // 
-            this.lLecHurs.AutoSize = true;
-            this.lLecHurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLecHurs.Location = new System.Drawing.Point(285, 366);
-            this.lLecHurs.Name = "lLecHurs";
-            this.lLecHurs.Size = new System.Drawing.Size(181, 18);
-            this.lLecHurs.TabIndex = 48;
-            this.lLecHurs.Text = "Number of Lecture hours :";
-            // 
-            // AddSubjectDetails
+            // SessionsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(995, 551);
-            this.Controls.Add(this.comboBoxYr);
-            this.Controls.Add(this.dropdSem);
-            this.Controls.Add(this.numericUpDownEval);
-            this.Controls.Add(this.numericUpDownLab);
-            this.Controls.Add(this.numericUpDownTute);
-            this.Controls.Add(this.numericUpDownLec);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnViewListSubj);
-            this.Controls.Add(this.btnAddSub);
-            this.Controls.Add(this.txtSubCode);
-            this.Controls.Add(this.txtSubName);
-            this.Controls.Add(this.lSubName);
-            this.Controls.Add(this.lSubCode);
+            this.ClientSize = new System.Drawing.Size(939, 551);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboBoxGroupID);
+            this.Controls.Add(this.btnGroupID);
+            this.Controls.Add(this.lEmp);
             this.Controls.Add(this.ltitle);
-            this.Controls.Add(this.lYr);
-            this.Controls.Add(this.lSem);
-            this.Controls.Add(this.lEvalHurs);
-            this.Controls.Add(this.lLabHurs);
-            this.Controls.Add(this.lTuteHurs);
-            this.Controls.Add(this.lLecHurs);
+            this.Controls.Add(this.sviewbtn);
+            this.Controls.Add(this.saddbtn);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -480,17 +347,14 @@
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AddSubjectDetails";
+            this.Name = "SessionsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
-            this.Load += new System.EventHandler(this.AddSubjectDetails_Load);
+            this.Load += new System.EventHandler(this.SessionsManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,26 +377,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBoxYr;
-        private System.Windows.Forms.ComboBox dropdSem;
-        private System.Windows.Forms.NumericUpDown numericUpDownEval;
-        private System.Windows.Forms.NumericUpDown numericUpDownLab;
-        private System.Windows.Forms.NumericUpDown numericUpDownTute;
-        private System.Windows.Forms.NumericUpDown numericUpDownLec;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnViewListSubj;
-        private System.Windows.Forms.Button btnAddSub;
-        private System.Windows.Forms.TextBox txtSubCode;
-        private System.Windows.Forms.TextBox txtSubName;
-        private System.Windows.Forms.Label lSubName;
-        private System.Windows.Forms.Label lSubCode;
+        private System.Windows.Forms.Button saddbtn;
+        private System.Windows.Forms.Button sviewbtn;
         private System.Windows.Forms.Label ltitle;
-        private System.Windows.Forms.Label lYr;
-        private System.Windows.Forms.Label lSem;
-        private System.Windows.Forms.Label lEvalHurs;
-        private System.Windows.Forms.Label lLabHurs;
-        private System.Windows.Forms.Label lTuteHurs;
-        private System.Windows.Forms.Label lLecHurs;
+        private System.Windows.Forms.Label lEmp;
+        private System.Windows.Forms.Button btnGroupID;
+        private System.Windows.Forms.ComboBox comboBoxGroupID;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

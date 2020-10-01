@@ -24,6 +24,7 @@ namespace TimetablePro
         {
             InitializeComponent();
             DisplayData();
+            DisplaySubjectData();
 
         }
         //copy methods
@@ -58,7 +59,7 @@ namespace TimetablePro
         private void DisplayData()
         {
 
-            string query = "Select Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No    from Lecturer";
+            string query = "Select Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No,Subject    from Lecturer";
 
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
 
@@ -89,6 +90,7 @@ namespace TimetablePro
             dropdBuild.Text = row.Cells[5].Value.ToString();
             dropdLevel.Text = row.Cells[6].Value.ToString();
             txtRank.Text = row.Cells[7].Value.ToString();
+            dropSubject.Text = row.Cells[8].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -129,6 +131,7 @@ namespace TimetablePro
             dropdLevel.Text = "";
             txtRank.Text = "";
             txtEmpId.Text = "";
+            dropSubject.Text = "";
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -138,13 +141,13 @@ namespace TimetablePro
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtEmpId.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != "" && dropdBuild.Text != "" && dropdLevel.Text != "" && txtRank.Text != "")
+            if (txtEmpId.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != "" && dropdBuild.Text != "" && dropdLevel.Text != "" && txtRank.Text != "" && dropSubject.Text != "")
             {
 
             string selected_id = dataGridView1.CurrentRow.Cells["Emp_ID"].Value.ToString();
             //Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No 
             SqlCommand cmd = new SqlCommand("Update Lecturer set Lecturer_Name = @Lecturer_Name,Faculty_Name = @Faculty_Name, Department_Name = @Department_Name," +
-                " Center_Name = @Center_Name, Building_Name = @Building_Name, LNo = @LNo, Rank_No = @Rank_No WHERE Emp_ID= @Emp_ID", sqlcon);
+                " Center_Name = @Center_Name, Building_Name = @Building_Name, LNo = @LNo, Rank_No = @Rank_No,Subject = @Subject  WHERE Emp_ID= @Emp_ID", sqlcon);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Lecturer_Name", txtName.Text);
             cmd.Parameters.AddWithValue("@Faculty_Name", dropdFac.Text);
@@ -153,6 +156,7 @@ namespace TimetablePro
             cmd.Parameters.AddWithValue("@Building_Name", dropdBuild.Text);
             cmd.Parameters.AddWithValue("@LNo", dropdLevel.Text);
             cmd.Parameters.AddWithValue("@Rank_No", dropdLevel.Text+"."+ selected_id);
+            cmd.Parameters.AddWithValue("@Subject", dropSubject.Text);
             cmd.Parameters.AddWithValue("@Emp_ID", selected_id);
 
             sqlcon.Open();
@@ -171,6 +175,28 @@ namespace TimetablePro
 
             }
         }
+
+
+        private void DisplaySubjectData()
+        {
+
+            string query = "Select SubCode  from subjects";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR2 = cmd.ExecuteReader();
+
+            while (DR2.Read())
+            {
+                dropSubject.Items.Add(DR2[0]);
+
+            }
+            sqlcon.Close();
+
+
+        }
+
+
 
         private void btnOpt2_Click(object sender, EventArgs e)
         {
@@ -224,6 +250,11 @@ namespace TimetablePro
             {
                 e.Handled = true;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

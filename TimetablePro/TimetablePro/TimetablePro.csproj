@@ -92,6 +92,19 @@
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Sessions\ViewEditSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sessions\ViewEditSessions.Designer.cs">
+      <DependentUpon>ViewEditSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sessions\Sessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sessions\Sessions.Designer.cs">
+      <DependentUpon>Sessions.cs</DependentUpon>
+
     <Compile Include="Set_Consecutive_Sessions\ConsecutiveMethods.cs" />
     <Compile Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.cs">
       <SubType>Form</SubType>
@@ -105,6 +118,7 @@
     </Compile>
     <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.Designer.cs">
       <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -225,11 +239,19 @@
     <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="Sessions\ViewEditSessions.resx">
+      <DependentUpon>ViewEditSessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sessions\Sessions.resx">
+      <DependentUpon>Sessions.cs</DependentUpon>
+
     <EmbeddedResource Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.resx">
       <DependentUpon>ConsecutiveSessionsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Set_Parallel_Sessions\ParallelSessionsManagement.resx">
       <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
@@ -308,5 +330,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
