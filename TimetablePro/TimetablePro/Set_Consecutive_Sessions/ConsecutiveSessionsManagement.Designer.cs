@@ -155,6 +155,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -247,10 +248,6 @@
             // comboBoxID
             // 
             this.comboBoxID.FormattingEnabled = true;
-            this.comboBoxID.Items.AddRange(new object[] {
-            "Y3.S2.IT.03",
-            "Y3.S2.IT.04",
-            "Y3.S2.IT.05"});
             this.comboBoxID.Location = new System.Drawing.Point(316, 169);
             this.comboBoxID.Name = "comboBoxID";
             this.comboBoxID.Size = new System.Drawing.Size(205, 24);

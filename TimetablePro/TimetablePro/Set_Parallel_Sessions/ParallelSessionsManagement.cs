@@ -66,7 +66,7 @@ namespace TimetablePro
         private void FillComboGroup()
         {
 
-            string query = "select group_id from student_groups ;";
+            string query = "select s_group_id from sessions group by s_group_id ;";
 
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand(query, sqlcon);
@@ -242,6 +242,14 @@ namespace TimetablePro
             ParallelMethods pm = new ParallelMethods();
             pm.reverseAllParallelSessions(finalString);
             DisplayDataTable1();
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
         }
     }
 }
