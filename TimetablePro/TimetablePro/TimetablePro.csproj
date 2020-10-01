@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generate\GroupTimetableUpdateCells.cs" />
+    <Compile Include="Generate\SevenDaysTablesClear.cs" />
+    <Compile Include="Generate\SevenDaysTableInsertions.cs" />
+    <Compile Include="Generate\Generate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generate\Generate.Designer.cs">
+      <DependentUpon>Generate.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupID_Settings\GroupID_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +92,7 @@
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Sessions\ViewEditSessions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +104,21 @@
     </Compile>
     <Compile Include="Sessions\Sessions.Designer.cs">
       <DependentUpon>Sessions.cs</DependentUpon>
+
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveMethods.cs" />
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.Designer.cs">
+      <DependentUpon>ConsecutiveSessionsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Parallel_Sessions\ParallelMethods.cs" />
+    <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.Designer.cs">
+      <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -193,6 +218,9 @@
     <Compile Include="Working_Days\WorkingDays.designer.cs">
       <DependentUpon>WorkingDays.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Generate\Generate.resx">
+      <DependentUpon>Generate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupID_Settings\GroupID_Settings.resx">
       <DependentUpon>GroupID_Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,11 +239,19 @@
     <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Sessions\ViewEditSessions.resx">
       <DependentUpon>ViewEditSessions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sessions\Sessions.resx">
       <DependentUpon>Sessions.cs</DependentUpon>
+
+    <EmbeddedResource Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.resx">
+      <DependentUpon>ConsecutiveSessionsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Parallel_Sessions\ParallelSessionsManagement.resx">
+      <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>

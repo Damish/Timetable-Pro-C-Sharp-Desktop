@@ -346,6 +346,7 @@ namespace TimetablePro
             workingDays.Show();
         }
 
+
         private void btnOpt7_Click(object sender, EventArgs e)
         {
            SessionsManagement sessionsManagement = new SessionsManagement();
@@ -354,6 +355,18 @@ namespace TimetablePro
             sessionsManagement.Show();
         }
 
-        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
+        }
+
     }
 }
