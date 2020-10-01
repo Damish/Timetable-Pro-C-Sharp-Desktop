@@ -1,6 +1,6 @@
 ﻿namespace TimetablePro
 {
-    partial class AddWorkingDays
+    partial class Generate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -44,12 +47,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.btn2addwe = new System.Windows.Forms.Button();
-            this.btn1addwd = new System.Windows.Forms.Button();
-            this.userControlWeekEnds1 = new TimetablePro.UserControlWeekEnds();
-            this.userControlWeekday1 = new TimetablePro.UserControlWeekday();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpt1
@@ -61,6 +71,7 @@
             this.btnOpt1.TabIndex = 6;
             this.btnOpt1.Text = "Home";
             this.btnOpt1.UseVisualStyleBackColor = true;
+            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // btnOpt2
             // 
@@ -104,7 +115,6 @@
             this.btnOpt5.TabIndex = 6;
             this.btnOpt5.Text = "Tags Management";
             this.btnOpt5.UseVisualStyleBackColor = true;
-            this.btnOpt5.Click += new System.EventHandler(this.btnOpt5_Click);
             // 
             // btnOpt6
             // 
@@ -222,57 +232,140 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // btn2addwe
+            // dataGridView1
             // 
-            this.btn2addwe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2addwe.Location = new System.Drawing.Point(775, 119);
-            this.btn2addwe.Name = "btn2addwe";
-            this.btn2addwe.Size = new System.Drawing.Size(162, 27);
-            this.btn2addwe.TabIndex = 14;
-            this.btn2addwe.Text = "Weekend";
-            this.btn2addwe.UseVisualStyleBackColor = true;
-            this.btn2addwe.Click += new System.EventHandler(this.btn2addwe_Click);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 643);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(239, 204);
+            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btn1addwd
+            // button1
             // 
-            this.btn1addwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1addwd.Location = new System.Drawing.Point(475, 119);
-            this.btn1addwd.Name = "btn1addwd";
-            this.btn1addwd.Size = new System.Drawing.Size(183, 27);
-            this.btn1addwd.TabIndex = 13;
-            this.btn1addwd.Text = "Week Day";
-            this.btn1addwd.UseVisualStyleBackColor = true;
-            this.btn1addwd.Click += new System.EventHandler(this.btn1addwd_Click);
+            this.button1.Location = new System.Drawing.Point(429, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 39);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Update All Parallel Sessions";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_UpdateParallelAll_Click);
             // 
-            // userControlWeekEnds1
+            // button2
             // 
-            this.userControlWeekEnds1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWeekEnds1.Location = new System.Drawing.Point(339, 167);
-            this.userControlWeekEnds1.Name = "userControlWeekEnds1";
-            this.userControlWeekEnds1.Size = new System.Drawing.Size(927, 499);
-            this.userControlWeekEnds1.TabIndex = 16;
+            this.button2.Location = new System.Drawing.Point(653, 164);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(241, 39);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Insert To Group_time_table";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn_InsertToSevenDays_Click);
             // 
-            // userControlWeekday1
+            // dataGridView7
             // 
-            this.userControlWeekday1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.userControlWeekday1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWeekday1.Location = new System.Drawing.Point(324, 165);
-            this.userControlWeekday1.Name = "userControlWeekday1";
-            this.userControlWeekday1.Size = new System.Drawing.Size(927, 486);
-            this.userControlWeekday1.TabIndex = 15;
+            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView7.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView7.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView7.Location = new System.Drawing.Point(286, 209);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersVisible = false;
+            this.dataGridView7.RowTemplate.Height = 24;
+            this.dataGridView7.Size = new System.Drawing.Size(1244, 617);
+            this.dataGridView7.TabIndex = 20;
             // 
-            // AddWorkingDays
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1202, 164);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(241, 39);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Reset Group_Timetable";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(429, 119);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(235, 32);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Set Parallel Sessions Form";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBoxID
+            // 
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Items.AddRange(new object[] {
+            "Y3.S2.IT.03",
+            "Y3.S2.IT.04",
+            "Y3.S2.IT.05"});
+            this.comboBoxID.Location = new System.Drawing.Point(286, 172);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxID.TabIndex = 10;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(681, 119);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(235, 32);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "Set Consecutive Sessions Form";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(918, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(264, 39);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Reset Parallel/Consecutive Sessions";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // Generate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.userControlWeekEnds1);
-            this.Controls.Add(this.btn2addwe);
-            this.Controls.Add(this.btn1addwd);
-            this.Controls.Add(this.userControlWeekday1);
+            this.ClientSize = new System.Drawing.Size(1562, 877);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView7);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.btnOpt11);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
             this.Controls.Add(this.btnOpt7);
             this.Controls.Add(this.btnOpt9);
@@ -283,12 +376,15 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Name = "AddWorkingDays";
+            this.Controls.Add(this.panel1);
+            this.Name = "Generate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,10 +406,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private UserControlWeekEnds userControlWeekEnds1;
-        private System.Windows.Forms.Button btn2addwe;
-        private System.Windows.Forms.Button btn1addwd;
-        private UserControlWeekday userControlWeekday1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBoxID;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button4;
     }
 }
 

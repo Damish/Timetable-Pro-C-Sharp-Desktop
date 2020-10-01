@@ -1,6 +1,6 @@
 ﻿namespace TimetablePro
 {
-    partial class AddWorkingDays
+    partial class ConsecutiveSessionsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -44,12 +46,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.btn2addwe = new System.Windows.Forms.Button();
-            this.btn1addwd = new System.Windows.Forms.Button();
-            this.userControlWeekEnds1 = new TimetablePro.UserControlWeekEnds();
-            this.userControlWeekday1 = new TimetablePro.UserControlWeekday();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboBoxTag = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpt1
@@ -61,6 +68,7 @@
             this.btnOpt1.TabIndex = 6;
             this.btnOpt1.Text = "Home";
             this.btnOpt1.UseVisualStyleBackColor = true;
+            this.btnOpt1.Click += new System.EventHandler(this.btnOpt1_Click);
             // 
             // btnOpt2
             // 
@@ -104,7 +112,6 @@
             this.btnOpt5.TabIndex = 6;
             this.btnOpt5.Text = "Tags Management";
             this.btnOpt5.UseVisualStyleBackColor = true;
-            this.btnOpt5.Click += new System.EventHandler(this.btnOpt5_Click);
             // 
             // btnOpt6
             // 
@@ -222,55 +229,103 @@
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
             // 
-            // btn2addwe
+            // dataGridView1
             // 
-            this.btn2addwe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2addwe.Location = new System.Drawing.Point(775, 119);
-            this.btn2addwe.Name = "btn2addwe";
-            this.btn2addwe.Size = new System.Drawing.Size(162, 27);
-            this.btn2addwe.TabIndex = 14;
-            this.btn2addwe.Text = "Weekend";
-            this.btn2addwe.UseVisualStyleBackColor = true;
-            this.btn2addwe.Click += new System.EventHandler(this.btn2addwe_Click);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(316, 199);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(380, 442);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btn1addwd
+            // comboBoxID
             // 
-            this.btn1addwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1addwd.Location = new System.Drawing.Point(475, 119);
-            this.btn1addwd.Name = "btn1addwd";
-            this.btn1addwd.Size = new System.Drawing.Size(183, 27);
-            this.btn1addwd.TabIndex = 13;
-            this.btn1addwd.Text = "Week Day";
-            this.btn1addwd.UseVisualStyleBackColor = true;
-            this.btn1addwd.Click += new System.EventHandler(this.btn1addwd_Click);
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Location = new System.Drawing.Point(316, 169);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(205, 24);
+            this.comboBoxID.TabIndex = 12;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
-            // userControlWeekEnds1
+            // dataGridView2
             // 
-            this.userControlWeekEnds1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWeekEnds1.Location = new System.Drawing.Point(339, 167);
-            this.userControlWeekEnds1.Name = "userControlWeekEnds1";
-            this.userControlWeekEnds1.Size = new System.Drawing.Size(927, 499);
-            this.userControlWeekEnds1.TabIndex = 16;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(894, 199);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(372, 441);
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // userControlWeekday1
+            // comboBoxTag
             // 
-            this.userControlWeekday1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.userControlWeekday1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWeekday1.Location = new System.Drawing.Point(324, 165);
-            this.userControlWeekday1.Name = "userControlWeekday1";
-            this.userControlWeekday1.Size = new System.Drawing.Size(927, 486);
-            this.userControlWeekday1.TabIndex = 15;
+            this.comboBoxTag.FormattingEnabled = true;
+            this.comboBoxTag.Items.AddRange(new object[] {
+            "Lecture",
+            "Lab",
+            "Tutorial"});
+            this.comboBoxTag.Location = new System.Drawing.Point(527, 169);
+            this.comboBoxTag.Name = "comboBoxTag";
+            this.comboBoxTag.Size = new System.Drawing.Size(169, 24);
+            this.comboBoxTag.TabIndex = 15;
+            this.comboBoxTag.SelectedIndexChanged += new System.EventHandler(this.comboBoxTag_SelectedIndexChanged);
             // 
-            // AddWorkingDays
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(740, 523);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 61);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Set Selected sessions Consecutive";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(559, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(450, 29);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Consecutive Sessions Management";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(759, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Reset All";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // ConsecutiveSessionsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.userControlWeekEnds1);
-            this.Controls.Add(this.btn2addwe);
-            this.Controls.Add(this.btn1addwd);
-            this.Controls.Add(this.userControlWeekday1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxTag);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -283,13 +338,18 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Name = "AddWorkingDays";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "ConsecutiveSessionsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
+            this.Load += new System.EventHandler(this.TagsManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -310,10 +370,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private UserControlWeekEnds userControlWeekEnds1;
-        private System.Windows.Forms.Button btn2addwe;
-        private System.Windows.Forms.Button btn1addwd;
-        private UserControlWeekday userControlWeekday1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxID;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBoxTag;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

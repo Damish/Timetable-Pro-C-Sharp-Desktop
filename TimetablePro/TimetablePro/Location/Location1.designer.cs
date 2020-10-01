@@ -157,6 +157,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 

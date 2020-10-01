@@ -24,6 +24,8 @@ namespace TimetablePro
         {
             InitializeComponent();
             DisplayData();
+            FillComboYear();
+            FillComboSemester();
 
         }
         //copy methods
@@ -60,6 +62,43 @@ namespace TimetablePro
             AddSubjectDetails Addsubj = new AddSubjectDetails();
             Addsubj.ShowDialog();
         }
+
+        private void FillComboYear()
+        {
+
+            string query = "Select * from groupID_option_year";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                comboBoxYr.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+        private void FillComboSemester()
+        {
+
+            string query = "Select * from groupID_option_Semester";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                dropdSem.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+
+
 
         private void DisplayData()
         {
@@ -117,8 +156,8 @@ namespace TimetablePro
             txtSubName.Text = row.Cells[1].Value.ToString();
             txtSubCode.Text = row.Cells[2].Value.ToString();
             numericUpDownLec.Text = row.Cells[5].Value.ToString();
-            numericUpDownLab.Text = row.Cells[6].Value.ToString();
-            numericUpDownTute.Text = row.Cells[7].Value.ToString();
+            numericUpDownLab.Text = row.Cells[7].Value.ToString();
+            numericUpDownTute.Text = row.Cells[6].Value.ToString();
             numericUpDownEval.Text = row.Cells[8].Value.ToString();
         }
 
@@ -235,6 +274,14 @@ namespace TimetablePro
 
             this.Hide();
             workingDays.Show();
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
         }
     }
 }
