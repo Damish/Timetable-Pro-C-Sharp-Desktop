@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generate\GroupTimetableUpdateCells.cs" />
-    <Compile Include="Generate\SessionsDataReset.cs" />
     <Compile Include="Generate\SevenDaysTablesClear.cs" />
     <Compile Include="Generate\SevenDaysTableInsertions.cs" />
     <Compile Include="Generate\Generate.cs">
@@ -92,6 +91,13 @@
     </Compile>
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveMethods.cs" />
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.Designer.cs">
+      <DependentUpon>ConsecutiveSessionsManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Set_Parallel_Sessions\ParallelMethods.cs" />
     <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.cs">
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set_Consecutive_Sessions\ConsecutiveSessionsManagement.resx">
+      <DependentUpon>ConsecutiveSessionsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Set_Parallel_Sessions\ParallelSessionsManagement.resx">
       <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>

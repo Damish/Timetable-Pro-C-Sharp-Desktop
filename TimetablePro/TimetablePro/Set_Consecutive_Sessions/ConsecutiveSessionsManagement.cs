@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace TimetablePro
 {
-    public partial class ParallelSessionsManagement : Form
+    public partial class ConsecutiveSessionsManagement : Form
     {
         SqlConnection sqlcon = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-        public ParallelSessionsManagement()
+        public ConsecutiveSessionsManagement()
         {
             InitializeComponent();
             DisplayDataTable1();
@@ -40,11 +40,11 @@ namespace TimetablePro
             }
             
             string query =
-                "Select s.record_id as Id,s.session_data as Session, s.parallel_with, s.isParallel, s.isConsecutive, s.consecutive, s.sort_order as [Order]" +
+                "Select s.record_id as Id,s.session_data as Session, s.consecutive, s.parallel_with, s.isConsecutive, s.isParallel, s.sort_order as [Order]" +
                 "from sessions s " +
                 "where s.s_group_id Like @id and " +
-                       "s.s_tag Like @tag "+
-                       "AND s.isConsecutive LIKE '%false%'";
+                       "s.s_tag Like @tag " +
+                       "AND s.isParallel LIKE '%false%'";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
             sqlcomm.Parameters.AddWithValue("@id", groupid);
             sqlcomm.Parameters.AddWithValue("@tag", tag);
@@ -210,25 +210,30 @@ namespace TimetablePro
             //    table2SelectedID = Int32.Parse(row.Cells["Id"].Value.ToString());
 
 
-                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-                {
-                    con4.Open();
-                    string setParallelorder = "UPDATE sessions set sort_order = @order WHERE record_id = @id;" +
-                        "UPDATE sessions set parallel_with = @table2selectedid WHERE record_id = @id;"+
-                        "UPDATE sessions set isParallel = 'true' WHERE record_id = @table2selectedid;";
+            using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                con4.Open();
+                string setParallelorder = "UPDATE sessions set consecutive = @table2selectedid WHERE record_id = @table1selectedid;" +
+                    "UPDATE sessions set isConsecutive = 'true' WHERE record_id = @table1selectedid;";
                 using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
-                    {
-                        //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                        sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                        sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
-                        sqlcomm1.Parameters.AddWithValue("@id", table1SelectedID);
-                        sqlcomm1.ExecuteNonQuery();
-                    }
+                {
+                    //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                    sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                    sqlcomm1.Parameters.AddWithValue("@table1selectedid", table1SelectedID);
+                    sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
+                    
+                    sqlcomm1.ExecuteNonQuery();
                 }
-                count += 1;
+            }
+            count += 1;
             //}
-            MessageBox.Show(count + " Parallel sessions updated Sucessfully!");
+            MessageBox.Show(count + " Consecutive sessions updated Sucessfully!");
             DisplayDataTable1();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)
