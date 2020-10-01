@@ -18,7 +18,14 @@ namespace TimetablePro
         public ViewSessionsManagement()
         {
             InitializeComponent();
-
+            DisplayData();
+            DisplaySubjectData();
+            DisplayLecData();
+            DisplayGroupData();
+            FilterbyLec();
+            FilterbySubCode();
+            FilterbyGroupID();
+            //search(txtsrch.Text);
         }
 
 
@@ -89,13 +96,7 @@ namespace TimetablePro
             SessionsManagement addsessions = new SessionsManagement();
             addsessions.Show();
         }
-
-        //private void ViewSessionsManagement_Load(object sender, EventArgs e)
-        //{
-            //this.Hide();
-           // ViewSessionsManagement viewsessions = new ViewSessionsManagement();
-           // viewsessions.Show();
-       // }
+        
 
         private void sviewbtn_Click(object sender, EventArgs e)
         {
@@ -103,5 +104,372 @@ namespace TimetablePro
             ViewSessionsManagement viewsessions = new ViewSessionsManagement();
             viewsessions.Show();
         }
+        private void DisplayData()
+        {
+
+            string query = "Select session_data,s_lecturer_name,s_subject_code,s_group_id from sessions";
+
+            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
+
+            sda.Fill(dt);
+
+            dataGridViewSessions.DataSource = dt;
+            sqlcon.Close();
+
+        }
+
+
+
+        private void DisplayLecData()
+        {
+
+            string query = "Select Lecturer_Name  from lecturer";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR2 = cmd.ExecuteReader();
+
+            while (DR2.Read())
+            {
+                dropLecID.Items.Add(DR2[0]);
+
+            }
+            sqlcon.Close();
+
+
+        }
+        private void DisplaySubjectData()
+        {
+
+            string query = "Select SubCode  from subjects";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR2 = cmd.ExecuteReader();
+
+            while (DR2.Read())
+            {
+                dropSubject.Items.Add(DR2[0]);
+
+            }
+            sqlcon.Close();
+
+
+        }
+
+        private void DisplayGroupData()
+        {
+
+            string query = "Select group_id  from student_groups";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR2 = cmd.ExecuteReader();
+
+            while (DR2.Read())
+            {
+                dropGroupID.Items.Add(DR2[0]);
+
+            }
+            sqlcon.Close();
+
+
+        }
+
+        private void FilterbyLec()
+        {
+            string LecID = "";
+
+            if (dropLecID.Text != "")
+            {
+                LecID = dropLecID.Text;
+                LecID = "%" + LecID + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+                 
+                    string query2 = "Select session_data,s_lecturer_name,s_subject_code,s_group_id from  sessions s where s_lecturer_name LIKE @LecID";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, sqlcon);
+                    sqlcomm2.Parameters.AddWithValue("@LecID", LecID = dropLecID.Text);
+
+                    sqlcon.Open();
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(sqlcomm2);
+                    sda.Fill(dt);
+                    dataGridViewSessions.DataSource = dt;
+                    sqlcon.Close();
+                    con4.Close();
+                    clearForm1();
+                }
+            }
+        }
+
+        private void FilterbySubCode()
+        {
+            string SubCode = "";
+
+            if (dropSubject.Text != "")
+            {
+                SubCode = dropSubject.Text;
+                SubCode = "%" + SubCode + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "Select session_data,s_lecturer_name,s_subject_code,s_group_id from  sessions s where s_subject_code LIKE @SubCode";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, sqlcon);
+                    sqlcomm2.Parameters.AddWithValue("@SubCode", SubCode = dropSubject.Text);
+
+                    sqlcon.Open();
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(sqlcomm2);
+                    sda.Fill(dt);
+                    dataGridViewSessions.DataSource = dt;
+                    sqlcon.Close();
+                    con4.Close();
+                    clearForm2();
+                }
+            }
+        }
+
+        private void FilterbyGroupID()
+        {
+            string GroupID = "";
+
+            if (dropGroupID.Text != "")
+            {
+                GroupID = dropGroupID.Text;
+                GroupID = "%" + GroupID + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "Select session_data,s_lecturer_name,s_subject_code,s_group_id from  sessions s where s_group_id LIKE @GroupID";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, sqlcon);
+                    sqlcomm2.Parameters.AddWithValue("@GroupID", GroupID = dropGroupID.Text);
+
+                    sqlcon.Open();
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(sqlcomm2);
+                    sda.Fill(dt);
+                    dataGridViewSessions.DataSource = dt;
+                    sqlcon.Close();
+                    con4.Close();
+                    clearForm3();
+                }
+            }
+        }
+
+        private void btnLecID_Click(object sender, EventArgs e)
+        {
+           FilterbyLec();
+        }
+
+    
+        private void btnSessions_Click(object sender, EventArgs e)
+        {
+            DisplayData();
+            clearForm1();
+            clearForm2();
+            clearForm3();
+        }
+
+        private void btnSubID_Click(object sender, EventArgs e)
+        {
+            FilterbySubCode();
+        }
+
+        private void btnGroupID_Click(object sender, EventArgs e)
+        {
+            FilterbyGroupID();
+        }
+
+
+        private void clearForm1()
+        {
+            dropSubject.Text = "";
+            dropGroupID.Text = "";
+        }
+        private void clearForm2()
+        {
+            dropLecID.Text = "";
+            dropGroupID.Text = "";
+        }
+        private void clearForm3()
+        {
+            dropLecID.Text = "";
+            dropSubject.Text = "";
+        }
+
+        private void btnDelLec_Click(object sender, EventArgs e)
+        {
+            string LecID = "";
+            string finalLecID = "";
+
+            if (dropLecID.Text != "")
+            {
+                LecID = dropLecID.Text;
+                finalLecID = "%" + LecID + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "delete from  sessions  where s_lecturer_name LIKE @LecID";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
+                    sqlcomm2.Parameters.AddWithValue("@LecID", finalLecID);
+
+                    sqlcomm2.ExecuteNonQuery();
+                    DisplayData();
+                    MessageBox.Show("Data Deleted Sucessfully");
+                       
+                    con4.Close();
+                   
+                }
+            }
+        }
+
+        private void dataGridViewSessions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDelSub_Click(object sender, EventArgs e)
+        {
+            string subID = "";
+            string finalSubID = "";
+
+            if (dropSubject.Text != "")
+            {
+                subID = dropSubject.Text;
+                finalSubID = "%" + subID + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "delete from  sessions  where s_subject_code LIKE @subID";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
+                    sqlcomm2.Parameters.AddWithValue("@subID", finalSubID);
+
+                    sqlcomm2.ExecuteNonQuery();
+                    DisplayData() ;
+                    MessageBox.Show("Data Deleted Sucessfully");
+
+                    con4.Close();
+
+                }
+            }
+        }
+
+        private void btnDelGroup_Click(object sender, EventArgs e)
+        {
+            string GroupID = "";
+            string finalGroupID = "";
+
+            if (dropGroupID.Text != "")
+            {
+                GroupID = dropGroupID.Text;
+                finalGroupID = "%" + GroupID + "%";
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "delete from  sessions  where s_group_id LIKE @GroupID";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
+                    sqlcomm2.Parameters.AddWithValue("@GroupID", finalGroupID);
+
+                    sqlcomm2.ExecuteNonQuery();
+                    DisplayData();
+                    MessageBox.Show("Data Deleted Sucessfully");
+
+                    con4.Close();
+
+                }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+           
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    con4.Open();
+
+                    string query2 = "delete from sessions;";
+
+                    SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
+
+                    sqlcomm2.ExecuteNonQuery();
+                    DisplayData();
+                    MessageBox.Show("Data Deleted Sucessfully");
+
+                    con4.Close();
+
+                }
+        }
+
+        //private void btnDelete_Click(object sender, EventArgs e)
+        //{
+        //    string selected_id = dataGridView1.CurrentRow.Cells["SubCode"].Value.ToString();
+        //    string delete_row = "delete from Subjects where SubCode='" + selected_id + "'";
+
+        //    sqlcon.Open();
+
+        //    SqlCommand sqlcomm = new SqlCommand(delete_row, sqlcon);
+
+        //    //sqlcomm.ExecuteNonQuery();
+
+        //    int count = sqlcomm.ExecuteNonQuery();
+
+        //    if (count > 0)
+        //    {
+
+        //        MessageBox.Show("Data Deleted Sucessfully");
+        //        //    dataGridView1.Rows.Clear();
+
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Failed to Delete!!!");
+        //    }
+        //    sqlcon.Close();
+        //    DisplayData();
+        //}
+
+        //public void search(string search_data)
+        //{
+        //    sqlcon.Open();
+        //    string query = "select session_data from sessions where session_data like '%'" + search_data + "'%'";
+        //    SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+        //    DataTable dt = new DataTable();
+        //    sda.Fill(dt);
+        //    dataGridViewSessions.DataSource = dt;
+        //    sqlcon.Close();
+        //}
+
+
+        //private void txtsrch_TextChanged(object sender, EventArgs e)
+        //{
+        //    search(txtsrch.Text);
+
+        //}
     }
 }

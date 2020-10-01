@@ -196,5 +196,7 @@ namespace TimetablePro
             this.Hide();
             workingDays.Show();
         }
+
+      
     }
 }

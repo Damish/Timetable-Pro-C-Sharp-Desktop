@@ -156,8 +156,8 @@ namespace TimetablePro
             txtSubName.Text = row.Cells[1].Value.ToString();
             txtSubCode.Text = row.Cells[2].Value.ToString();
             numericUpDownLec.Text = row.Cells[5].Value.ToString();
-            numericUpDownLab.Text = row.Cells[6].Value.ToString();
-            numericUpDownTute.Text = row.Cells[7].Value.ToString();
+            numericUpDownLab.Text = row.Cells[7].Value.ToString();
+            numericUpDownTute.Text = row.Cells[6].Value.ToString();
             numericUpDownEval.Text = row.Cells[8].Value.ToString();
         }
 

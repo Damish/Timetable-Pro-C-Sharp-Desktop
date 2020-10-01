@@ -18,11 +18,7 @@ namespace TimetablePro
         public SessionsManagement()
         {
             InitializeComponent();
-            DisplayTagData();
             DisplayGroupID();
-            DisplaySubjectData();
-
-            //DisplayData();
             AddToSessions();
         }
 
@@ -91,8 +87,6 @@ namespace TimetablePro
                 while (dataReader.Read())
                 {
 
-                    
-
                     string subjectCode = dataReader.GetString(0);
                     string subname = dataReader.GetString(1);
                     string lecturerName = dataReader.GetString(2);
@@ -109,7 +103,7 @@ namespace TimetablePro
                         {
                             //create lecture sessions
                             orderNo += 1; //Incrementing orderNo by 1
-                            string sessionString1 = sessionString + "Lecture\n" + lecHrs+"hours";
+                            string sessionString1 = sessionString + "Lecture\n" + lecHrs+" hours";
                             Console.WriteLine(sessionString1);
                             InsertToSessionTable(sessionString1, orderNo, lecHrs, subjectCode, subname, lecturerName, GroupID,120, "Lecture");
                         }
@@ -118,7 +112,7 @@ namespace TimetablePro
                         {
                             //create lab sessions
                             orderNo += 1;//Incrementing orderNo by 1
-                            string sessionString2 = sessionString + "Lab\n" + labHrs + "hours";
+                            string sessionString2 = sessionString + "Lab\n" + labHrs + " hours";
                             Console.WriteLine(sessionString2);
                             InsertToSessionTable(sessionString2, orderNo, labHrs, subjectCode, subname, lecturerName, GroupID, 120, "Lab");
                         }
@@ -127,7 +121,7 @@ namespace TimetablePro
                         {
                             //create lab sessions
                             orderNo += 1;//Incrementing orderNo by 1
-                            string sessionString3 = sessionString + "Tute\n" + tuteHrs + "hours";
+                            string sessionString3 = sessionString + "Tute\n" + tuteHrs + " hours";
                             Console.WriteLine(sessionString3);
                             InsertToSessionTable(sessionString3, orderNo, tuteHrs, subjectCode, subname, lecturerName, GroupID, 120, "Tute");
                         }
@@ -165,7 +159,9 @@ namespace TimetablePro
                 con3.Open();
 
                 string query = "Insert into sessions(session_data,sort_order,duration,s_subject_code,s_subject_name,s_lecturer_name,s_group_id,s_student_count,s_tag)" +
-                    "values(@session_data,@sort_order,@duration,@s_subject_code,@s_subject_name,@s_lecturer_name,@s_group_id,@s_student_count,@s_tag)";
+                    "values(@session_data,@sort_order,@duration,@s_subject_code,@s_subject_name,@s_lecturer_name,@s_group_id,@s_student_count,@s_tag); "+
+                    "Insert into sessions_original(session_data,sort_order,duration,s_subject_code,s_subject_name,s_lecturer_name,s_group_id,s_student_count,s_tag)" +
+                    "values(@session_data,@sort_order,@duration,@s_subject_code,@s_subject_name,@s_lecturer_name,@s_group_id,@s_student_count,@s_tag);";
 
                 SqlCommand sqlcomm = new SqlCommand(query, con3);
                
@@ -281,116 +277,40 @@ namespace TimetablePro
             sqlcon.Close();
 
         }
-        private void DisplaySubjectData()
-        {
-            string query = "Select * from Subjects";
 
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand(query, sqlcon);
-            SqlDataReader DR = cmd.ExecuteReader();
-
-            while (DR.Read())
-            {
-                comboBoxSubject.Items.Add(DR[3]);
-
-            }
-            sqlcon.Close();
-
-        }
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    if (comboBoxGroupID.Text != "" )
+        //    {
 
 
+        //        SqlCommand cmdSave = new SqlCommand("Insert into sessionsTb(lecturer_name,group_id,no_of_std,tag,duration,subj_name,subj_code)Values(@lecturer_name,@group_id,@no_of_std,@tag,@duration,@subj_name,@subj_code)", sqlcon);
 
-        private void DisplayTagData()
-        {
+        //        cmdSave.Parameters.AddWithValue("@group_id", comboBoxGroupID.Text);
 
-            string query = "Select *  from tags";
+        //        sqlcon.Open();
+        //        cmdSave.ExecuteNonQuery();
 
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand(query, sqlcon);
-            SqlDataReader DR2 = cmd.ExecuteReader();
+        //        sqlcon.Close();
 
-            while (DR2.Read())
-            {
-              comboBoxTag.Items.Add(DR2[1]);
+        //        clearForm();
+        //        MessageBox.Show("Subject's Data saved sucessfully.");
+        //    }
+        //    else
+        //    {
 
-            }
-            sqlcon.Close();
-           
+        //        MessageBox.Show("Fill all the blanks!");
 
-        }
-
-
-
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (txtLecName.Text != "" && comboBoxGroupID.Text != "" && txtStdNo.Text != "" && comboBoxTag.Text != "" && txtDuration.Text != "" && comboBoxSubject.Text != "" && txtSubCode.Text != "")
-            {
-
-
-                SqlCommand cmdSave = new SqlCommand("Insert into sessionsTb(lecturer_name,group_id,no_of_std,tag,duration,subj_name,subj_code)Values(@lecturer_name,@group_id,@no_of_std,@tag,@duration,@subj_name,@subj_code)", sqlcon);
-
-                cmdSave.Parameters.AddWithValue("@group_id", comboBoxGroupID.Text);
-                cmdSave.Parameters.AddWithValue("@lecturer_name", txtLecName.Text);
-                 cmdSave.Parameters.AddWithValue("@no_of_std", txtStdNo.Text);
-                 cmdSave.Parameters.AddWithValue("@tag", comboBoxTag.Text);
-                 cmdSave.Parameters.AddWithValue("@duration", txtDuration.Text);
-                cmdSave.Parameters.AddWithValue("@subj_name", comboBoxSubject.Text);
-                 cmdSave.Parameters.AddWithValue("@subj_code", txtSubCode.Text);
-
-
-
-
-                sqlcon.Open();
-                cmdSave.ExecuteNonQuery();
-
-                sqlcon.Close();
-
-                clearForm();
-                MessageBox.Show("Subject's Data saved sucessfully.");
-            }
-            else
-            {
-
-                MessageBox.Show("Fill all the blanks!");
-
-            }
-        }
-        private void clearForm()
-        {
-
-            txtLecName.Text = "";
-            comboBoxGroupID.Text = "";
-            txtStdNo.Text = "";
-            comboBoxTag.Text = "";
-            txtDuration.Text = "";
-            comboBoxSubject.Text = "";
-            txtSubCode.Text = "";
-           
-
-        }
+        //    }
+        //}
+        //private void clearForm()
+        //{
+        //    comboBoxGroupID.Text = "";
+        //}
 
         private void SessionsManagement_Load(object sender, EventArgs e)
         {
 
-        }
-
-      
-        private void btnSubject_Click(object sender, EventArgs e)
-        {
-            //doesn't work give erro as asuer connection failed
-            string query = "Select SubCode from Subjects where SubName ="+comboBoxSubject.Text;
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand(query, sqlcon);
-            SqlDataReader DR = cmd.ExecuteReader();
-
-            if (DR.Read())
-            {
-                txtSubCode.Text = (DR["SubCode"].ToString());
-
-            }
-       
-            sqlcon.Close();
         }
 
         private void lLevel_Click(object sender, EventArgs e)
@@ -398,9 +318,12 @@ namespace TimetablePro
 
         }
 
-        private void comboBoxGroupID_SelectedIndexChanged(object sender, EventArgs e)
+      
+        private void btnGroupID_Click(object sender, EventArgs e)
         {
             AddToSessions();
         }
+
+   
     }
 }
