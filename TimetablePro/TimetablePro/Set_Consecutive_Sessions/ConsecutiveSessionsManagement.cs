@@ -208,27 +208,33 @@ namespace TimetablePro
             //{
 
             //    table2SelectedID = Int32.Parse(row.Cells["Id"].Value.ToString());
-
-
-            using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            if (table1SelectedID != 0 && table2SelectedID != 0)
             {
-                con4.Open();
-                string setParallelorder = "UPDATE sessions set consecutive = @table2selectedid WHERE record_id = @table1selectedid;" +
-                    "UPDATE sessions set isConsecutive = 'true' WHERE record_id = @table1selectedid;";
-                using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
                 {
-                    //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                    sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                    sqlcomm1.Parameters.AddWithValue("@table1selectedid", table1SelectedID);
-                    sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
-                    
-                    sqlcomm1.ExecuteNonQuery();
+                    con4.Open();
+                    string setParallelorder = "UPDATE sessions set consecutive = @table2selectedid WHERE record_id = @table1selectedid;" +
+                        "UPDATE sessions set isConsecutive = 'true' WHERE record_id = @table2selectedid;";
+                    using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+                    {
+                        //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@table1selectedid", table1SelectedID);
+                        sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
+
+                        sqlcomm1.ExecuteNonQuery();
+                    }
                 }
+                count += 1;
+                //}
+                MessageBox.Show(count + " Consecutive sessions updated Sucessfully!");
+                DisplayDataTable1();
+
             }
-            count += 1;
-            //}
-            MessageBox.Show(count + " Consecutive sessions updated Sucessfully!");
-            DisplayDataTable1();
+            else {
+                MessageBox.Show( " Select two sessions to set consecutive!!!");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -242,11 +248,15 @@ namespace TimetablePro
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
+                ParallelMethods pm = new ParallelMethods();
+                pm.reverseAllParallelSessions(finalString);
+                DisplayDataTable1();
+            }
+            else {
+                MessageBox.Show("Select group to reset data!!!");
             }
 
-            ParallelMethods pm = new ParallelMethods();
-            pm.reverseAllParallelSessions(finalString);
-            DisplayDataTable1();
+            
         }
 
         private void btnOpt7_Click(object sender, EventArgs e)
@@ -255,6 +265,14 @@ namespace TimetablePro
 
             this.Hide();
             sessionsManagement.Show();
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -52,6 +52,8 @@
             this.btnGroupID = new System.Windows.Forms.Button();
             this.comboBoxGroupID = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -239,12 +241,13 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // saddbtn
             // 
             this.saddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saddbtn.Location = new System.Drawing.Point(317, 149);
-            this.saddbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saddbtn.Margin = new System.Windows.Forms.Padding(4);
             this.saddbtn.Name = "saddbtn";
             this.saddbtn.Size = new System.Drawing.Size(135, 36);
             this.saddbtn.TabIndex = 9;
@@ -256,7 +259,7 @@
             // 
             this.sviewbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sviewbtn.Location = new System.Drawing.Point(516, 150);
-            this.sviewbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sviewbtn.Margin = new System.Windows.Forms.Padding(4);
             this.sviewbtn.Name = "sviewbtn";
             this.sviewbtn.Size = new System.Drawing.Size(171, 34);
             this.sviewbtn.TabIndex = 10;
@@ -268,12 +271,12 @@
             // 
             this.ltitle.AutoSize = true;
             this.ltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltitle.Location = new System.Drawing.Point(816, 228);
+            this.ltitle.Location = new System.Drawing.Point(614, 203);
             this.ltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ltitle.Name = "ltitle";
-            this.ltitle.Size = new System.Drawing.Size(210, 25);
+            this.ltitle.Size = new System.Drawing.Size(249, 25);
             this.ltitle.TabIndex = 54;
-            this.ltitle.Text = "Generated sessions ";
+            this.ltitle.Text = "Auto Generate sessions ";
             // 
             // lEmp
             // 
@@ -292,7 +295,7 @@
             this.btnGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGroupID.Location = new System.Drawing.Point(516, 288);
-            this.btnGroupID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGroupID.Margin = new System.Windows.Forms.Padding(4);
             this.btnGroupID.Name = "btnGroupID";
             this.btnGroupID.Size = new System.Drawing.Size(103, 30);
             this.btnGroupID.TabIndex = 114;
@@ -305,7 +308,7 @@
             this.comboBoxGroupID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGroupID.FormattingEnabled = true;
             this.comboBoxGroupID.Location = new System.Drawing.Point(317, 288);
-            this.comboBoxGroupID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxGroupID.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGroupID.Name = "comboBoxGroupID";
             this.comboBoxGroupID.Size = new System.Drawing.Size(160, 24);
             this.comboBoxGroupID.TabIndex = 117;
@@ -313,18 +316,41 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(700, 272);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(317, 334);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(517, 391);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(908, 294);
             this.dataGridView1.TabIndex = 121;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Brown;
+            this.button1.Location = new System.Drawing.Point(739, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 35);
+            this.button1.TabIndex = 122;
+            this.button1.Text = "Set Parallel Sessions";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Navy;
+            this.button2.Location = new System.Drawing.Point(963, 150);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(247, 35);
+            this.button2.TabIndex = 123;
+            this.button2.Text = "Set Consecutive Sessions";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SessionsManagement
             // 
@@ -332,6 +358,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1252, 678);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBoxGroupID);
             this.Controls.Add(this.btnGroupID);
@@ -389,6 +417,8 @@
         private System.Windows.Forms.Button btnGroupID;
         private System.Windows.Forms.ComboBox comboBoxGroupID;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
