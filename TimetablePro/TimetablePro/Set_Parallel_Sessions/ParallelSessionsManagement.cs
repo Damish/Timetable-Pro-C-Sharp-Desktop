@@ -19,6 +19,7 @@ namespace TimetablePro
         {
             InitializeComponent();
             DisplayDataTable1();
+            FillComboGroup();
 
         }
 
@@ -38,11 +39,11 @@ namespace TimetablePro
                 tag = "%" + comboBoxTag.Text + "%";
             }
             
-            string query = 
-                "Select s.record_id as Id, s.session_data as Session, s.sort_order as [Order] " +
-                "from sessions_test_2222 s " +
-                "where s.session_data Like @id and " +
-                       "s.session_data Like @tag";
+            string query =
+                "Select s.record_id as Id, s.parallel_with, s.isParallel,s.session_data as Session, s.sort_order as [Order]" +
+                "from sessions s " +
+                "where s.s_group_id Like @id and " +
+                       "s.s_tag Like @tag";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
             sqlcomm.Parameters.AddWithValue("@id", groupid);
             sqlcomm.Parameters.AddWithValue("@tag", tag);
@@ -59,7 +60,28 @@ namespace TimetablePro
             sqlcon.Close();
 
         }
-        
+
+
+        private void FillComboGroup()
+        {
+
+            string query = "select group_id from student_groups ;";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                comboBoxID.Items.Add(DR[0]);
+
+            }
+            sqlcon.Close();
+        }
+
+
+
+
 
         private void TagsManagement_Load(object sender, EventArgs e)
         {
@@ -136,43 +158,77 @@ namespace TimetablePro
         }
 
         String tempOrder = "";
-        String tempid = "";
+        int table1SelectedID  =0;
+        int table2SelectedID = 0;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tempOrder = dataGridView1.CurrentRow.Cells["Order"].Value.ToString();
-            Console.WriteLine("Selected order : "+dataGridView1.CurrentRow.Cells["Order"].Value.ToString());
+            tempOrder = dataGridView2.CurrentRow.Cells["Order"].Value.ToString();
+            table1SelectedID = Int32.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
+            //Console.WriteLine("Selected order : "+dataGridView1.CurrentRow.Cells["Order"].Value.ToString());
+            Console.WriteLine("Selected id table 1 : " + table1SelectedID);
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tempid = dataGridView2.CurrentRow.Cells["id"].Value.ToString();
-            Console.WriteLine("Selected id : " + dataGridView2.CurrentRow.Cells["id"].Value.ToString());
+            table2SelectedID = Int32.Parse(dataGridView2.CurrentRow.Cells["Id"].Value.ToString());
+            Console.WriteLine("Selected id table 2 : " + table2SelectedID);
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    int count = 0;
+        //    foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+        //    {
+               
+        //        tempid = row.Cells["id"].Value.ToString();
+            
+
+        //    using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+        //    {
+        //        con4.Open();
+        //        string setParallelorder = "UPDATE sessions set sort_order = @order WHERE record_id = @id;";
+        //        using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+        //        {
+        //            sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+        //            sqlcomm1.Parameters.AddWithValue("@id", tempid);
+        //            sqlcomm1.ExecuteNonQuery();
+        //        }
+        //    }
+        //        count += 1;
+        //    }
+        //    MessageBox.Show(count +" Parallel sessions updated Sucessfully!");
+        //    DisplayDataTable1();
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
             int count = 0;
-            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
-            {
-               
-                tempid = row.Cells["id"].Value.ToString();
-            
+            //foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            //{
 
-            using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
-                con4.Open();
-                string setParallelorder = "UPDATE sessions_test_2222 set sort_order = @order WHERE record_id = @id;";
-                using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+            //    table2SelectedID = Int32.Parse(row.Cells["Id"].Value.ToString());
+
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
                 {
-                    sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                    sqlcomm1.Parameters.AddWithValue("@id", tempid);
-                    sqlcomm1.ExecuteNonQuery();
+                    con4.Open();
+                    string setParallelorder = "UPDATE sessions set sort_order = @order WHERE record_id = @id;" +
+                        "UPDATE sessions set parallel_with = @table2selectedid WHERE record_id = @id;"+
+                        "UPDATE sessions set isParallel = 'true' WHERE record_id = @table2selectedid;";
+                using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+                    {
+                        //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
+                        sqlcomm1.Parameters.AddWithValue("@id", table1SelectedID);
+                        sqlcomm1.ExecuteNonQuery();
+                    }
                 }
-            }
                 count += 1;
-            }
-            MessageBox.Show(count +" Parallel sessions updated Sucessfully!");
+            //}
+            MessageBox.Show(count + " Parallel sessions updated Sucessfully!");
             DisplayDataTable1();
         }
+
     }
 }

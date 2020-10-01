@@ -21,12 +21,12 @@ namespace TimetablePro
         public Generate()
         {
             InitializeComponent();
-            
+            FillComboGroup();
 
             displayFullTimetable();
         }
 
-        private void DisplayData() // sessions table display 
+        private void DisplayData() // sessions table display bottom left corner table 
         {
 
             //Console.WriteLine("the ID to Refer is " + Group_id);
@@ -39,9 +39,9 @@ namespace TimetablePro
             }
             
 
-            string query = "Select * from sessions_test_2222 s where s.session_data Like @id ";
+            string query = "Select * from sessions s where s.s_group_id Like @s_group_id ";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
-            sqlcomm.Parameters.AddWithValue("@id", finalString);
+            sqlcomm.Parameters.AddWithValue("@s_group_id", finalString);
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
             sda.Fill(dt);
@@ -59,14 +59,35 @@ namespace TimetablePro
             }
 
 
-            string query = "Select * from sessions_test_2222 s where s.session_data Like @id ";
+            string query = "Select * from sessions s where s.s_group_id Like @id ";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
             sqlcomm.Parameters.AddWithValue("@id", finalString);
             sqlcon.Open();
             SqlDataReader reader = sqlcomm.ExecuteReader(); //DataReader to update parallel all sessions
 
+
+            //List<int> list = (from IDataRecord r in reader
+            //                  select (int)r["sort_order"]
+            //        ).ToList();
+
+            //foreach (int s in list)
+            //{
+            //    Console.WriteLine("Data: " + s);
+            //}
+
+
             if (reader.HasRows)
             {
+
+                //while (reader.Read())
+                //{
+                //    ParallelMethods pm = new ParallelMethods();
+
+                //    Boolean x = pm.returnSessionsWithoutParallelSessions(reader.GetInt32(0));//true for only sessions,not parallel sessions
+
+                //    Console.WriteLine("Record_id:"+ reader.GetInt32(0)  + "isParallel:" + x);
+                //}
+
                 //variables to save previous session data
                 int prevId = 1;
                 int prevOrderNo = 0;
@@ -74,11 +95,13 @@ namespace TimetablePro
 
                 while (reader.Read())
                 {
+
                     if (reader.GetInt32(2) == prevOrderNo)//if parallel
                     {
-                        //Console.WriteLine(reader.GetInt32(0) + " <<  Now in update Parallel All "+prevId + " "+ prevSData + "   " + reader.GetString(1) + " \n");
+                        Console.WriteLine(reader.GetInt32(0) + " <<  Now in update Parallel All " + prevId + " " + prevSData + "   " + reader.GetString(1) + " \n");
+
                         UpdateParallelAll(reader.GetInt32(0), prevId, prevSData, reader.GetString(1));
-                        
+
                     }
                     else
                     {
@@ -86,6 +109,7 @@ namespace TimetablePro
                         prevOrderNo = reader.GetInt32(2);
                         prevSData = reader.GetString(1);
                     }
+                    //Console.WriteLine("Current order" + reader.GetInt32(2) + "Prev order" + prevOrderNo);
                 }
             }
             else
@@ -97,10 +121,10 @@ namespace TimetablePro
         }
 
 
-        int remainingTimeMonday = 3;
-        int remainingTimeTuesday = 3;
-        int remainingTimeWednesday = 3;
-        int remainingTimeThursday = 10;
+        int remainingTimeMonday = 5;
+        int remainingTimeTuesday = 5;
+        int remainingTimeWednesday = 10;
+        int remainingTimeThursday = 5;
         int remainingTimeFriday = 10;
 
 
@@ -115,16 +139,16 @@ namespace TimetablePro
 
 
             SqlConnection sqlcon2 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-            string query2 = "Select * from sessions_test_2222 s where s.session_data Like @id ";
+            string query2 = "Select * from sessions s where s.s_group_id Like @id ";
             sqlcon2.Open();
             SqlCommand sqlcomm2 = new SqlCommand(query2, sqlcon2);
             sqlcomm2.Parameters.AddWithValue("@id", finalString);
             SqlDataReader reader2 = sqlcomm2.ExecuteReader(); //DataReader for inserting to monday,tuesday tables
 
 
-            int MondayStartTime = 1830;
-            int TuesdayStartTime = 1830;
-            int WednesdayStartTime = 1830;
+            int MondayStartTime = 830;
+            int TuesdayStartTime = 830;
+            int WednesdayStartTime = 830;
             int ThursdayStartTime = 830;
             int FridayStartTime = 830;
 
@@ -135,11 +159,19 @@ namespace TimetablePro
                 int prevId = 1;
                 int prevOrderNo=0;
                 string prevSData ="";
-            
+                int prevSDuration = 0;
+
                 while (reader2.Read())
                 {
+                    //ParallelMethods pm = new ParallelMethods();
+                    //Boolean x = pm.returnSessionsWithoutParallelSessions(reader2.GetInt32(0));
+                    // //&& reader2.GetInt32(18) == -1
+                    //if (x == false)
+                    //{
+                        
+
                     //Console.WriteLine("{0}\n{1}\n{2}\n{3}\n", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
-                    if ((remainingTimeMonday >= reader2.GetInt32(3)))
+                    if ((remainingTimeMonday >= reader2.GetInt32(3)))    // 5 >= 2
                     {  //Monday fill
                        
                         int s_id = reader2.GetInt32(0);
@@ -150,15 +182,35 @@ namespace TimetablePro
                         prevId = reader2.GetInt32(0);
                         prevOrderNo = reader2.GetInt32(2);
                         prevSData = reader2.GetString(1);
+                        prevSDuration = reader2.GetInt32(3);
 
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
-                        
+
+                       
+
+                        //if (reader2.GetString(1).Contains("Parallel"))
+                        //{
+                        //    s_duration += prevSDuration;
+                        //}
+
+
                         int count = 1;
+                        int start = 0;
+                        int end = 0;
                         while (count <= s_duration)//add the same session twice to get better view
                         {
+                            
+                         start = MondayStartTime;
+                         end = start + 100;
+
+                            Console.WriteLine("Session data: " + reader2.GetString(1));
+                            Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
                             MondayStartTime += 100;//increment duration of time slot
-                            gtuc.InsertCellsMonday(s_data, MondayStartTime);
+
+                            gtuc.InsertCellsMonday(s_data, MondayStartTime,"Monday", start, end, s_id);
                             count += 1;
+                            
                         }
                         remainingTimeMonday -= s_duration; //decrement remaining time available to add new sessions
                         
@@ -167,6 +219,7 @@ namespace TimetablePro
                     
                     else if (remainingTimeTuesday >= reader2.GetInt32(3))
                     {//Tuesday fill
+                        
 
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
@@ -180,10 +233,17 @@ namespace TimetablePro
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
                         int count = 1;
+                        int start = 0;
+                        int end = 0;
                         while (count <= s_duration)//add the same session twice to get better view
                         {
+                            start = TuesdayStartTime ;
+                            end = start + 100;
                             TuesdayStartTime += 100;//increment duration of time slot
-                            gtuc.InsertCellsTuesday(s_data, TuesdayStartTime);
+
+                            Console.WriteLine("Tuesday Start time: " + TuesdayStartTime + " start :" + start + " end: " + end);
+
+                            gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
                             count += 1;
                         }
                         remainingTimeTuesday -= s_duration; //decrement remaining time available to add new sessions
@@ -236,6 +296,7 @@ namespace TimetablePro
                         }
                         remainingTimeThursday -= s_duration; //decrement remaining time available to add new sessions
                     }
+
                     else if (remainingTimeFriday >= reader2.GetInt32(3))
                     {//Friday fill
 
@@ -259,6 +320,7 @@ namespace TimetablePro
                         }
                         remainingTimeFriday -= s_duration; //decrement remaining time available to add new sessions
                     }
+
                     else
                     {
                         
@@ -272,6 +334,11 @@ namespace TimetablePro
 
                         break;
                     }
+
+
+                    //}//x == false end
+
+
                 }
             }
             else
@@ -283,11 +350,11 @@ namespace TimetablePro
            
             displayFullTimetable();
 
-           remainingTimeMonday = 3; //reset time durations
-           remainingTimeTuesday = 3; //reset time durations
-           remainingTimeWednesday = 3;
-           remainingTimeThursday = 10;
-           remainingTimeFriday = 10;
+            remainingTimeMonday = 5; //reset time durations
+            remainingTimeTuesday = 5; //reset time durations
+            remainingTimeWednesday = 10;
+            remainingTimeThursday = 5;
+            remainingTimeFriday = 10;
         }
 
         public void displayFullTimetable()
@@ -311,8 +378,8 @@ namespace TimetablePro
             using (SqlConnection con2 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con2.Open();
-                string updateParallelAll = "UPDATE sessions_test_2222 SET session_data=@newData WHERE record_id = @record_id;" +
-                    "DELETE From sessions_test_2222 where record_id = @current_record_id;";
+                string updateParallelAll = "UPDATE sessions SET session_data=@newData WHERE record_id = @record_id;" +
+                    "DELETE From sessions where record_id = @current_record_id;";
                 using (SqlCommand sqlcomm1 = new SqlCommand(updateParallelAll, con2))
                 {
                     string newSessionData = "Parallel sessions available \n"+s_data_prev + "\n" + s_data_now;
@@ -327,11 +394,26 @@ namespace TimetablePro
         }
 
 
-        
 
 
 
 
+        private void FillComboGroup()
+        {
+
+            string query = "select group_id from student_groups ;";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                comboBoxID.Items.Add(DR[0]);
+
+            }
+            sqlcon.Close();
+        }
 
 
 
@@ -407,20 +489,7 @@ namespace TimetablePro
             InsertDatatoSevenDays();
         }
 
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    string finalString = "";
-        //    if (comboBoxID.Text != "")
-        //    {
-        //        finalString = "%" + comboBoxID.Text + "%";
-        //    }
-            
-        //    SevenDaysTablesClear sdtc = new SevenDaysTablesClear();
-        //    sdtc.clearAllDays(finalString);
-            
-        //    displayFullTimetable();
-            
-        //}
+       
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

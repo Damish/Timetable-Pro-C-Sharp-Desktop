@@ -93,6 +93,7 @@
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Set_Parallel_Sessions\ParallelMethods.cs" />
     <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
