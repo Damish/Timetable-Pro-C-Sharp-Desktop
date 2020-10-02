@@ -208,6 +208,8 @@ namespace TimetablePro
             //{
 
             //    table2SelectedID = Int32.Parse(row.Cells["Id"].Value.ToString());
+            if (table1SelectedID != 0 && table2SelectedID != 0)
+            {
 
 
                 using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -227,8 +229,13 @@ namespace TimetablePro
                 }
                 count += 1;
             //}
-            MessageBox.Show(count + " Parallel sessions updated Sucessfully!");
+            MessageBox.Show(" Parallel sessions updated Sucessfully!");
             DisplayDataTable1();
+            }
+            else
+            {
+                MessageBox.Show(" Select two sessions to set Parallel!!!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -237,11 +244,15 @@ namespace TimetablePro
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
+                ParallelMethods pm = new ParallelMethods();
+                pm.reverseAllParallelSessions(finalString);
+                DisplayDataTable1();
+            }
+            else
+            {
+                MessageBox.Show("Select group to reset data!!!");
             }
 
-            ParallelMethods pm = new ParallelMethods();
-            pm.reverseAllParallelSessions(finalString);
-            DisplayDataTable1();
         }
 
         private void btnOpt7_Click(object sender, EventArgs e)
@@ -250,6 +261,14 @@ namespace TimetablePro
 
             this.Hide();
             sessionsManagement.Show();
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
         }
     }
 }

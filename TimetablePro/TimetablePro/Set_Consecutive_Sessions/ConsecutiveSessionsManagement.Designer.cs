@@ -228,6 +228,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // dataGridView1
             // 
@@ -285,9 +286,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(740, 523);
+            this.button1.Location = new System.Drawing.Point(728, 565);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 61);
+            this.button1.Size = new System.Drawing.Size(146, 76);
             this.button1.TabIndex = 16;
             this.button1.Text = "Set Selected sessions Consecutive";
             this.button1.UseVisualStyleBackColor = true;
