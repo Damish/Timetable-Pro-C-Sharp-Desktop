@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -45,8 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.sviewbtn = new System.Windows.Forms.Button();
-            this.saddbtn = new System.Windows.Forms.Button();
             this.dataGridViewSessions = new System.Windows.Forms.DataGridView();
             this.ltitle = new System.Windows.Forms.Label();
             this.dropLecID = new System.Windows.Forms.ComboBox();
@@ -64,6 +62,10 @@
             this.btnDelSub = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sviewbtn = new System.Windows.Forms.Button();
+            this.saddbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSessions)).BeginInit();
@@ -253,30 +255,6 @@
             this.btnOpt11.UseVisualStyleBackColor = true;
             this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
-            // sviewbtn
-            // 
-            this.sviewbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sviewbtn.Location = new System.Drawing.Point(517, 150);
-            this.sviewbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.sviewbtn.Name = "sviewbtn";
-            this.sviewbtn.Size = new System.Drawing.Size(171, 34);
-            this.sviewbtn.TabIndex = 12;
-            this.sviewbtn.Text = "View Sessions";
-            this.sviewbtn.UseVisualStyleBackColor = true;
-            this.sviewbtn.Click += new System.EventHandler(this.sviewbtn_Click);
-            // 
-            // saddbtn
-            // 
-            this.saddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saddbtn.Location = new System.Drawing.Point(324, 149);
-            this.saddbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.saddbtn.Name = "saddbtn";
-            this.saddbtn.Size = new System.Drawing.Size(135, 36);
-            this.saddbtn.TabIndex = 11;
-            this.saddbtn.Text = "Add Sessions";
-            this.saddbtn.UseVisualStyleBackColor = true;
-            this.saddbtn.Click += new System.EventHandler(this.saddbtn_Click);
-            // 
             // dataGridViewSessions
             // 
             this.dataGridViewSessions.AllowUserToAddRows = false;
@@ -287,11 +265,11 @@
             this.dataGridViewSessions.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSessions.Location = new System.Drawing.Point(756, 228);
-            this.dataGridViewSessions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewSessions.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewSessions.Name = "dataGridViewSessions";
             this.dataGridViewSessions.ReadOnly = true;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSessions.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSessions.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewSessions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSessions.Size = new System.Drawing.Size(555, 436);
             this.dataGridViewSessions.TabIndex = 75;
@@ -312,7 +290,7 @@
             // 
             this.dropLecID.FormattingEnabled = true;
             this.dropLecID.Location = new System.Drawing.Point(324, 274);
-            this.dropLecID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropLecID.Margin = new System.Windows.Forms.Padding(4);
             this.dropLecID.Name = "dropLecID";
             this.dropLecID.Size = new System.Drawing.Size(204, 24);
             this.dropLecID.TabIndex = 77;
@@ -321,7 +299,7 @@
             // 
             this.dropSubject.FormattingEnabled = true;
             this.dropSubject.Location = new System.Drawing.Point(324, 396);
-            this.dropSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropSubject.Margin = new System.Windows.Forms.Padding(4);
             this.dropSubject.Name = "dropSubject";
             this.dropSubject.Size = new System.Drawing.Size(204, 24);
             this.dropSubject.TabIndex = 78;
@@ -330,7 +308,7 @@
             // 
             this.dropGroupID.FormattingEnabled = true;
             this.dropGroupID.Location = new System.Drawing.Point(324, 508);
-            this.dropGroupID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropGroupID.Margin = new System.Windows.Forms.Padding(4);
             this.dropGroupID.Name = "dropGroupID";
             this.dropGroupID.Size = new System.Drawing.Size(204, 24);
             this.dropGroupID.TabIndex = 79;
@@ -374,7 +352,7 @@
             this.btnLecID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLecID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLecID.Location = new System.Drawing.Point(537, 274);
-            this.btnLecID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLecID.Margin = new System.Windows.Forms.Padding(4);
             this.btnLecID.Name = "btnLecID";
             this.btnLecID.Size = new System.Drawing.Size(103, 30);
             this.btnLecID.TabIndex = 115;
@@ -388,7 +366,7 @@
             this.btnSubID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSubID.Location = new System.Drawing.Point(537, 396);
-            this.btnSubID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubID.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubID.Name = "btnSubID";
             this.btnSubID.Size = new System.Drawing.Size(103, 30);
             this.btnSubID.TabIndex = 116;
@@ -402,7 +380,7 @@
             this.btnGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGroupID.Location = new System.Drawing.Point(537, 508);
-            this.btnGroupID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGroupID.Margin = new System.Windows.Forms.Padding(4);
             this.btnGroupID.Name = "btnGroupID";
             this.btnGroupID.Size = new System.Drawing.Size(103, 30);
             this.btnGroupID.TabIndex = 117;
@@ -416,7 +394,7 @@
             this.btnSessions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSessions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSessions.Location = new System.Drawing.Point(324, 587);
-            this.btnSessions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSessions.Margin = new System.Windows.Forms.Padding(4);
             this.btnSessions.Name = "btnSessions";
             this.btnSessions.Size = new System.Drawing.Size(331, 43);
             this.btnSessions.TabIndex = 118;
@@ -430,7 +408,7 @@
             this.btnDelLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelLec.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelLec.Location = new System.Drawing.Point(324, 308);
-            this.btnDelLec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelLec.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelLec.Name = "btnDelLec";
             this.btnDelLec.Size = new System.Drawing.Size(272, 30);
             this.btnDelLec.TabIndex = 119;
@@ -444,7 +422,7 @@
             this.btnDelGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelGroup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelGroup.Location = new System.Drawing.Point(324, 539);
-            this.btnDelGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelGroup.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelGroup.Name = "btnDelGroup";
             this.btnDelGroup.Size = new System.Drawing.Size(272, 30);
             this.btnDelGroup.TabIndex = 120;
@@ -458,7 +436,7 @@
             this.btnDelSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelSub.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelSub.Location = new System.Drawing.Point(324, 430);
-            this.btnDelSub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelSub.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelSub.Name = "btnDelSub";
             this.btnDelSub.Size = new System.Drawing.Size(272, 30);
             this.btnDelSub.TabIndex = 121;
@@ -483,7 +461,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReset.Location = new System.Drawing.Point(324, 638);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(183, 38);
             this.btnReset.TabIndex = 123;
@@ -492,12 +470,70 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(979, 148);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(247, 35);
+            this.button2.TabIndex = 127;
+            this.button2.Text = "Set Consecutive Sessions";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(744, 148);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 35);
+            this.button1.TabIndex = 126;
+            this.button1.Text = "Set Parallel Sessions";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // sviewbtn
+            // 
+            this.sviewbtn.BackColor = System.Drawing.Color.Purple;
+            this.sviewbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sviewbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sviewbtn.Location = new System.Drawing.Point(519, 148);
+            this.sviewbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.sviewbtn.Name = "sviewbtn";
+            this.sviewbtn.Size = new System.Drawing.Size(171, 34);
+            this.sviewbtn.TabIndex = 125;
+            this.sviewbtn.Text = "View Sessions";
+            this.sviewbtn.UseVisualStyleBackColor = false;
+            this.sviewbtn.Click += new System.EventHandler(this.sviewbtn_Click_1);
+            // 
+            // saddbtn
+            // 
+            this.saddbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.saddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saddbtn.ForeColor = System.Drawing.Color.Transparent;
+            this.saddbtn.Location = new System.Drawing.Point(333, 147);
+            this.saddbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.saddbtn.Name = "saddbtn";
+            this.saddbtn.Size = new System.Drawing.Size(135, 36);
+            this.saddbtn.TabIndex = 124;
+            this.saddbtn.Text = "Add Sessions";
+            this.saddbtn.UseVisualStyleBackColor = false;
+            this.saddbtn.Click += new System.EventHandler(this.saddbtn_Click_1);
+            // 
             // ViewSessionsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sviewbtn);
+            this.Controls.Add(this.saddbtn);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelSub);
@@ -515,8 +551,6 @@
             this.Controls.Add(this.dropLecID);
             this.Controls.Add(this.ltitle);
             this.Controls.Add(this.dataGridViewSessions);
-            this.Controls.Add(this.sviewbtn);
-            this.Controls.Add(this.saddbtn);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -559,8 +593,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button sviewbtn;
-        private System.Windows.Forms.Button saddbtn;
         private System.Windows.Forms.DataGridView dataGridViewSessions;
         private System.Windows.Forms.Label ltitle;
         private System.Windows.Forms.ComboBox dropLecID;
@@ -578,6 +610,10 @@
         private System.Windows.Forms.Button btnDelSub;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sviewbtn;
+        private System.Windows.Forms.Button saddbtn;
     }
 }
 

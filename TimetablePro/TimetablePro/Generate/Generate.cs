@@ -44,7 +44,7 @@ namespace TimetablePro
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
             sda.Fill(dt);
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
         }
 
         private void onClick_UpdateAllParallel_Btn()
@@ -107,6 +107,8 @@ namespace TimetablePro
             }
             sqlcon.Close();
         }
+
+
         int remainingTimeMonday = 7;
         int remainingTimeTuesday = 7;
         int remainingTimeWednesday = 5;
@@ -752,12 +754,17 @@ namespace TimetablePro
             //DisplayData();
             //}
         }
-
+        
         private void btn_InsertToSevenDays_Click(object sender, EventArgs e)
         {
-            if (comboBoxID.Text != "")
+            if (comboBoxID.Text != "" && !(prevText.Equals(comboBoxID.Text)))
             {
+                prevText = comboBoxID.Text;
+                label1.Text = comboBoxID.Text;
+                GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+                gtuc.ResetALLCellsToNull();
                 InsertDatatoSevenDays();
+                MessageBox.Show("Timetable Loaded Sucessfully!");
             }
             else
             {
@@ -792,7 +799,7 @@ namespace TimetablePro
             }
 
         }
-
+        string prevText = "";
         private void button5_Click(object sender, EventArgs e)
         {
             if (comboBoxID.Text != "")
@@ -800,8 +807,10 @@ namespace TimetablePro
                 InsertDatatoSevenDays();
                 GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
                 gtuc.ResetALLCellsToNull();
-
+                prevText = "";
+                label1.Text = "";
                 displayFullTimetable();
+                MessageBox.Show("Timetable Reset Sucessfully!");
             }
             else
             {
@@ -819,6 +828,16 @@ namespace TimetablePro
 
             this.Hide();
             sessionsManagement.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

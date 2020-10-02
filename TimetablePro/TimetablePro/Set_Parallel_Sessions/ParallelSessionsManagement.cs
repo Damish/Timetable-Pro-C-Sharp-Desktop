@@ -36,9 +36,16 @@ namespace TimetablePro
             string tag = "";
             if (comboBoxID.Text != "")
             {
-                tag = "%" + comboBoxTag.Text + "%";
+                if (comboBoxTag.Text != "All")
+                {
+                    tag = "%" + comboBoxTag.Text + "%";
+                }
+                else
+                {
+
+                    tag = "%%";
+                }
             }
-            
             string query =
                 "Select s.record_id as Id,s.session_data as Session, s.parallel_with, s.isParallel, s.isConsecutive, s.consecutive, s.sort_order as [Order]" +
                 "from sessions s " +
@@ -165,14 +172,34 @@ namespace TimetablePro
         {
             tempOrder = dataGridView2.CurrentRow.Cells["Order"].Value.ToString();
             table1SelectedID = Int32.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
+
+            if (table1SelectedID == table2SelectedID)
+            {
+                MessageBox.Show("Same ID selected! Please select Different ID.Thanks!!!");
+                lblSelected1.Text = "";
+            }
+            else
+            {
+            lblSelected1.Text = table1SelectedID.ToString();
             //Console.WriteLine("Selected order : "+dataGridView1.CurrentRow.Cells["Order"].Value.ToString());
             MessageBox.Show("Selected id table 1 : " + table1SelectedID);
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             table2SelectedID = Int32.Parse(dataGridView2.CurrentRow.Cells["Id"].Value.ToString());
-            MessageBox.Show("Selected id table 2 : " + table2SelectedID);
+
+            if (table1SelectedID == table2SelectedID)
+            {
+                MessageBox.Show("Same ID selected! Please select Different ID.Thanks!!!");
+                lblSelected2.Text ="";
+            }
+            else
+            {
+                lblSelected2.Text = table2SelectedID.ToString();
+                MessageBox.Show("Selected id table 2 : " + table2SelectedID);
+            }
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -228,15 +255,64 @@ namespace TimetablePro
                     }
                 }
                 count += 1;
-            //}
-            MessageBox.Show(" Parallel sessions updated Sucessfully!");
-            DisplayDataTable1();
+                //}
+                lblSelected1.Text = "";
+                lblSelected2.Text = "";
+
+                MessageBox.Show(" Parallel sessions updated Sucessfully!");
+                DisplayDataTable1();
             }
             else
             {
-                MessageBox.Show(" Select two sessions to set Parallel!!!");
+                MessageBox.Show(" Select group id and  two sessions to set Parallel!!!");
             }
         }
+
+        private void onClick_UpdateAllParallel_Btn()
+        {
+
+            string finalString = "";
+            if (comboBoxID.Text != "")
+            {
+                finalString = "%" + comboBoxID.Text + "%";
+            }
+            string query = "Select * from sessions s where s.s_group_id Like @id ";
+            SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
+            sqlcomm.Parameters.AddWithValue("@id", finalString);
+            sqlcon.Open();
+            SqlDataReader reader = sqlcomm.ExecuteReader(); //DataReader to update parallel all sessions
+            
+            if (reader.HasRows)
+            {
+
+                while (reader.Read())
+                {
+                    //Console.WriteLine("Is parallel: " + reader.GetString(15) + " IsConsecutive : " + reader.GetString(10));
+                    string isParallel = reader.GetString(15);
+                    string isConsecutive = reader.GetString(10);
+                    int parallel_with = reader.GetInt32(16);
+                    int consecutive = reader.GetInt32(17);
+
+                    if ((isParallel.Equals("false")) && (!(parallel_with.Equals(-1))))
+                    {
+                        Console.WriteLine("Record ID: " + reader.GetInt32(0) + " Parallel With: " + parallel_with);
+
+                        ParallelMethods pm = new ParallelMethods();
+                        //Console.WriteLine("Find Session data : "+pm.getSessionData(106));
+                        pm.NewUpdateParallelAll(reader.GetInt32(0), parallel_with, pm.getSessionData(parallel_with), reader.GetString(1));
+
+                    }
+                }
+                
+            }
+            else
+            {
+                reader.Close();
+            }
+            sqlcon.Close();
+        }
+
+        string prevText = "";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -247,6 +323,10 @@ namespace TimetablePro
                 ParallelMethods pm = new ParallelMethods();
                 pm.reverseAllParallelSessions(finalString);
                 DisplayDataTable1();
+                prevText = "";
+                lblSelected1.Text = "";
+                lblSelected2.Text = "";
+                MessageBox.Show("All Parallel Sessions Removed Sucessfully!");
             }
             else
             {
@@ -269,6 +349,57 @@ namespace TimetablePro
 
             this.Hide();
             generate.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ConsecutiveSessionsManagement csm = new ConsecutiveSessionsManagement();
+            this.Hide();
+            csm.Show();
+        }
+
+        private void lblSelected1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSelected2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        int count = 0;
+        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            count += 1;
+            
+            if (comboBoxID.Text != "" && !(prevText.Equals(comboBoxID.Text)))
+            {
+                prevText = comboBoxID.Text;
+                onClick_UpdateAllParallel_Btn();
+                DisplayDataTable1();
+                lblSelected1.Text = "";
+                lblSelected2.Text = "";
+                MessageBox.Show("Changes Applied Sucessfully!");
+
+            }
+            else
+            {
+                MessageBox.Show("Select group to Apply Changes or Reset Data!!!");
+            }
+
+
+
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
