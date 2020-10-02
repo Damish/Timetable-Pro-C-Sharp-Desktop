@@ -40,6 +40,29 @@ namespace TimetablePro
             timeTgen.Show();
         }
 
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            CommonView commonView = new CommonView();
+
+            this.Hide();
+            commonView.Show();
+        }
+
+        private void btnOpt6_Click(object sender, EventArgs e)
+        {
+            Location1 location1 = new Location1();
+            this.Hide();
+            location1.Show();
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
+        }
+
         //post your methods here
 
 

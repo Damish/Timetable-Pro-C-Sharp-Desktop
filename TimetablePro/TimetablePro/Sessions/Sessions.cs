@@ -328,10 +328,10 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-            Generate generate = new Generate();
+            CommonView commonView = new CommonView();
 
             this.Hide();
-            generate.Show();
+            commonView.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

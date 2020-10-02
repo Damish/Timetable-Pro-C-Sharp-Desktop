@@ -346,16 +346,21 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-            Generate generate = new Generate();
+            CommonView commonView = new CommonView();
             this.Hide();
-            generate.Show();
+            commonView.Show();
         }
 
         private void btnOpt10_Click(object sender, EventArgs e)
         {
-            TimeTgen timeTgen = new TimeTgen();
+           
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sm = new SessionsManagement();
             this.Hide();
-            timeTgen.Show();
+            sm.Show();
         }
     }
 }

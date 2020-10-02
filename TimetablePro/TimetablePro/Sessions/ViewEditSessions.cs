@@ -423,10 +423,10 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-            Generate generate = new Generate();
+            CommonView commonView = new CommonView();
 
             this.Hide();
-            generate.Show();
+            commonView.Show();
         }
 
         private void saddbtn_Click_1(object sender, EventArgs e)

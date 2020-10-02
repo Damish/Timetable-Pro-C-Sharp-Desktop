@@ -43,6 +43,7 @@
             this.btnOpt7 = new System.Windows.Forms.Button();
             this.btnOpt10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,11 +81,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnRoomdetails = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnsessionAll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAllo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAllo)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -117,6 +117,7 @@
             this.btnOpt2.TabIndex = 6;
             this.btnOpt2.Text = "Student Management";
             this.btnOpt2.UseVisualStyleBackColor = true;
+            this.btnOpt2.Click += new System.EventHandler(this.btnOpt2_Click);
             // 
             // btnOpt3
             // 
@@ -157,6 +158,7 @@
             this.btnOpt6.TabIndex = 6;
             this.btnOpt6.Text = "Location Management";
             this.btnOpt6.UseVisualStyleBackColor = true;
+            this.btnOpt6.Click += new System.EventHandler(this.btnOpt6_Click);
             // 
             // btnOpt8
             // 
@@ -187,6 +189,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -208,6 +211,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1251, 112);
             this.panel1.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // label11
             // 
@@ -249,6 +262,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // comboBoxTag
             // 
@@ -578,16 +592,6 @@
             this.btnRoomdetails.UseVisualStyleBackColor = true;
             this.btnRoomdetails.Click += new System.EventHandler(this.btnRoomdetails_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TimetablePro.Properties.Resources.I21;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnsessionAll
             // 
             this.btnsessionAll.Location = new System.Drawing.Point(820, 119);
@@ -657,8 +661,8 @@
             this.Load += new System.EventHandler(this.RoomAllocation_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAllo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAllo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

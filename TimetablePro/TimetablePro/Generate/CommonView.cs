@@ -11,34 +11,18 @@ using System.Windows.Forms;
 
 namespace TimetablePro
 {
-    public partial class WorkingDays : Form
+    public partial class CommonView : Form
     {
-
         SqlConnection sqlcon = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-        public WorkingDays()
+        public CommonView()
         {
             InitializeComponent();
-           
+          
 
         }
 
-        private void btnaddwo_Click(object sender, EventArgs e)
-        {
-            AddWorkingDays addWorkingDays = new AddWorkingDays();
-            this.Hide();
-            addWorkingDays.Show();
-        }
-
-        private void btnview_Click(object sender, EventArgs e)
-        {
-            UpdateDeleteworkingDays updateDeleteworkingDays = new UpdateDeleteworkingDays();
-            this.Hide();
-            updateDeleteworkingDays.Show();
-
-
-        }
-
+   
         private void btnOpt2_Click(object sender, EventArgs e)
         {
             studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
@@ -93,14 +77,6 @@ namespace TimetablePro
             workingDays.Show();
         }
 
-        private void btnOpt5_Click(object sender, EventArgs e)
-        {
-            TagsManagement tagsManagement = new TagsManagement();
-
-            this.Hide();
-            tagsManagement.Show();
-        }
-
         private void btnOpt7_Click(object sender, EventArgs e)
         {
             SessionsManagement sessionsManagement = new SessionsManagement();
@@ -109,13 +85,30 @@ namespace TimetablePro
             sessionsManagement.Show();
         }
 
-        private void btnOpt11_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            CommonView commonView = new CommonView();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TimeTgenLect timeTgenLect = new TimeTgenLect();
             this.Hide();
-            commonView.Show();
+            timeTgenLect.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+            this.Hide();
+            generate.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TimeTgen timeTgen = new TimeTgen();
+            this.Hide();
+            timeTgen.Show();
         }
     }
 }
-

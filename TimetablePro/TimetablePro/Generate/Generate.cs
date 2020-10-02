@@ -839,5 +839,12 @@ namespace TimetablePro
         {
 
         }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            CommonView commonView = new CommonView();
+            this.Hide();
+            commonView.Show();
+        }
     }
 }

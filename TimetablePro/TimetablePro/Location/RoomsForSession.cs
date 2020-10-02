@@ -215,5 +215,29 @@ namespace TimetablePro
             this.Hide();
             location1.Show();
         }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            CommonView commonView = new CommonView();
+
+            this.Hide();
+            commonView.Show();
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
+        }
+
+        private void btnOpt2_Click(object sender, EventArgs e)
+        {
+            studentGroupsManagement studentGroupsManagement = new studentGroupsManagement();
+
+            this.Hide();
+            studentGroupsManagement.Show();
+        }
     }
 }

@@ -256,6 +256,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // label1
             // 
@@ -274,7 +275,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnReset.Location = new System.Drawing.Point(316, 622);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(104, 36);
             this.btnReset.TabIndex = 96;
@@ -294,7 +295,7 @@
             "6",
             "7"});
             this.dropdLevel.Location = new System.Drawing.Point(512, 491);
-            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4);
             this.dropdLevel.Name = "dropdLevel";
             this.dropdLevel.Size = new System.Drawing.Size(160, 24);
             this.dropdLevel.TabIndex = 91;
@@ -308,7 +309,7 @@
             "New Building",
             "Engineering"});
             this.dropdBuild.Location = new System.Drawing.Point(512, 450);
-            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4);
             this.dropdBuild.Name = "dropdBuild";
             this.dropdBuild.Size = new System.Drawing.Size(160, 24);
             this.dropdBuild.TabIndex = 92;
@@ -324,7 +325,7 @@
             "Kurunegala",
             "Matara"});
             this.dropdCent.Location = new System.Drawing.Point(512, 410);
-            this.dropdCent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdCent.Margin = new System.Windows.Forms.Padding(4);
             this.dropdCent.Name = "dropdCent";
             this.dropdCent.Size = new System.Drawing.Size(160, 24);
             this.dropdCent.TabIndex = 93;
@@ -347,7 +348,7 @@
             "Architectuer",
             "Quantity Surveying"});
             this.dropdDept.Location = new System.Drawing.Point(512, 368);
-            this.dropdDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdDept.Margin = new System.Windows.Forms.Padding(4);
             this.dropdDept.Name = "dropdDept";
             this.dropdDept.Size = new System.Drawing.Size(160, 24);
             this.dropdDept.TabIndex = 94;
@@ -365,7 +366,7 @@
             "Law",
             "Hospitality & Culinary"});
             this.dropdFac.Location = new System.Drawing.Point(512, 331);
-            this.dropdFac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropdFac.Margin = new System.Windows.Forms.Padding(4);
             this.dropdFac.Name = "dropdFac";
             this.dropdFac.Size = new System.Drawing.Size(160, 24);
             this.dropdFac.TabIndex = 95;
@@ -373,7 +374,7 @@
             // txtRank
             // 
             this.txtRank.Location = new System.Drawing.Point(512, 530);
-            this.txtRank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRank.Margin = new System.Windows.Forms.Padding(4);
             this.txtRank.Name = "txtRank";
             this.txtRank.ReadOnly = true;
             this.txtRank.Size = new System.Drawing.Size(160, 22);
@@ -382,7 +383,7 @@
             // txtEmpId
             // 
             this.txtEmpId.Location = new System.Drawing.Point(512, 288);
-            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.ReadOnly = true;
             this.txtEmpId.Size = new System.Drawing.Size(160, 22);
@@ -391,7 +392,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(512, 241);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 22);
             this.txtName.TabIndex = 88;
@@ -490,7 +491,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUpdate.Location = new System.Drawing.Point(551, 622);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 36);
             this.btnUpdate.TabIndex = 79;
@@ -504,7 +505,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Location = new System.Drawing.Point(1059, 631);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(252, 32);
             this.btnDelete.TabIndex = 78;
@@ -520,7 +521,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.MintCream;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(704, 229);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -532,7 +533,7 @@
             // 
             this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewList.Location = new System.Drawing.Point(551, 150);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewList.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewList.Name = "btnViewList";
             this.btnViewList.Size = new System.Drawing.Size(136, 32);
             this.btnViewList.TabIndex = 76;
@@ -544,7 +545,7 @@
             // 
             this.btnAddLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLec.Location = new System.Drawing.Point(309, 150);
-            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddLec.Name = "btnAddLec";
             this.btnAddLec.Size = new System.Drawing.Size(233, 32);
             this.btnAddLec.TabIndex = 75;
@@ -567,7 +568,7 @@
             // 
             this.dropSubject.FormattingEnabled = true;
             this.dropSubject.Location = new System.Drawing.Point(512, 571);
-            this.dropSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropSubject.Margin = new System.Windows.Forms.Padding(4);
             this.dropSubject.Name = "dropSubject";
             this.dropSubject.Size = new System.Drawing.Size(160, 24);
             this.dropSubject.TabIndex = 99;

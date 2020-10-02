@@ -31,7 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
@@ -49,7 +49,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,6 +131,7 @@
             this.btnOpt6.TabIndex = 6;
             this.btnOpt6.Text = "Location Management";
             this.btnOpt6.UseVisualStyleBackColor = true;
+            this.btnOpt6.Click += new System.EventHandler(this.btnOpt6_Click);
             // 
             // btnOpt8
             // 
@@ -162,6 +162,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -234,20 +235,11 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(604, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 35);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "For Group";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(894, 194);
+            this.button3.Location = new System.Drawing.Point(1044, 159);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 35);
             this.button3.TabIndex = 10;
@@ -257,7 +249,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(336, 195);
+            this.button1.Location = new System.Drawing.Point(864, 159);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 35);
             this.button1.TabIndex = 10;
@@ -268,7 +260,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 262);
+            this.label1.Location = new System.Drawing.Point(281, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 11;
@@ -279,19 +271,19 @@
             this.dataGridViewTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTable.Location = new System.Drawing.Point(286, 334);
+            this.dataGridViewTable.Location = new System.Drawing.Point(286, 263);
             this.dataGridViewTable.Name = "dataGridViewTable";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTable.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTable.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTable.RowTemplate.Height = 24;
             this.dataGridViewTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTable.Size = new System.Drawing.Size(976, 283);
+            this.dataGridViewTable.Size = new System.Drawing.Size(965, 354);
             this.dataGridViewTable.TabIndex = 12;
             // 
             // comboBoxRoom
             // 
             this.comboBoxRoom.FormattingEnabled = true;
-            this.comboBoxRoom.Location = new System.Drawing.Point(747, 266);
+            this.comboBoxRoom.Location = new System.Drawing.Point(698, 220);
             this.comboBoxRoom.Name = "comboBoxRoom";
             this.comboBoxRoom.Size = new System.Drawing.Size(121, 24);
             this.comboBoxRoom.TabIndex = 13;
@@ -301,7 +293,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(585, 266);
+            this.label2.Location = new System.Drawing.Point(573, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 14;
@@ -330,7 +322,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -374,7 +365,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;

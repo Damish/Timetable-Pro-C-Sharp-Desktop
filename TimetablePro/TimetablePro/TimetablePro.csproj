@@ -59,6 +59,12 @@
     <Compile Include="Generate\Generate.Designer.cs">
       <DependentUpon>Generate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generate\CommonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generate\CommonView.Designer.cs">
+      <DependentUpon>CommonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupID_Settings\GroupID_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +125,6 @@
     <Compile Include="Location\UpdateDeleteLocationForm.designer.cs">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Sessions\ViewEditSessions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,7 +150,6 @@
     </Compile>
     <Compile Include="Set_Parallel_Sessions\ParallelSessionsManagement.Designer.cs">
       <DependentUpon>ParallelSessionsManagement.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -265,6 +269,9 @@
     </Compile>
     <EmbeddedResource Include="Generate\Generate.resx">
       <DependentUpon>Generate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generate\CommonView.resx">
+      <DependentUpon>CommonView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupID_Settings\GroupID_Settings.resx">
       <DependentUpon>GroupID_Settings.cs</DependentUpon>

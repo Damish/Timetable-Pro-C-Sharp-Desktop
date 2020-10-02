@@ -297,10 +297,10 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-            Generate generate = new Generate();
+            CommonView commonView = new CommonView();
 
             this.Hide();
-            generate.Show();
+            commonView.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -318,6 +318,14 @@ namespace TimetablePro
         private void lblSelected2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
         }
     }
 }
