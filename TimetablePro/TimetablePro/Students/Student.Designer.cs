@@ -293,7 +293,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
-            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
+            
             // 
             // btnOpt10
             // 
@@ -472,7 +472,7 @@
             this.textBox1.Size = new System.Drawing.Size(196, 27);
             this.textBox1.TabIndex = 19;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // button1
             // 

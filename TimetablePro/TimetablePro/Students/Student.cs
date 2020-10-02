@@ -229,7 +229,6 @@ namespace TimetablePro
 
             btnCancel.Visible = true;
             //btnNew.Visible = true;
-            btnUpdate.Visible = true;
             btnSave.Visible = false;
             btnDelete.Text = "Delete Selected Row";
             btnDelete.Visible = true;
@@ -263,7 +262,6 @@ namespace TimetablePro
             clearAll();
 
             btnSave.Visible = true;
-            btnUpdate.Visible = false;
             btnDelete.Visible = false;
             btnCancel.Visible = false;
            //btnNew.Visible = false;
@@ -348,7 +346,9 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-           
+            Generate generate = new Generate();
+            this.Hide();
+            generate.Show();
         }
 
         private void btnOpt10_Click(object sender, EventArgs e)
