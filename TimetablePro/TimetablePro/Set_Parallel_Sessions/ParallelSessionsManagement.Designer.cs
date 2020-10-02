@@ -1,6 +1,6 @@
 ﻿namespace TimetablePro
 {
-    partial class TagsManagement
+    partial class ParallelSessionsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTagName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -50,68 +47,25 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnOpt11 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboBoxTag = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.labelCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSelected2 = new System.Windows.Forms.Label();
+            this.lblSelected1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(495, 404);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(306, 270);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tag Name :";
-            // 
-            // txtTagName
-            // 
-            this.txtTagName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTagName.Location = new System.Drawing.Point(430, 267);
-            this.txtTagName.Name = "txtTagName";
-            this.txtTagName.Size = new System.Drawing.Size(201, 27);
-            this.txtTagName.TabIndex = 5;
-            this.txtTagName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(287, 154);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Create New";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(269, 145);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(251, 32);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tags Management";
             // 
             // btnOpt1
             // 
@@ -241,6 +195,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label11
             // 
@@ -282,126 +237,201 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(703, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(316, 209);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(380, 437);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btnCancel
+            // comboBoxID
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(721, 571);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(232, 33);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Location = new System.Drawing.Point(314, 179);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(205, 24);
+            this.comboBoxID.TabIndex = 12;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
-            // btnDelete
+            // dataGridView2
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(1035, 571);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(232, 33);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Visible = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(894, 209);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(372, 431);
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // btnUpdate
+            // comboBoxTag
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(430, 404);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(90, 35);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.comboBoxTag.FormattingEnabled = true;
+            this.comboBoxTag.Items.AddRange(new object[] {
+            "All",
+            "Lecture",
+            "Lab",
+            "Tute"});
+            this.comboBoxTag.Location = new System.Drawing.Point(525, 179);
+            this.comboBoxTag.Name = "comboBoxTag";
+            this.comboBoxTag.Size = new System.Drawing.Size(171, 24);
+            this.comboBoxTag.TabIndex = 15;
+            this.comboBoxTag.SelectedIndexChanged += new System.EventHandler(this.comboBoxTag_SelectedIndexChanged);
             // 
-            // txtDescription
+            // button1
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(430, 330);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(201, 27);
-            this.txtDescription.TabIndex = 12;
-            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(702, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(186, 71);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Set Selected sessions Parallel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 337);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(311, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Description :";
+            this.label1.Size = new System.Drawing.Size(392, 29);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Parallel Sessions Management";
             // 
-            // btnNew
+            // button2
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(550, 404);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(81, 35);
-            this.btnNew.TabIndex = 28;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Visible = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(778, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 30);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Reset All";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // labelCode
+            // button3
             // 
-            this.labelCode.AutoSize = true;
-            this.labelCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCode.Location = new System.Drawing.Point(306, 221);
-            this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(63, 20);
-            this.labelCode.TabIndex = 30;
-            this.labelCode.Text = "Code : ";
-            this.labelCode.Visible = false;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Navy;
+            this.button3.Location = new System.Drawing.Point(1050, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(216, 35);
+            this.button3.TabIndex = 124;
+            this.button3.Text = "Consecutive Sessions";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // txtCode
+            // label3
             // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(430, 214);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(201, 27);
-            this.txtCode.TabIndex = 29;
-            this.txtCode.Text = "Auto-Generate";
-            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCode.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(522, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 18);
+            this.label3.TabIndex = 129;
+            this.label3.Text = "Select Tag: (Optional)";
             // 
-            // TagsManagement
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(311, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 18);
+            this.label2.TabIndex = 128;
+            this.label2.Text = "Select Group ID:";
+            // 
+            // lblSelected2
+            // 
+            this.lblSelected2.AutoSize = true;
+            this.lblSelected2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelected2.Location = new System.Drawing.Point(825, 339);
+            this.lblSelected2.Name = "lblSelected2";
+            this.lblSelected2.Size = new System.Drawing.Size(19, 20);
+            this.lblSelected2.TabIndex = 131;
+            this.lblSelected2.Text = "  ";
+            this.lblSelected2.Click += new System.EventHandler(this.lblSelected2_Click);
+            // 
+            // lblSelected1
+            // 
+            this.lblSelected1.AutoSize = true;
+            this.lblSelected1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelected1.Location = new System.Drawing.Point(748, 339);
+            this.lblSelected1.Name = "lblSelected1";
+            this.lblSelected1.Size = new System.Drawing.Size(19, 20);
+            this.lblSelected1.TabIndex = 130;
+            this.lblSelected1.Text = "  ";
+            this.lblSelected1.Click += new System.EventHandler(this.lblSelected1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(313, 649);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 17);
+            this.label5.TabIndex = 132;
+            this.label5.Text = "Click on Session data";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(891, 643);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 17);
+            this.label4.TabIndex = 133;
+            this.label4.Text = "Click on Session data";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(729, 525);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(133, 28);
+            this.button4.TabIndex = 134;
+            this.button4.Text = "Apply Changes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ParallelSessionsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1327, 678);
-            this.Controls.Add(this.labelCode);
-            this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.btnNew);
+            this.ClientSize = new System.Drawing.Size(1327, 687);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblSelected2);
+            this.Controls.Add(this.lblSelected1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBoxTag);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.btnOpt11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOpt10);
@@ -414,13 +444,8 @@
             this.Controls.Add(this.btnOpt4);
             this.Controls.Add(this.btnOpt2);
             this.Controls.Add(this.btnOpt1);
-            this.Controls.Add(this.txtTagName);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Name = "TagsManagement";
+            this.Name = "ParallelSessionsManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timetable Pro V1.1";
             this.Load += new System.EventHandler(this.TagsManagement_Load);
@@ -428,17 +453,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTagName;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnOpt1;
         private System.Windows.Forms.Button btnOpt2;
         private System.Windows.Forms.Button btnOpt3;
@@ -454,16 +475,22 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOpt11;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxID;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBoxTag;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label labelCode;
-        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSelected2;
+        private System.Windows.Forms.Label lblSelected1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
     }
 }
 

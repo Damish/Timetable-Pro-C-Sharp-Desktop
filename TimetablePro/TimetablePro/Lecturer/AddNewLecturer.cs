@@ -23,7 +23,7 @@ namespace TimetablePro
         public AddNewLecturer()
         {
             InitializeComponent();
-
+            DisplaySubjectData();
 
         }
         //copy methods
@@ -37,11 +37,19 @@ namespace TimetablePro
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (txtEmpId.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != "" && dropdBuild.Text != "" && dropdLevel.Text != "" && txtRank.Text != "")
+            if (txtEmpId.Text.Length != 6 && txtEmpId.Text != "")
+            {
+                MessageBox.Show("Enter only 6 digits to the Employee ID!");
+            }
+
+            else if (txtEmpId.Text != "" && dropSubject.Text != "" && txtName.Text != "" && dropdFac.Text != "" && dropdDept.Text != "" && dropdCent.Text != ""
+                && dropdBuild.Text != "" && dropdLevel.Text != "" )
+                
+            //&& txtRank.Text != ""
             {
 
 
-                SqlCommand cmdSave = new SqlCommand("Insert into Lecturer(Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No)Values(@Emp_ID,@Lecturer_Name,@Faculty_Name,@Department_Name,@Center_Name,@Building_Name,@LNo,@Rank_No)", sqlcon);
+                SqlCommand cmdSave = new SqlCommand("Insert into Lecturer(Emp_ID,Lecturer_Name,Faculty_Name,Department_Name,Center_Name,Building_Name,LNo,Rank_No,Subject)Values(@Emp_ID,@Lecturer_Name,@Faculty_Name,@Department_Name,@Center_Name,@Building_Name,@LNo,@Rank_No,@Subject)", sqlcon);
 
                 cmdSave.Parameters.AddWithValue("@Emp_ID", txtEmpId.Text);
                 cmdSave.Parameters.AddWithValue("@Lecturer_Name", txtName.Text);
@@ -50,10 +58,12 @@ namespace TimetablePro
                 cmdSave.Parameters.AddWithValue("@Center_Name", dropdCent.Text);
                 cmdSave.Parameters.AddWithValue("@Building_Name", dropdBuild.Text);
                 cmdSave.Parameters.AddWithValue("@LNo", dropdLevel.Text);
-                cmdSave.Parameters.AddWithValue("@Rank_No", txtRank.Text);
+                cmdSave.Parameters.AddWithValue("@Rank_No", dropdLevel.Text+"."+txtEmpId.Text);
+                cmdSave.Parameters.AddWithValue("@Subject", dropSubject.Text);
+                //cmdSave.Parameters.AddWithValue("@Rank_No", txtRank.Text);
 
 
-
+                // checklength();
                 sqlcon.Open();
                 cmdSave.ExecuteNonQuery();
 
@@ -66,13 +76,14 @@ namespace TimetablePro
 
                 MessageBox.Show("Lecturer's Data saved sucessfully.");
             }
+           
             else
             {
 
-                MessageBox.Show("Fill all the blanks!");
-
+                    MessageBox.Show("Fill all the blanks!");
+           
             }
-
+    
         }
         private void clearForm()
         {
@@ -84,9 +95,30 @@ namespace TimetablePro
             dropdDept.Text = "";
             dropdFac.Text = "";
             dropdLevel.Text = "";
-            txtRank.Text = "";
+            dropSubject.Text = "";
 
         }
+
+
+        private void DisplaySubjectData()
+        {
+
+            string query = "Select SubCode  from subjects";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR2 = cmd.ExecuteReader();
+
+            while (DR2.Read())
+            {
+                dropSubject.Items.Add(DR2[0]);
+
+            }
+            sqlcon.Close();
+
+
+        }
+
 
         private void btnOpt3_Click(object sender, EventArgs e)
         {
@@ -154,6 +186,32 @@ namespace TimetablePro
 
             this.Hide();
             workingDays.Show();
+        }
+
+        private void txtEmpId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dropdLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
         }
     }
 }

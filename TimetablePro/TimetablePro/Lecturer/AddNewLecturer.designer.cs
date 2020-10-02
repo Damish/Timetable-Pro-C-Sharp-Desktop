@@ -52,7 +52,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnViewList = new System.Windows.Forms.Button();
             this.btnAddLec = new System.Windows.Forms.Button();
-            this.txtRank = new System.Windows.Forms.TextBox();
             this.txtEmpId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lEmp = new System.Windows.Forms.Label();
@@ -60,10 +59,11 @@
             this.ltitle = new System.Windows.Forms.Label();
             this.lName = new System.Windows.Forms.Label();
             this.lFac = new System.Windows.Forms.Label();
-            this.lRank = new System.Windows.Forms.Label();
             this.lLevel = new System.Windows.Forms.Label();
             this.lBuild = new System.Windows.Forms.Label();
             this.lCent = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dropSubject = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +173,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -252,6 +253,7 @@
             // 
             // dropdLevel
             // 
+            this.dropdLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdLevel.FormattingEnabled = true;
             this.dropdLevel.Items.AddRange(new object[] {
             "1",
@@ -262,26 +264,29 @@
             "6",
             "7"});
             this.dropdLevel.Location = new System.Drawing.Point(1089, 434);
-            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdLevel.Name = "dropdLevel";
             this.dropdLevel.Size = new System.Drawing.Size(160, 24);
             this.dropdLevel.TabIndex = 43;
+            this.dropdLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dropdLevel_KeyPress);
             // 
             // dropdBuild
             // 
+            this.dropdBuild.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdBuild.FormattingEnabled = true;
             this.dropdBuild.Items.AddRange(new object[] {
             "D Block",
             "New Building",
             "Engineering"});
             this.dropdBuild.Location = new System.Drawing.Point(593, 505);
-            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdBuild.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdBuild.Name = "dropdBuild";
             this.dropdBuild.Size = new System.Drawing.Size(160, 24);
             this.dropdBuild.TabIndex = 42;
             // 
             // dropdCent
             // 
+            this.dropdCent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdCent.FormattingEnabled = true;
             this.dropdCent.Items.AddRange(new object[] {
             "Malabe ",
@@ -291,13 +296,14 @@
             "Kurunegala",
             "Matara"});
             this.dropdCent.Location = new System.Drawing.Point(593, 436);
-            this.dropdCent.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdCent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdCent.Name = "dropdCent";
             this.dropdCent.Size = new System.Drawing.Size(160, 24);
             this.dropdCent.TabIndex = 41;
             // 
             // dropdDept
             // 
+            this.dropdDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdDept.FormattingEnabled = true;
             this.dropdDept.Items.AddRange(new object[] {
             "Information Technology",
@@ -314,13 +320,14 @@
             "Architectuer",
             "Quantity Surveying"});
             this.dropdDept.Location = new System.Drawing.Point(1089, 362);
-            this.dropdDept.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdDept.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdDept.Name = "dropdDept";
             this.dropdDept.Size = new System.Drawing.Size(160, 24);
             this.dropdDept.TabIndex = 40;
             // 
             // dropdFac
             // 
+            this.dropdFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdFac.FormattingEnabled = true;
             this.dropdFac.Items.AddRange(new object[] {
             "Computing",
@@ -332,7 +339,7 @@
             "Law",
             "Hospitality & Culinary"});
             this.dropdFac.Location = new System.Drawing.Point(1089, 295);
-            this.dropdFac.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdFac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdFac.Name = "dropdFac";
             this.dropdFac.Size = new System.Drawing.Size(160, 24);
             this.dropdFac.TabIndex = 39;
@@ -343,7 +350,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Location = new System.Drawing.Point(763, 590);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 44);
             this.btnSave.TabIndex = 38;
@@ -355,7 +362,7 @@
             // 
             this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewList.Location = new System.Drawing.Point(639, 153);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewList.Name = "btnViewList";
             this.btnViewList.Size = new System.Drawing.Size(136, 32);
             this.btnViewList.TabIndex = 37;
@@ -367,7 +374,7 @@
             // 
             this.btnAddLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLec.Location = new System.Drawing.Point(397, 153);
-            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddLec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddLec.Name = "btnAddLec";
             this.btnAddLec.Size = new System.Drawing.Size(233, 32);
             this.btnAddLec.TabIndex = 36;
@@ -375,26 +382,19 @@
             this.btnAddLec.UseVisualStyleBackColor = true;
             this.btnAddLec.Click += new System.EventHandler(this.btnAddLec_Click);
             // 
-            // txtRank
-            // 
-            this.txtRank.Location = new System.Drawing.Point(1089, 507);
-            this.txtRank.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRank.Name = "txtRank";
-            this.txtRank.Size = new System.Drawing.Size(160, 22);
-            this.txtRank.TabIndex = 35;
-            // 
             // txtEmpId
             // 
             this.txtEmpId.Location = new System.Drawing.Point(593, 367);
-            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.Size = new System.Drawing.Size(160, 22);
             this.txtEmpId.TabIndex = 34;
+            this.txtEmpId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpId_KeyPress);
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(593, 298);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 22);
             this.txtName.TabIndex = 33;
@@ -454,17 +454,6 @@
             this.lFac.TabIndex = 27;
             this.lFac.Text = "Faculty :\r\n";
             // 
-            // lRank
-            // 
-            this.lRank.AutoSize = true;
-            this.lRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRank.Location = new System.Drawing.Point(892, 513);
-            this.lRank.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lRank.Name = "lRank";
-            this.lRank.Size = new System.Drawing.Size(63, 24);
-            this.lRank.TabIndex = 26;
-            this.lRank.Text = "Rank :";
-            // 
             // lLevel
             // 
             this.lLevel.AutoSize = true;
@@ -498,12 +487,34 @@
             this.lCent.TabIndex = 24;
             this.lCent.Text = "Center :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(892, 508);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 24);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Subject :";
+            // 
+            // dropSubject
+            // 
+            this.dropSubject.FormattingEnabled = true;
+            this.dropSubject.Location = new System.Drawing.Point(1089, 505);
+            this.dropSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dropSubject.Name = "dropSubject";
+            this.dropSubject.Size = new System.Drawing.Size(160, 24);
+            this.dropSubject.TabIndex = 46;
+            // 
             // AddNewLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1327, 678);
+            this.Controls.Add(this.dropSubject);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dropdLevel);
             this.Controls.Add(this.dropdBuild);
             this.Controls.Add(this.dropdCent);
@@ -512,7 +523,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnViewList);
             this.Controls.Add(this.btnAddLec);
-            this.Controls.Add(this.txtRank);
             this.Controls.Add(this.txtEmpId);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lEmp);
@@ -520,7 +530,6 @@
             this.Controls.Add(this.ltitle);
             this.Controls.Add(this.lName);
             this.Controls.Add(this.lFac);
-            this.Controls.Add(this.lRank);
             this.Controls.Add(this.lLevel);
             this.Controls.Add(this.lBuild);
             this.Controls.Add(this.lCent);
@@ -567,13 +576,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox dropdLevel;
         private System.Windows.Forms.ComboBox dropdBuild;
-        private System.Windows.Forms.ComboBox dropdCent;
         private System.Windows.Forms.ComboBox dropdDept;
         private System.Windows.Forms.ComboBox dropdFac;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnViewList;
         private System.Windows.Forms.Button btnAddLec;
-        private System.Windows.Forms.TextBox txtRank;
         private System.Windows.Forms.TextBox txtEmpId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lEmp;
@@ -581,10 +588,12 @@
         private System.Windows.Forms.Label ltitle;
         private System.Windows.Forms.Label lName;
         private System.Windows.Forms.Label lFac;
-        private System.Windows.Forms.Label lRank;
         private System.Windows.Forms.Label lLevel;
         private System.Windows.Forms.Label lBuild;
         private System.Windows.Forms.Label lCent;
+        private System.Windows.Forms.ComboBox dropdCent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox dropSubject;
     }
 }
 

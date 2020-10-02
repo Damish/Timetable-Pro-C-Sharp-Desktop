@@ -24,6 +24,8 @@ namespace TimetablePro
         {
             InitializeComponent();
             DisplayData();
+            FillComboYear();
+            FillComboSemester();
 
         }
         //copy methods
@@ -61,10 +63,47 @@ namespace TimetablePro
             Addsubj.ShowDialog();
         }
 
+        private void FillComboYear()
+        {
+
+            string query = "Select * from groupID_option_year";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                comboBoxYr.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+        private void FillComboSemester()
+        {
+
+            string query = "Select * from groupID_option_Semester";
+
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand(query, sqlcon);
+            SqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                dropdSem.Items.Add(DR[1]);
+
+            }
+            sqlcon.Close();
+        }
+
+
+
+
         private void DisplayData()
         {
 
-            string query = "Select Subject_ID,OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs    from Subjects";
+            string query = "Select Subject_ID,SubName,SubCode,OfferedYr,OfferedSem,LecHrs,TuteHrs,LabHrs,EvalHrs    from Subjects";
 
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
 
@@ -112,19 +151,23 @@ namespace TimetablePro
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
             //OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs
-            comboBoxYr.Text = row.Cells[1].Value.ToString();
-            dropdSem.Text = row.Cells[2].Value.ToString();
-            txtSubName.Text = row.Cells[3].Value.ToString();
-            txtSubCode.Text = row.Cells[4].Value.ToString();
+            comboBoxYr.Text = row.Cells[3].Value.ToString();
+            dropdSem.Text = row.Cells[4].Value.ToString();
+            txtSubName.Text = row.Cells[1].Value.ToString();
+            txtSubCode.Text = row.Cells[2].Value.ToString();
             numericUpDownLec.Text = row.Cells[5].Value.ToString();
-            numericUpDownLab.Text = row.Cells[6].Value.ToString();
-            numericUpDownTute.Text = row.Cells[7].Value.ToString();
+            numericUpDownLab.Text = row.Cells[7].Value.ToString();
+            numericUpDownTute.Text = row.Cells[6].Value.ToString();
             numericUpDownEval.Text = row.Cells[8].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
+            if (txtSubCode.Text.Length != 6 && txtSubCode.Text != "")
+            {
+                MessageBox.Show("Enter a valid subject code!");
+            }
+            else if (comboBoxYr.Text != "" && dropdSem.Text != "" && txtSubName.Text != "" && txtSubCode.Text != "" && numericUpDownLec.Text != "" && numericUpDownTute.Text != "" && numericUpDownLab.Text != "" && numericUpDownEval.Text != "")
             {
                 string selected_id = dataGridView1.CurrentRow.Cells["Subject_ID"].Value.ToString();
             //OfferedYr,OfferedSem,SubName,SubCode,LecHrs,TuteHrs,LabHrs,EvalHrs
@@ -231,6 +274,14 @@ namespace TimetablePro
 
             this.Hide();
             workingDays.Show();
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
         }
     }
 }

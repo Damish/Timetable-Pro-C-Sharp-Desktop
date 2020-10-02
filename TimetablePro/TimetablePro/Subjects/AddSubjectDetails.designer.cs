@@ -176,6 +176,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -256,13 +257,8 @@
             // comboBoxYr
             // 
             this.comboBoxYr.FormattingEnabled = true;
-            this.comboBoxYr.Items.AddRange(new object[] {
-            "1st Year",
-            "2nd Year",
-            "3rd Year",
-            "4th Year"});
             this.comboBoxYr.Location = new System.Drawing.Point(628, 314);
-            this.comboBoxYr.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxYr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxYr.Name = "comboBoxYr";
             this.comboBoxYr.Size = new System.Drawing.Size(160, 24);
             this.comboBoxYr.TabIndex = 67;
@@ -271,11 +267,8 @@
             // 
             this.dropdSem.FormattingEnabled = true;
             this.dropdSem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dropdSem.Items.AddRange(new object[] {
-            "Semester 1",
-            "Semester 2"});
             this.dropdSem.Location = new System.Drawing.Point(1100, 319);
-            this.dropdSem.Margin = new System.Windows.Forms.Padding(4);
+            this.dropdSem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropdSem.Name = "dropdSem";
             this.dropdSem.Size = new System.Drawing.Size(160, 24);
             this.dropdSem.TabIndex = 66;
@@ -283,7 +276,7 @@
             // numericUpDownEval
             // 
             this.numericUpDownEval.Location = new System.Drawing.Point(1103, 514);
-            this.numericUpDownEval.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownEval.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDownEval.Name = "numericUpDownEval";
             this.numericUpDownEval.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownEval.TabIndex = 65;
@@ -291,7 +284,7 @@
             // numericUpDownLab
             // 
             this.numericUpDownLab.Location = new System.Drawing.Point(1103, 446);
-            this.numericUpDownLab.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownLab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDownLab.Name = "numericUpDownLab";
             this.numericUpDownLab.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownLab.TabIndex = 64;
@@ -299,7 +292,7 @@
             // numericUpDownTute
             // 
             this.numericUpDownTute.Location = new System.Drawing.Point(632, 517);
-            this.numericUpDownTute.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownTute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDownTute.Name = "numericUpDownTute";
             this.numericUpDownTute.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownTute.TabIndex = 63;
@@ -307,7 +300,7 @@
             // numericUpDownLec
             // 
             this.numericUpDownLec.Location = new System.Drawing.Point(632, 448);
-            this.numericUpDownLec.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownLec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDownLec.Name = "numericUpDownLec";
             this.numericUpDownLec.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownLec.TabIndex = 62;
@@ -318,7 +311,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Location = new System.Drawing.Point(749, 609);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(156, 38);
             this.btnSave.TabIndex = 61;
@@ -330,7 +323,7 @@
             // 
             this.btnViewListSubj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewListSubj.Location = new System.Drawing.Point(628, 154);
-            this.btnViewListSubj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewListSubj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewListSubj.Name = "btnViewListSubj";
             this.btnViewListSubj.Size = new System.Drawing.Size(132, 39);
             this.btnViewListSubj.TabIndex = 60;
@@ -342,7 +335,7 @@
             // 
             this.btnAddSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSub.Location = new System.Drawing.Point(384, 154);
-            this.btnAddSub.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddSub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddSub.Name = "btnAddSub";
             this.btnAddSub.Size = new System.Drawing.Size(236, 39);
             this.btnAddSub.TabIndex = 59;
@@ -353,7 +346,7 @@
             // txtSubCode
             // 
             this.txtSubCode.Location = new System.Drawing.Point(1101, 379);
-            this.txtSubCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSubCode.Name = "txtSubCode";
             this.txtSubCode.Size = new System.Drawing.Size(160, 22);
             this.txtSubCode.TabIndex = 58;
@@ -361,7 +354,7 @@
             // txtSubName
             // 
             this.txtSubName.Location = new System.Drawing.Point(628, 383);
-            this.txtSubName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSubName.Name = "txtSubName";
             this.txtSubName.Size = new System.Drawing.Size(163, 22);
             this.txtSubName.TabIndex = 57;
