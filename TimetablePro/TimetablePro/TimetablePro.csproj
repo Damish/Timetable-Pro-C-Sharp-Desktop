@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>TimeTableFORLecture_Room_Group\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -76,6 +79,30 @@
     </Compile>
     <Compile Include="Location\Location1.designer.cs">
       <DependentUpon>Location1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\RoomAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\RoomAllocation.designer.cs">
+      <DependentUpon>RoomAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\RoomForTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\RoomForTime.designer.cs">
+      <DependentUpon>RoomForTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\RoomsForSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\RoomsForSession.designer.cs">
+      <DependentUpon>RoomsForSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\TemplateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\TemplateView.designer.cs">
+      <DependentUpon>TemplateView.cs</DependentUpon>
     </Compile>
     <Compile Include="Location\UpdateDeleteLocationForm.cs">
       <SubType>Form</SubType>
@@ -139,6 +166,24 @@
     <Compile Include="Tags\Tags.Designer.cs">
       <DependentUpon>Tags.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgenLect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgenLect.designer.cs">
+      <DependentUpon>TimeTgenLect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgenGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgenGroup.designer.cs">
+      <DependentUpon>TimeTgenGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeTableFORLecture_Room_Group\TimeTgen.designer.cs">
+      <DependentUpon>TimeTgen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Working_Days\AddWorkingDaysForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +241,18 @@
     <EmbeddedResource Include="Location\Location1.resx">
       <DependentUpon>Location1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Location\RoomAllocation.resx">
+      <DependentUpon>RoomAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\RoomForTime.resx">
+      <DependentUpon>RoomForTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\RoomsForSession.resx">
+      <DependentUpon>RoomsForSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\TemplateView.resx">
+      <DependentUpon>TemplateView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Location\UpdateDeleteLocationForm.resx">
       <DependentUpon>UpdateDeleteLocationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +287,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tags\Tags.resx">
       <DependentUpon>Tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTableFORLecture_Room_Group\TimeTgenLect.resx">
+      <DependentUpon>TimeTgenLect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTableFORLecture_Room_Group\TimeTgenGroup.resx">
+      <DependentUpon>TimeTgenGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTableFORLecture_Room_Group\TimeTgen.resx">
+      <DependentUpon>TimeTgen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Working_Days\AddWorkingDaysForm.resx">
       <DependentUpon>AddWorkingDaysForm.cs</DependentUpon>

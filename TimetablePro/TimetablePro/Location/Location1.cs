@@ -93,5 +93,13 @@ namespace TimetablePro
             this.Hide();
             workingDays.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RoomAllocation roomAllocation = new RoomAllocation();
+            this.Hide();
+            roomAllocation.Show();
+
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace TimetablePro
             textBoxupdateRoom.Text = row.Cells[2].Value.ToString();
             String type = row.Cells[3].Value.ToString();
 
-            if (type == "LectureRoom")
+            if (type == "Lecture")
             {
                 radioBtnuplec.Checked = true;
             }

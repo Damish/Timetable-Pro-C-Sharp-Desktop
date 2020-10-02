@@ -43,34 +43,41 @@ namespace TimetablePro
         {
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Insert into Location(BuildingName,Room,RoomType,RoomCapacity,Specialty)values(@BuildingName,@Room,@RoomType,@RoomCapacity,@Specialty)", conn);
-                cmd.Parameters.AddWithValue("@BuildingName", comboBoxBuilding.Text);
-                cmd.Parameters.AddWithValue("@Room", textRoom.Text);
-                if (radioBtnlec.Checked == true)
+                if (comboBoxBuilding.Text == "" || textRoom.Text == "" || textcapacity.Text == "" )
                 {
-                    cmd.Parameters.AddWithValue("@RoomType", radioBtnlec.Text);
-                }
-                else if (RadioBtnLab.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@RoomType", RadioBtnLab.Text);
+                    MessageBox.Show("Please Fill missing input fields !!!");
                 }
                 else
                 {
-                    MessageBox.Show("enter the RoomType");
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into Location(BuildingName,Room,RoomType,RoomCapacity,Specialty)values(@BuildingName,@Room,@RoomType,@RoomCapacity,@Specialty)", conn);
+                    cmd.Parameters.AddWithValue("@BuildingName", comboBoxBuilding.Text);
+                    cmd.Parameters.AddWithValue("@Room", textRoom.Text);
+                   
+                    if (radioBtnlec.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@RoomType", radioBtnlec.Text);
+                    }
+                    else if (RadioBtnLab.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@RoomType", RadioBtnLab.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("enter the RoomType");
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@RoomCapacity", textcapacity.Text);
+                    cmd.Parameters.AddWithValue("@specialty", textspec.Text);
+
+                    cmd.ExecuteNonQuery();
+
+
+
+
+                    conn.Close();
+                    MessageBox.Show("Added successfully!!!");
                 }
-
-                cmd.Parameters.AddWithValue("@RoomCapacity", textcapacity.Text);
-                cmd.Parameters.AddWithValue("@specialty", textspec.Text);
-
-                cmd.ExecuteNonQuery();
-
-
-
-
-                conn.Close();
-                MessageBox.Show("Added successfully!!!");
-
 
 
 

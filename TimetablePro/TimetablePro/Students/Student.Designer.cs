@@ -301,6 +301,7 @@
             this.btnOpt10.TabIndex = 6;
             this.btnOpt10.Text = "Help";
             this.btnOpt10.UseVisualStyleBackColor = true;
+            this.btnOpt10.Click += new System.EventHandler(this.btnOpt10_Click);
             // 
             // panel1
             // 
@@ -363,6 +364,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // dataGridView1
             // 
