@@ -137,6 +137,7 @@
             resources.ApplyResources(this.btnOpt7, "btnOpt7");
             this.btnOpt7.Name = "btnOpt7";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 

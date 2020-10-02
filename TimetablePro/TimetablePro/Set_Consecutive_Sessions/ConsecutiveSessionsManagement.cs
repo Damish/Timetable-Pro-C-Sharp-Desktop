@@ -33,10 +33,18 @@ namespace TimetablePro
             {
                 groupid = "%" + comboBoxID.Text + "%";
             }
+            
             string tag = "";
             if (comboBoxID.Text != "")
             {
-                tag = "%" + comboBoxTag.Text + "%";
+                if (comboBoxTag.Text != "All")
+                {
+                    tag = "%" + comboBoxTag.Text + "%";
+                }
+                else{
+
+                    tag = "%%";
+                }
             }
             
             string query =
@@ -66,7 +74,7 @@ namespace TimetablePro
         private void FillComboGroup()
         {
 
-            string query = "select group_id from student_groups ;";
+            string query = "select s_group_id from sessions group by s_group_id ;";
 
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand(query, sqlcon);
@@ -165,14 +173,27 @@ namespace TimetablePro
         {
             tempOrder = dataGridView2.CurrentRow.Cells["Order"].Value.ToString();
             table1SelectedID = Int32.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
+
+            lblSelected1.Text=table1SelectedID.ToString();
+            
             //Console.WriteLine("Selected order : "+dataGridView1.CurrentRow.Cells["Order"].Value.ToString());
             MessageBox.Show("Selected id table 1 : " + table1SelectedID);
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             table2SelectedID = Int32.Parse(dataGridView2.CurrentRow.Cells["Id"].Value.ToString());
-            MessageBox.Show("Selected id table 2 : " + table2SelectedID);
+            
+            if (table1SelectedID >= table2SelectedID)
+            {
+                MessageBox.Show("Selected sessions cannont be consecutive .Please select Different ID!!!(Consecutive Rule: Select single session from table 1 & select session from table 2 not above the selectd session in table 1.Thanks!!!)");
+            }
+            else
+            {
+                lblSelected2.Text = table2SelectedID.ToString();
+                MessageBox.Show("Selected id table 2 : " + table2SelectedID);
+            }
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -208,27 +229,37 @@ namespace TimetablePro
             //{
 
             //    table2SelectedID = Int32.Parse(row.Cells["Id"].Value.ToString());
-
-
-            using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            if (table1SelectedID != 0 && table2SelectedID != 0)
             {
-                con4.Open();
-                string setParallelorder = "UPDATE sessions set consecutive = @table2selectedid WHERE record_id = @table1selectedid;" +
-                    "UPDATE sessions set isConsecutive = 'true' WHERE record_id = @table1selectedid;";
-                using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+
+                using (SqlConnection con4 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
                 {
-                    //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                    sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
-                    sqlcomm1.Parameters.AddWithValue("@table1selectedid", table1SelectedID);
-                    sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
-                    
-                    sqlcomm1.ExecuteNonQuery();
+                    con4.Open();
+                    string setParallelorder = "UPDATE sessions set consecutive = @table2selectedid WHERE record_id = @table1selectedid;" +
+                        "UPDATE sessions set isConsecutive = 'true' WHERE record_id = @table2selectedid;";
+                    using (SqlCommand sqlcomm1 = new SqlCommand(setParallelorder, con4))
+                    {
+                        //sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@order", tempOrder);
+                        sqlcomm1.Parameters.AddWithValue("@table1selectedid", table1SelectedID);
+                        sqlcomm1.Parameters.AddWithValue("@table2selectedid", table2SelectedID);
+
+                        sqlcomm1.ExecuteNonQuery();
+                    }
                 }
+                count += 1;
+                //}
+
+                lblSelected1.Text = "";
+                lblSelected2.Text = "";
+
+                MessageBox.Show(count + " Consecutive sessions updated Sucessfully!");
+                DisplayDataTable1();
+
             }
-            count += 1;
-            //}
-            MessageBox.Show(count + " Consecutive sessions updated Sucessfully!");
-            DisplayDataTable1();
+            else {
+                MessageBox.Show( " Select group id and two sessions to set consecutive!!!");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -242,11 +273,51 @@ namespace TimetablePro
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
+                ParallelMethods pm = new ParallelMethods();
+                pm.reverseAllParallelSessions(finalString);
+                DisplayDataTable1();
+                lblSelected1.Text = "";
+                lblSelected2.Text = "";
+                MessageBox.Show("All Parallel Sessions Removed Sucessfully!");
+            }
+            else {
+                MessageBox.Show("Select group to reset data!!!");
             }
 
-            ParallelMethods pm = new ParallelMethods();
-            pm.reverseAllParallelSessions(finalString);
-            DisplayDataTable1();
+            
+        }
+
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            this.Hide();
+            psm.Show();
+        }
+
+        private void lblSelected1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSelected2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

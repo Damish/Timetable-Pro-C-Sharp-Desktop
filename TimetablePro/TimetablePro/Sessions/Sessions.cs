@@ -54,10 +54,7 @@ namespace TimetablePro
                 GroupID = comboBoxGroupID.Text;
                 substrYear = GroupID.Substring(0, 2);
                 substrSemester = GroupID.Substring(2, 2);
-
-            
-
-           
+                
 
             Console.WriteLine("Year: "+substrYear +" Semester: "+ substrSemester);
 
@@ -324,6 +321,31 @@ namespace TimetablePro
             AddToSessions();
         }
 
-   
+        private void comboBoxGroupID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            this.Hide();
+            psm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsecutiveSessionsManagement csm = new ConsecutiveSessionsManagement();
+            this.Hide();
+            csm.Show();
+        }
     }
 }

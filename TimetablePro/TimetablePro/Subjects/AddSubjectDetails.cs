@@ -197,6 +197,12 @@ namespace TimetablePro
             workingDays.Show();
         }
 
-      
+        private void btnOpt7_Click(object sender, EventArgs e)
+        {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
+            this.Hide();
+            sessionsManagement.Show();
+        }
     }
 }

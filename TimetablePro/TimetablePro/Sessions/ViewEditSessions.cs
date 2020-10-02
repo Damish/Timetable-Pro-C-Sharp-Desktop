@@ -83,27 +83,18 @@ namespace TimetablePro
             workingDays.Show();
         }
 
-        private void saddbtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SessionsManagement addsessions = new SessionsManagement();
-            addsessions.Show();
-        }
+        
 
         private void btnOpt7_Click(object sender, EventArgs e)
         {
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
             this.Hide();
-            SessionsManagement addsessions = new SessionsManagement();
-            addsessions.Show();
+            sessionsManagement.Show();
         }
         
 
-        private void sviewbtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ViewSessionsManagement viewsessions = new ViewSessionsManagement();
-            viewsessions.Show();
-        }
+        
         private void DisplayData()
         {
 
@@ -328,7 +319,8 @@ namespace TimetablePro
                 {
                     con4.Open();
 
-                    string query2 = "delete from  sessions  where s_lecturer_name LIKE @LecID";
+                    string query2 = "delete from  sessions  where s_lecturer_name LIKE @LecID;" +
+                        "delete from  sessions_original where s_lecturer_name LIKE @LecID;";
 
                     SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
                     sqlcomm2.Parameters.AddWithValue("@LecID", finalLecID);
@@ -362,7 +354,8 @@ namespace TimetablePro
                 {
                     con4.Open();
 
-                    string query2 = "delete from  sessions  where s_subject_code LIKE @subID";
+                    string query2 = "delete from  sessions  where s_subject_code LIKE @subID;" +
+                        "delete from  sessions_original  where s_subject_code LIKE @subID;";
 
                     SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
                     sqlcomm2.Parameters.AddWithValue("@subID", finalSubID);
@@ -391,7 +384,8 @@ namespace TimetablePro
                 {
                     con4.Open();
 
-                    string query2 = "delete from  sessions  where s_group_id LIKE @GroupID";
+                    string query2 = "delete from  sessions  where s_group_id LIKE @GroupID;" +
+                        "delete from  sessions_original  where s_group_id LIKE @GroupID;";
 
                     SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
                     sqlcomm2.Parameters.AddWithValue("@GroupID", finalGroupID);
@@ -413,7 +407,8 @@ namespace TimetablePro
                 {
                     con4.Open();
 
-                    string query2 = "delete from sessions;";
+                    string query2 = "delete from sessions;" +
+                    "delete from sessions_original;";
 
                     SqlCommand sqlcomm2 = new SqlCommand(query2, con4);
 
@@ -424,6 +419,42 @@ namespace TimetablePro
                     con4.Close();
 
                 }
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            Generate generate = new Generate();
+
+            this.Hide();
+            generate.Show();
+        }
+
+        private void saddbtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            SessionsManagement addsessions = new SessionsManagement();
+            addsessions.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            this.Hide();
+            psm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsecutiveSessionsManagement csm = new ConsecutiveSessionsManagement();
+            this.Hide();
+            csm.Show();
+        }
+
+        private void sviewbtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewSessionsManagement viewsessions = new ViewSessionsManagement();
+            viewsessions.Show();
         }
 
         //private void btnDelete_Click(object sender, EventArgs e)

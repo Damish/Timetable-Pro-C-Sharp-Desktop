@@ -37,7 +37,6 @@ namespace TimetablePro
             {
                 finalString = "%" + comboBoxID.Text + "%";
             }
-            
 
             string query = "Select * from sessions s where s.s_group_id Like @s_group_id ";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
@@ -45,8 +44,7 @@ namespace TimetablePro
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
             sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-
+            //dataGridView1.DataSource = dt;
         }
 
         private void onClick_UpdateAllParallel_Btn()
@@ -58,13 +56,11 @@ namespace TimetablePro
                 finalString = "%" + comboBoxID.Text + "%";
             }
 
-
             string query = "Select * from sessions s where s.s_group_id Like @id ";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
             sqlcomm.Parameters.AddWithValue("@id", finalString);
             sqlcon.Open();
             SqlDataReader reader = sqlcomm.ExecuteReader(); //DataReader to update parallel all sessions
-
 
             //List<int> list = (from IDataRecord r in reader
             //                  select (int)r["sort_order"]
@@ -75,21 +71,12 @@ namespace TimetablePro
             //    Console.WriteLine("Data: " + s);
             //}
 
-
             if (reader.HasRows)
             {
-
-                //ParallelMethods pm = new ParallelMethods();
-                //Boolean isParallel = pm.checkParallelSessions(reader2.GetInt32(0));
-
-                //ConsecutiveMethods cm = new ConsecutiveMethods();
-                //Boolean isConsecutive = cm.checkConsecutiveSessions(reader2.GetInt32(0));
-                ////&& reader2.GetInt32(18) == -1
 
                 while (reader.Read())
                 {
                     //Console.WriteLine("Is parallel: " + reader.GetString(15) + " IsConsecutive : " + reader.GetString(10));
-
                     string isParallel = reader.GetString(15);
                     string isConsecutive = reader.GetString(10);
                     int parallel_with = reader.GetInt32(16);
@@ -101,13 +88,10 @@ namespace TimetablePro
 
                         ParallelMethods pm = new ParallelMethods();
                         //Console.WriteLine("Find Session data : "+pm.getSessionData(106));
-                        pm.NewUpdateParallelAll(reader.GetInt32(0), parallel_with, pm.getSessionData(parallel_with),reader.GetString(1));
+                        pm.NewUpdateParallelAll(reader.GetInt32(0), parallel_with, pm.getSessionData(parallel_with), reader.GetString(1));
 
                     }
-
-
                 }
-
                 //if (reader2.GetString(16) .Equals( false))//select sessions without already set parallel sessions
                 //{
                 //    if (reader2.GetString(10).Equals(false))// select sessions without already set consecutive sessions
@@ -116,60 +100,29 @@ namespace TimetablePro
                 //    }
                 //}//x == false end
 
-
-
-                ////variables to save previous session data
-                //int prevId = 1;
-                //int prevOrderNo = 0;
-                //string prevSData = "";
-
-                //while (reader.Read())
-                //{
-
-                //    if (reader.GetInt32(2) == prevOrderNo)//if parallel
-                //    {
-                //        Console.WriteLine(reader.GetInt32(0) + " <<  Now in update Parallel All " + prevId + " " + prevSData + "   " + reader.GetString(1) + " \n");
-
-                //        UpdateParallelAll(reader.GetInt32(0), prevId, prevSData, reader.GetString(1));
-
-                //    }
-                //    else
-                //    {
-                //        prevId = reader.GetInt32(0);
-                //        prevOrderNo = reader.GetInt32(2);
-                //        prevSData = reader.GetString(1);
-                //    }
-                //    //Console.WriteLine("Current order" + reader.GetInt32(2) + "Prev order" + prevOrderNo);
-                //}
-
-
             }
             else
             {
                 reader.Close();
             }
             sqlcon.Close();
-
         }
 
 
-        int remainingTimeMonday = 10;
-        int remainingTimeTuesday = 10;
-        int remainingTimeWednesday = 10;
-        int remainingTimeThursday = 10;
-        int remainingTimeFriday = 10;
-
+        int remainingTimeMonday = 7;
+        int remainingTimeTuesday = 7;
+        int remainingTimeWednesday = 5;
+        int remainingTimeThursday = 5;
+        int remainingTimeFriday = 5;
 
         private void InsertDatatoSevenDays()
         {
-
             string finalString = "";
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
             }
 
-            
             SqlConnection sqlcon2 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             string query2 = "Select * from sessions s where s.s_group_id Like @id ";
             sqlcon2.Open();
@@ -187,224 +140,444 @@ namespace TimetablePro
 
             if (reader2.HasRows)
             {
-                //variables to save previous session data
-                int prevId = 1;
-                int prevOrderNo=0;
-                string prevSData ="";
-                int prevSDuration = 0;
-
 
                 while (reader2.Read())
                 {
-                    ////hahahahahahahahaha
-                    //if (reader2.GetString(15).Equals("false")) //isParallel {
-                    //{
-                    //    if (reader2.GetString(10).Equals("false"))//isConsecutive
-                    //    {
-                    //        //Add session to table
-                    //        gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
-                    //    }
-                    //    else
-                    //    {
-                    //        //Find consecutive session and put
-                    //        ParallelMethods pm = new ParallelMethods();
-                    //        string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
-                    //        gtuc.InsertCellsTuesday(s_data_consecutive, TuesdayStartTime, "Tuesday", start, end, s_id);
-                    //    }
-                    //}
-                    ////hahahahahahahahaha
 
-
-                    //Console.WriteLine("{0}\n{1}\n{2}\n{3}\n", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
-                    if ((remainingTimeMonday >= reader2.GetInt32(3)))    // 5 >= 2
+                    if ((remainingTimeMonday >= reader2.GetInt32(3)))
                     {  //Monday fill
-                       
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
-                        int s_order = reader2.GetInt32(2);
                         int s_duration = reader2.GetInt32(3);
-                        
-                        prevId = reader2.GetInt32(0);
-                        prevOrderNo = reader2.GetInt32(2);
-                        prevSData = reader2.GetString(1);
-                        prevSDuration = reader2.GetInt32(3);
 
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
-                        
-                        int count = 1;
+
+                        Console.WriteLine(" Monday start Time: " + MondayStartTime);
+
+                        //Console.WriteLine("Session data: " + reader2.GetString(1));
+                        //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
                         int start = 0;
                         int end = 0;
-                        while (count <= s_duration)//add the same session twice to get better view
+
+                        if (reader2.GetString(15).Equals("false") && reader2.GetString(10).Equals("false")) //isParallel
                         {
-                            
-                         start = MondayStartTime;
-                         end = start + 100;
-
-                            //Console.WriteLine("Session data: " + reader2.GetString(1));
-                            //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
-
-                            MondayStartTime += 100;//increment duration of time slot
-
-                            //hahahahahahahahaha
-                            if (reader2.GetString(15).Equals("false")) //isParallel {
+                            if (!(reader2.GetInt32(17).Equals(-1)))//Consecutive != -1
                             {
-                                if (reader2.GetString(10).Equals("false"))//isConsecutive
+                                //Find consecutive session and put
+                                ParallelMethods pm = new ParallelMethods();
+                                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+
+                                //Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
+
+                                
+                                int c2 = 1;
+                                while (c2 <= s_duration)//add the same session twice to get better view
                                 {
-                                    //Add session to table
+                                    //Console.WriteLine("s_data : " + reader2.GetString(1)+" Mondaystart:" + MondayStartTime);
+                                    MondayStartTime += 100;
                                     gtuc.InsertCellsMonday(s_data, MondayStartTime, "Monday", start, end, s_id);
-
+                                    c2 += 1;
                                 }
-                                else
+                                
+                                int c3 = 1;
+                                while (c3 <= s_duration)//add the same session twice to get better view
                                 {
-                                    //Find consecutive session and put
-                                    ParallelMethods pm = new ParallelMethods();
-                                    string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
-
-                                    Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
-
-                                    gtuc.InsertCellsMonday(s_data, MondayStartTime, "Monday", start, end, s_id);
-                                    gtuc.InsertCellsMonday(s_data_consecutive, MondayStartTime+=(count*100), "Monday", start, end, s_id);
+                                    MondayStartTime += 100;
+                                    gtuc.InsertCellsMonday(s_data_consecutive, MondayStartTime, "Monday", start, end, s_id);
+                                    c3 += 1;
                                 }
+                                remainingTimeMonday -= (2 * s_duration);//decrement remaining time available to add new sessions
                             }
-                            //hahahahahahahahaha
+                            else //Consecutive == -1
+                            {
+                                
+                                int c1 = 1;
+                                while (c1 <= s_duration)//add the same session twice to get better view
+                                {
+                                    start = MondayStartTime;
+                                    end = start + 100;
+                                    MondayStartTime += 100;
+                                    gtuc.InsertCellsMonday(s_data, MondayStartTime, "Monday", start, end, s_id);
 
-                            //gtuc.InsertCellsMonday(s_data, MondayStartTime,"Monday", start, end, s_id);
-                            count += 1;
-                            
+                                    c1 += 1;
+                                }
+                                remainingTimeMonday -= s_duration;//decrement remaining time available to add new sessions
+                            }
                         }
-                        remainingTimeMonday -= s_duration; //decrement remaining time available to add new sessions
+
                         
-                       
                     }
                     
-                    else if (remainingTimeTuesday >= reader2.GetInt32(3))
-                    {//Tuesday fill
-                        
-
+                    else if ((remainingTimeTuesday >= reader2.GetInt32(3)))
+                    {  //Tuesday fill
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
-                        int s_order = reader2.GetInt32(2);
                         int s_duration = reader2.GetInt32(3);
 
-                        prevId = reader2.GetInt32(0);
-                        prevOrderNo = reader2.GetInt32(2);
-                        prevSData = reader2.GetString(1);
-                        
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
-                        int count = 1;
+                        Console.WriteLine(" Tuesday start Time: " + TuesdayStartTime);
+
+                        //Console.WriteLine("Session data: " + reader2.GetString(1));
+                        //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
                         int start = 0;
                         int end = 0;
-                        while (count <= s_duration)//add the same session twice to get better view
+
+                        Console.WriteLine("remaining time to be added: " + remainingTimeTuesday);
+
+                        if (reader2.GetString(15).Equals("false") && reader2.GetString(10).Equals("false")) //isParallel
                         {
-                            start = TuesdayStartTime ;
-                            end = start + 100;
-                            TuesdayStartTime += 100;//increment duration of time slot
-
-                            //Console.WriteLine("Tuesday Start time: " + TuesdayStartTime + " start :" + start + " end: " + end);
-
-
-                            //hahahahahahahahaha
-                            if (reader2.GetString(15).Equals("false")) //isParallel {
+                            if (!(reader2.GetInt32(17).Equals(-1)))//Consecutive != -1
                             {
-                                if (reader2.GetString(10).Equals("false"))//isConsecutive
+                                //Find consecutive session and put
+                                ParallelMethods pm = new ParallelMethods();
+                                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+
+                                //Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
+
+
+                                int c2 = 1;
+                                while (c2 <= s_duration)//add the same session twice to get better view
                                 {
-                                    //Add session to table
+                                    //Console.WriteLine("s_data : " + reader2.GetString(1)+" Mondaystart:" + MondayStartTime);
+                                    TuesdayStartTime += 100;
                                     gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
+                                    c2 += 1;
                                 }
-                                else
+
+                                int c3 = 1;
+                                while (c3 <= s_duration)//add the same session twice to get better view
                                 {
-                                    //Find consecutive session and put
-                                    ParallelMethods pm = new ParallelMethods();
-                                    string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+                                    TuesdayStartTime += 100;
                                     gtuc.InsertCellsTuesday(s_data_consecutive, TuesdayStartTime, "Tuesday", start, end, s_id);
+                                    c3 += 1;
                                 }
+                                remainingTimeTuesday -= (2 * s_duration);//decrement remaining time available to add new sessions
                             }
-                            //hahahahahahahahaha
+                            else //Consecutive == -1
+                            {
 
+                                int c1 = 1;
+                                while (c1 <= s_duration)//add the same session twice to get better view
+                                {
+                                    start = TuesdayStartTime;
+                                    end = start + 100;
+                                    TuesdayStartTime += 100;
+                                    gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
 
-
-                            //gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
-                            count += 1;
+                                    c1 += 1;
+                                }
+                                remainingTimeTuesday -= s_duration;//decrement remaining time available to add new sessions
+                            }
                         }
-                        remainingTimeTuesday -= s_duration; //decrement remaining time available to add new sessions
+
+
                     }
 
-                    else if (remainingTimeWednesday >= reader2.GetInt32(3))
-                    {//wednesday fill
 
+                    else if ((remainingTimeWednesday >= reader2.GetInt32(3)))
+                    {  //Monday fill
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
-                        int s_order = reader2.GetInt32(2);
                         int s_duration = reader2.GetInt32(3);
-
-                        prevId = reader2.GetInt32(0);
-                        prevOrderNo = reader2.GetInt32(2);
-                        prevSData = reader2.GetString(1);
 
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
-                        int count = 1;
-                        while (count <= s_duration)//add the same session twice to get better view
+                        Console.WriteLine(" Wednesday start Time: " + WednesdayStartTime);
+
+                        //Console.WriteLine("Session data: " + reader2.GetString(1));
+                        //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
+                        int start = 0;
+                        int end = 0;
+
+                        if (reader2.GetString(15).Equals("false") && reader2.GetString(10).Equals("false")) //isParallel
                         {
-                            WednesdayStartTime += 100;//increment duration of time slot
-                            gtuc.InsertCellsWednesday(s_data, WednesdayStartTime);
-                            count += 1;
+                            if (!(reader2.GetInt32(17).Equals(-1)))//Consecutive != -1
+                            {
+                                //Find consecutive session and put
+                                ParallelMethods pm = new ParallelMethods();
+                                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+
+                                //Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
+
+
+                                int c2 = 1;
+                                while (c2 <= s_duration)//add the same session twice to get better view
+                                {
+                                    //Console.WriteLine("s_data : " + reader2.GetString(1)+" Mondaystart:" + MondayStartTime);
+                                    WednesdayStartTime += 100;
+                                    gtuc.InsertCellsWednesday(s_data, WednesdayStartTime, "Wednesday", start, end, s_id);
+                                    c2 += 1;
+                                }
+
+                                int c3 = 1;
+                                while (c3 <= s_duration)//add the same session twice to get better view
+                                {
+                                    WednesdayStartTime += 100;
+                                    gtuc.InsertCellsWednesday(s_data_consecutive, WednesdayStartTime, "Wednesday", start, end, s_id);
+                                    c3 += 1;
+                                }
+                                remainingTimeWednesday -= (2 * s_duration);//decrement remaining time available to add new sessions
+                            }
+                            else //Consecutive == -1
+                            {
+
+                                int c1 = 1;
+                                while (c1 <= s_duration)//add the same session twice to get better view
+                                {
+                                    start = WednesdayStartTime;
+                                    end = start + 100;
+                                    WednesdayStartTime += 100;
+                                    gtuc.InsertCellsWednesday(s_data, WednesdayStartTime, "Wednesday", start, end, s_id);
+
+                                    c1 += 1;
+                                }
+                                remainingTimeWednesday -= s_duration;//decrement remaining time available to add new sessions
+                            }
                         }
-                        remainingTimeWednesday -= s_duration; //decrement remaining time available to add new sessions
+
+
                     }
 
-                    else if (remainingTimeThursday >= reader2.GetInt32(3))
-                    {//Thursday fill
 
+
+                    else if ((remainingTimeThursday >= reader2.GetInt32(3)))
+                    {  //Monday fill
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
-                        int s_order = reader2.GetInt32(2);
                         int s_duration = reader2.GetInt32(3);
-
-                        prevId = reader2.GetInt32(0);
-                        prevOrderNo = reader2.GetInt32(2);
-                        prevSData = reader2.GetString(1);
 
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
-                        int count = 1;
-                        while (count <= s_duration)//add the same session twice to get better view
+                        Console.WriteLine(" Thursday start Time: " + ThursdayStartTime);
+
+                        //Console.WriteLine("Session data: " + reader2.GetString(1));
+                        //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
+                        int start = 0;
+                        int end = 0;
+
+                        if (reader2.GetString(15).Equals("false") && reader2.GetString(10).Equals("false")) //isParallel
                         {
-                            ThursdayStartTime += 100;//increment duration of time slot
-                            gtuc.InsertCellsThursday(s_data, ThursdayStartTime);
-                            count += 1;
+                            if (!(reader2.GetInt32(17).Equals(-1)))//Consecutive != -1
+                            {
+                                //Find consecutive session and put
+                                ParallelMethods pm = new ParallelMethods();
+                                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+
+                                //Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
+
+
+                                int c2 = 1;
+                                while (c2 <= s_duration)//add the same session twice to get better view
+                                {
+                                    //Console.WriteLine("s_data : " + reader2.GetString(1)+" Mondaystart:" + MondayStartTime);
+                                    ThursdayStartTime += 100;
+                                    gtuc.InsertCellsWednesday(s_data, ThursdayStartTime, "Thursday", start, end, s_id);
+                                    c2 += 1;
+                                }
+
+                                int c3 = 1;
+                                while (c3 <= s_duration)//add the same session twice to get better view
+                                {
+                                    ThursdayStartTime += 100;
+                                    gtuc.InsertCellsThursday(s_data_consecutive, ThursdayStartTime, "Thursday", start, end, s_id);
+                                    c3 += 1;
+                                }
+                                remainingTimeThursday -= (2 * s_duration);//decrement remaining time available to add new sessions
+                            }
+                            else //Consecutive == -1
+                            {
+
+                                int c1 = 1;
+                                while (c1 <= s_duration)//add the same session twice to get better view
+                                {
+                                    start = ThursdayStartTime;
+                                    end = start + 100;
+                                    ThursdayStartTime += 100;
+                                    gtuc.InsertCellsThursday(s_data, ThursdayStartTime, "Thursday", start, end, s_id);
+
+                                    c1 += 1;
+                                }
+                                remainingTimeThursday -= s_duration;//decrement remaining time available to add new sessions
+                            }
                         }
-                        remainingTimeThursday -= s_duration; //decrement remaining time available to add new sessions
+
+
                     }
 
-                    else if (remainingTimeFriday >= reader2.GetInt32(3))
-                    {//Friday fill
 
+                    else if ((remainingTimeFriday >= reader2.GetInt32(3)))
+                    {  //Monday fill
                         int s_id = reader2.GetInt32(0);
                         string s_data = reader2.GetString(1);
-                        int s_order = reader2.GetInt32(2);
                         int s_duration = reader2.GetInt32(3);
-
-                        prevId = reader2.GetInt32(0);
-                        prevOrderNo = reader2.GetInt32(2);
-                        prevSData = reader2.GetString(1);
 
                         GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
 
-                        int count = 1;
-                        while (count <= s_duration)//add the same session twice to get better view
+                        Console.WriteLine(" Friday start Time: " + FridayStartTime);
+
+                        //Console.WriteLine("Session data: " + reader2.GetString(1));
+                        //Console.WriteLine("Monday Start time: " + MondayStartTime + " start :" + start + " end: " + end + "\n");
+
+                        int start = 0;
+                        int end = 0;
+
+                        if (reader2.GetString(15).Equals("false") && reader2.GetString(10).Equals("false")) //isParallel
                         {
-                            FridayStartTime += 100;//increment duration of time slot
-                            gtuc.InsertCellsFriday(s_data, FridayStartTime);
-                            count += 1;
+                            if (!(reader2.GetInt32(17).Equals(-1)))//Consecutive != -1
+                            {
+                                //Find consecutive session and put
+                                ParallelMethods pm = new ParallelMethods();
+                                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+
+                                //Console.WriteLine("s_data_consecutive to be added: " + s_data_consecutive);
+
+
+                                int c2 = 1;
+                                while (c2 <= s_duration)//add the same session twice to get better view
+                                {
+                                    //Console.WriteLine("s_data : " + reader2.GetString(1)+" Mondaystart:" + MondayStartTime);
+                                    FridayStartTime += 100;
+                                    gtuc.InsertCellsFriday(s_data, FridayStartTime, "Friday", start, end, s_id);
+                                    c2 += 1;
+                                }
+
+                                int c3 = 1;
+                                while (c3 <= s_duration)//add the same session twice to get better view
+                                {
+                                    FridayStartTime += 100;
+                                    gtuc.InsertCellsFriday(s_data_consecutive, FridayStartTime, "Friday", start, end, s_id);
+                                    c3 += 1;
+                                }
+                                remainingTimeFriday -= (2 * s_duration);//decrement remaining time available to add new sessions
+                            }
+                            else //Consecutive == -1
+                            {
+
+                                int c1 = 1;
+                                while (c1 <= s_duration)//add the same session twice to get better view
+                                {
+                                    start = FridayStartTime;
+                                    end = start + 100;
+                                    FridayStartTime += 100;
+                                    gtuc.InsertCellsFriday(s_data, FridayStartTime, "Friday", start, end, s_id);
+
+                                    c1 += 1;
+                                }
+                                remainingTimeFriday -= s_duration;//decrement remaining time available to add new sessions
+                            }
                         }
-                        remainingTimeFriday -= s_duration; //decrement remaining time available to add new sessions
+
+
                     }
+
+                    //else if (remainingTimeTuesday >= reader2.GetInt32(3))
+                    //{//Tuesday fill
+
+                    //    int s_id = reader2.GetInt32(0);
+                    //    string s_data = reader2.GetString(1);
+                    //    int s_duration = reader2.GetInt32(3);
+
+                    //    GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+
+                    //    int count = 1;
+                    //    int start = 0;
+                    //    int end = 0;
+                    //    while (count <= s_duration)//add the same session twice to get better view
+                    //    {
+                    //        start = TuesdayStartTime;
+                    //        end = start + 100;
+                    //        TuesdayStartTime += 100;//increment duration of time slot
+
+                    //        //Console.WriteLine("Tuesday Start time: " + TuesdayStartTime + " start :" + start + " end: " + end);
+
+
+                    //        //haha
+                    //        if (reader2.GetString(15).Equals("false")) //isParallel {
+                    //        {
+                    //            if (reader2.GetString(10).Equals("false"))//isConsecutive
+                    //            {
+                    //                //Add session to table
+                    //                gtuc.InsertCellsTuesday(s_data, TuesdayStartTime, "Tuesday", start, end, s_id);
+                    //            }
+                    //            else
+                    //            {
+                    //                //Find consecutive session and put
+                    //                ParallelMethods pm = new ParallelMethods();
+                    //                string s_data_consecutive = pm.getSessionData(reader2.GetInt32(17));
+                    //                gtuc.InsertCellsTuesday(s_data_consecutive, TuesdayStartTime, "Tuesday", start, end, s_id);
+                    //            }
+                    //        }
+                    //        //haha
+                    //        count += 1;
+                    //    }
+                    //    remainingTimeTuesday -= s_duration; //decrement remaining time available to add new sessions
+                    //}
+
+                    //else if (remainingTimeWednesday >= reader2.GetInt32(3))
+                    //{//wednesday fill
+
+                    //    int s_id = reader2.GetInt32(0);
+                    //    string s_data = reader2.GetString(1);
+                    //    int s_duration = reader2.GetInt32(3);
+
+                    //    GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+
+                    //    int count = 1;
+                    //    while (count <= s_duration)//add the same session twice to get better view
+                    //    {
+                    //        WednesdayStartTime += 100;//increment duration of time slot
+                    //        gtuc.InsertCellsWednesday(s_data, WednesdayStartTime);
+                    //        count += 1;
+                    //    }
+                    //    remainingTimeWednesday -= s_duration; //decrement remaining time available to add new sessions
+                    //}
+
+                    //else if (remainingTimeThursday >= reader2.GetInt32(3))
+                    //{//Thursday fill
+
+                    //    int s_id = reader2.GetInt32(0);
+                    //    string s_data = reader2.GetString(1);
+                    //    int s_duration = reader2.GetInt32(3);
+
+                    //    GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+
+                    //    int count = 1;
+                    //    while (count <= s_duration)//add the same session twice to get better view
+                    //    {
+                    //        ThursdayStartTime += 100;//increment duration of time slot
+                    //        gtuc.InsertCellsThursday(s_data, ThursdayStartTime);
+                    //        count += 1;
+                    //    }
+                    //    remainingTimeThursday -= s_duration; //decrement remaining time available to add new sessions
+                    //}
+
+                    //else if (remainingTimeFriday >= reader2.GetInt32(3))
+                    //{//Friday fill
+
+                    //    int s_id = reader2.GetInt32(0);
+                    //    string s_data = reader2.GetString(1);
+                    //    int s_duration = reader2.GetInt32(3);
+
+                    //    GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+
+                    //    int count = 1;
+                    //    while (count <= s_duration)//add the same session twice to get better view
+                    //    {
+                    //        FridayStartTime += 100;//increment duration of time slot
+                    //        gtuc.InsertCellsFriday(s_data, FridayStartTime);
+                    //        count += 1;
+                    //    }
+                    //    remainingTimeFriday -= s_duration; //decrement remaining time available to add new sessions
+                    //}
 
                     else
                     {
-                        
+
                         MessageBox.Show("Can't map following Data all Days full : \n" +
                            "Remaining TimeMonday :" + remainingTimeMonday + "hours\n" +
                            "Remaining TimeTuesday :" + remainingTimeTuesday + "hours\n" +
@@ -415,7 +588,7 @@ namespace TimetablePro
 
                         break;
                     }
-                        
+
 
                 }
             }
@@ -425,19 +598,19 @@ namespace TimetablePro
             }
             sqlcon2.Close();
 
-           
+
             displayFullTimetable();
 
-            remainingTimeMonday = 10; //reset time durations
-            remainingTimeTuesday = 10; //reset time durations
-            remainingTimeWednesday = 10;
-            remainingTimeThursday = 10;
-            remainingTimeFriday = 10;
+            remainingTimeMonday = 7; //reset time durations
+            remainingTimeTuesday = 7; //reset time durations
+            remainingTimeWednesday = 5;
+            remainingTimeThursday = 5;
+            remainingTimeFriday = 5;
         }
 
         public void displayFullTimetable()
         {
-            string query = "Select Time,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday from Group_Timetable";
+            string query = "Select Time,Monday,Tuesday,Wednesday,Thursday,Friday from Group_Timetable";
             SqlCommand sqlcomm = new SqlCommand(query, sqlcon);
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
@@ -446,11 +619,11 @@ namespace TimetablePro
             sqlcon.Close();
         }
 
-        
+
 
         //---------UpdateParallelAll---in sessions_test_2222 table-----
 
-        public void UpdateParallelAll(int c_record_id,int s_id, string s_data_prev, string s_data_now)
+        public void UpdateParallelAll(int c_record_id, int s_id, string s_data_prev, string s_data_now)
         {
             //Console.WriteLine(s_id.ToString() + "  Now in update Parallel All " + s_data_prev + "   " + s_data_now + " \n");
             using (SqlConnection con2 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -460,12 +633,12 @@ namespace TimetablePro
                     "DELETE From sessions where record_id = @current_record_id;";
                 using (SqlCommand sqlcomm1 = new SqlCommand(updateParallelAll, con2))
                 {
-                    string newSessionData = "Parallel sessions available \n"+s_data_prev + "\n" + s_data_now;
+                    string newSessionData = "Parallel sessions available \n" + s_data_prev + "\n" + s_data_now;
 
                     sqlcomm1.Parameters.AddWithValue("@newData", newSessionData);
                     sqlcomm1.Parameters.AddWithValue("@record_id", s_id);
                     sqlcomm1.Parameters.AddWithValue("@current_record_id", c_record_id);
-                    
+
                     sqlcomm1.ExecuteNonQuery();
                 }
             }
@@ -479,7 +652,7 @@ namespace TimetablePro
         private void FillComboGroup()
         {
 
-            string query = "select group_id from student_groups ;";
+            string query = "select s_group_id from sessions group by s_group_id ;";
 
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand(query, sqlcon);
@@ -556,11 +729,20 @@ namespace TimetablePro
             DisplayData();
         }
 
-        int clickCount=0;
+        
         private void btn_UpdateParallelAll_Click(object sender, EventArgs e)
         {
+            
+            if (comboBoxID.Text != "")
+            {
+                onClick_UpdateAllParallel_Btn();
+                DisplayData();
+            }
+            else
+            {
+                MessageBox.Show("Select group to uodate data!!!");
+            }
 
-           
             //clickCount += 1;
             //if (clickCount > 1)
             //{
@@ -568,17 +750,32 @@ namespace TimetablePro
             //}
             //else
             //{
-                onClick_UpdateAllParallel_Btn();
-                DisplayData();
+            //onClick_UpdateAllParallel_Btn();
+            //DisplayData();
             //}
         }
-
+        
         private void btn_InsertToSevenDays_Click(object sender, EventArgs e)
         {
-            InsertDatatoSevenDays();
+            if (comboBoxID.Text != "" && !(prevText.Equals(comboBoxID.Text)))
+            {
+                prevText = comboBoxID.Text;
+                label1.Text = comboBoxID.Text;
+                GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+                gtuc.ResetALLCellsToNull();
+                InsertDatatoSevenDays();
+                MessageBox.Show("Timetable Loaded Sucessfully!");
+            }
+            else
+            {
+                MessageBox.Show("Select group to Insert data!!!");
+            }
+
+
+           
         }
 
-       
+
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -587,37 +784,60 @@ namespace TimetablePro
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             string finalString = "";
             if (comboBoxID.Text != "")
             {
                 finalString = "%" + comboBoxID.Text + "%";
+                ParallelMethods pm = new ParallelMethods();
+                pm.reverseAllParallelSessions(finalString);
+                DisplayData();
+            }
+            else
+            {
+                MessageBox.Show("Select group to reset data!!!");
             }
 
-            ParallelMethods pm = new ParallelMethods();
-            pm.reverseAllParallelSessions(finalString);
-            DisplayData();
         }
-
+        string prevText = "";
         private void button5_Click(object sender, EventArgs e)
         {
-            GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
-            gtuc.ResetALLCellsToNull();
+            if (comboBoxID.Text != "")
+            {
+                InsertDatatoSevenDays();
+                GroupTimetableUpdateCells gtuc = new GroupTimetableUpdateCells();
+                gtuc.ResetALLCellsToNull();
+                prevText = "";
+                label1.Text = "";
+                displayFullTimetable();
+                MessageBox.Show("Timetable Reset Sucessfully!");
+            }
+            else
+            {
+                MessageBox.Show("Select group to reset data!!!");
+            }
 
-            displayFullTimetable();
+            
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        
+
+        private void btnOpt7_Click(object sender, EventArgs e)
         {
-            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
             this.Hide();
-            psm.Show();
+            sessionsManagement.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            ConsecutiveSessionsManagement csm = new ConsecutiveSessionsManagement();
-            this.Hide();
-            csm.Show();
+
+        }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -113,9 +113,10 @@ namespace TimetablePro
         }
         private void btnOpt6_Click(object sender, EventArgs e)
         {
-            Location1 locationForm = new Location1();
+            SessionsManagement sessionsManagement = new SessionsManagement();
+
             this.Hide();
-            locationForm.Show();
+            sessionsManagement.Show();
 
         }
         private void btnOpt9_Click(object sender, EventArgs e)
