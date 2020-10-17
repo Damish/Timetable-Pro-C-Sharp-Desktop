@@ -213,5 +213,18 @@ namespace TimetablePro
             this.Hide();
             sessionsManagement.Show();
         }
+
+        private void AddNewLecturer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            CommonView commonView = new CommonView();
+
+            this.Hide();
+            commonView.Show();
+        }
     }
 }

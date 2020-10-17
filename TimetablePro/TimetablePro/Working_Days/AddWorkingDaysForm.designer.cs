@@ -221,6 +221,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // btn2addwe
             // 

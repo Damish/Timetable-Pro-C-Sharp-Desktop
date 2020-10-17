@@ -243,6 +243,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // btnaddloc
             // 
@@ -261,10 +262,10 @@
             this.RadioBtnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioBtnLab.Location = new System.Drawing.Point(873, 302);
             this.RadioBtnLab.Name = "RadioBtnLab";
-            this.RadioBtnLab.Size = new System.Drawing.Size(110, 24);
+            this.RadioBtnLab.Size = new System.Drawing.Size(58, 24);
             this.RadioBtnLab.TabIndex = 26;
             this.RadioBtnLab.TabStop = true;
-            this.RadioBtnLab.Text = "Laboratory";
+            this.RadioBtnLab.Text = "Lab";
             this.RadioBtnLab.UseVisualStyleBackColor = true;
             // 
             // textspec
@@ -281,10 +282,10 @@
             this.radioBtnlec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnlec.Location = new System.Drawing.Point(694, 302);
             this.radioBtnlec.Name = "radioBtnlec";
-            this.radioBtnlec.Size = new System.Drawing.Size(131, 24);
+            this.radioBtnlec.Size = new System.Drawing.Size(87, 24);
             this.radioBtnlec.TabIndex = 27;
             this.radioBtnlec.TabStop = true;
-            this.radioBtnlec.Text = "LectureRoom";
+            this.radioBtnlec.Text = "Lecture";
             this.radioBtnlec.UseVisualStyleBackColor = true;
             // 
             // textcapacity

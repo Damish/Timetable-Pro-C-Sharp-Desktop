@@ -174,6 +174,7 @@
             this.btnOpt7.TabIndex = 6;
             this.btnOpt7.Text = "Sessions Management";
             this.btnOpt7.UseVisualStyleBackColor = true;
+            this.btnOpt7.Click += new System.EventHandler(this.btnOpt7_Click);
             // 
             // btnOpt10
             // 
@@ -246,6 +247,7 @@
             this.btnOpt11.TabIndex = 8;
             this.btnOpt11.Text = "Generate Timetable";
             this.btnOpt11.UseVisualStyleBackColor = true;
+            this.btnOpt11.Click += new System.EventHandler(this.btnOpt11_Click);
             // 
             // label2
             // 
@@ -261,11 +263,11 @@
             // dataGridViewLocation
             // 
             this.dataGridViewLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLocation.Location = new System.Drawing.Point(753, 179);
+            this.dataGridViewLocation.Location = new System.Drawing.Point(726, 179);
             this.dataGridViewLocation.Name = "dataGridViewLocation";
             this.dataGridViewLocation.RowTemplate.Height = 24;
             this.dataGridViewLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLocation.Size = new System.Drawing.Size(597, 336);
+            this.dataGridViewLocation.Size = new System.Drawing.Size(589, 336);
             this.dataGridViewLocation.TabIndex = 46;
             this.dataGridViewLocation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLocation_CellClick);
             // 
@@ -295,12 +297,12 @@
             // 
             this.radioBtnuplab.AutoSize = true;
             this.radioBtnuplab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnuplab.Location = new System.Drawing.Point(621, 375);
+            this.radioBtnuplab.Location = new System.Drawing.Point(582, 375);
             this.radioBtnuplab.Name = "radioBtnuplab";
-            this.radioBtnuplab.Size = new System.Drawing.Size(110, 24);
+            this.radioBtnuplab.Size = new System.Drawing.Size(58, 24);
             this.radioBtnuplab.TabIndex = 42;
             this.radioBtnuplab.TabStop = true;
-            this.radioBtnuplab.Text = "Laboratory";
+            this.radioBtnuplab.Text = "Lab";
             this.radioBtnuplab.UseVisualStyleBackColor = true;
             // 
             // textBoxspecupd
@@ -317,10 +319,10 @@
             this.radioBtnuplec.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnuplec.Location = new System.Drawing.Point(467, 375);
             this.radioBtnuplec.Name = "radioBtnuplec";
-            this.radioBtnuplec.Size = new System.Drawing.Size(131, 24);
+            this.radioBtnuplec.Size = new System.Drawing.Size(87, 24);
             this.radioBtnuplec.TabIndex = 43;
             this.radioBtnuplec.TabStop = true;
-            this.radioBtnuplec.Text = "LectureRoom";
+            this.radioBtnuplec.Text = "Lecture";
             this.radioBtnuplec.UseVisualStyleBackColor = true;
             this.radioBtnuplec.CheckedChanged += new System.EventHandler(this.radioBtnuplec_CheckedChanged);
             // 

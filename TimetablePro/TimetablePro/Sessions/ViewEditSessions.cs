@@ -83,12 +83,7 @@ namespace TimetablePro
             workingDays.Show();
         }
 
-        private void saddbtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SessionsManagement addsessions = new SessionsManagement();
-            addsessions.Show();
-        }
+        
 
         private void btnOpt7_Click(object sender, EventArgs e)
         {
@@ -99,12 +94,7 @@ namespace TimetablePro
         }
         
 
-        private void sviewbtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ViewSessionsManagement viewsessions = new ViewSessionsManagement();
-            viewsessions.Show();
-        }
+        
         private void DisplayData()
         {
 
@@ -433,10 +423,38 @@ namespace TimetablePro
 
         private void btnOpt11_Click(object sender, EventArgs e)
         {
-            Generate generate = new Generate();
+            CommonView commonView = new CommonView();
 
             this.Hide();
-            generate.Show();
+            commonView.Show();
+        }
+
+        private void saddbtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            SessionsManagement addsessions = new SessionsManagement();
+            addsessions.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ParallelSessionsManagement psm = new ParallelSessionsManagement();
+            this.Hide();
+            psm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsecutiveSessionsManagement csm = new ConsecutiveSessionsManagement();
+            this.Hide();
+            csm.Show();
+        }
+
+        private void sviewbtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewSessionsManagement viewsessions = new ViewSessionsManagement();
+            viewsessions.Show();
         }
 
         //private void btnDelete_Click(object sender, EventArgs e)

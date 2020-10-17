@@ -94,6 +94,22 @@ namespace TimetablePro
             workingDays.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RoomAllocation roomAllocation = new RoomAllocation();
+            this.Hide();
+            roomAllocation.Show();
+
+        }
+
+        private void btnOpt11_Click(object sender, EventArgs e)
+        {
+            CommonView commonView = new CommonView();
+
+            this.Hide();
+            commonView.Show();
+        }
+
         private void btnOpt7_Click(object sender, EventArgs e)
         {
             SessionsManagement sessionsManagement = new SessionsManagement();
