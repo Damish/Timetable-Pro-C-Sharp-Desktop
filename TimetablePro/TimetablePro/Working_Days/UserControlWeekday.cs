@@ -23,7 +23,7 @@ namespace TimetablePro
         {
             try
             {
-                SqlConnection vid = new SqlConnection("Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                SqlConnection vid = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                 {
                     SqlCommand xp = new SqlCommand("Insert into weekdays(number_of_days, monday, tuesday, wednesday, Thursday, friday, start_time, end_time, time_slot)values(@number_of_days,@monday,@tuesday,@wednesday,@Thursday,@friday,@start_time,@end_time,@time_slot)", vid);
 
