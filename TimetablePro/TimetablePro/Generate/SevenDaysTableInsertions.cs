@@ -19,7 +19,7 @@ namespace TimetablePro
 
             //Console.WriteLine(s_id  + "  Now in InsertToMonday " + s_data + "   " + s_order + " "+s_duration +" \n");
 
-            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con1.Open();
                 string insertoMonday = "Insert into monday_table values(@record_id,@s_data,@order,@duration)";
@@ -41,7 +41,7 @@ namespace TimetablePro
 
         public void InsertToTuesday(int s_id, string s_data, int s_order, int s_duration)
         {
-            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con1.Open();
                 string insertoMonday = "Insert into tuesday_table values(@record_id,@s_data,@order,@duration)";
@@ -62,7 +62,7 @@ namespace TimetablePro
         {
             //Console.WriteLine(s_id  + "  Now in InsertToMonday " + s_data + "   " + s_order + " "+s_duration +" \n");
 
-            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con1.Open();
                 string insertoMonday = "Insert into wednesday_table values(@record_id,@s_data,@order,@duration)";
@@ -83,7 +83,7 @@ namespace TimetablePro
         {
             //Console.WriteLine(s_id  + "  Now in InsertToMonday " + s_data + "   " + s_order + " "+s_duration +" \n");
 
-            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con1.Open();
                 string insertoMonday = "Insert into thursday_table values(@record_id,@s_data,@order,@duration)";
@@ -104,7 +104,7 @@ namespace TimetablePro
         {
             //Console.WriteLine(s_id  + "  Now in InsertToMonday " + s_data + "   " + s_order + " "+s_duration +" \n");
 
-            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con1 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con1.Open();
                 string insertoMonday = "Insert into friday_table values(@record_id,@s_data,@order,@duration)";

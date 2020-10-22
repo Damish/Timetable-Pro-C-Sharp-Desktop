@@ -13,7 +13,7 @@ namespace TimetablePro
 
         public void ResetALLCellsToNull()
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 for (int x = 830; x <= 2030; x += 100)
@@ -33,7 +33,7 @@ namespace TimetablePro
 
         public void InsertCellsMonday(string s_data,int time, string day, int start,int end,int id)
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 string updateParallelAll = "UPDATE Group_Timetable SET Monday=@s_data WHERE Time = @time;" +
@@ -54,7 +54,7 @@ namespace TimetablePro
 
         public void InsertCellsTuesday(string s_data, int time, string day, int start, int end, int id)
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 string updateParallelAll = "UPDATE Group_Timetable SET Tuesday=@s_data WHERE Time = @time;" +
@@ -75,7 +75,7 @@ namespace TimetablePro
 
         public void InsertCellsWednesday(string s_data, int time, string day, int start, int end, int id)
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 string updateParallelAll = "UPDATE Group_Timetable SET Wednesday=@s_data WHERE Time = @time;" +
@@ -96,7 +96,7 @@ namespace TimetablePro
 
         public void InsertCellsThursday(string s_data, int time, string day, int start, int end, int id)
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 string updateParallelAll = "UPDATE Group_Timetable SET Thursday=@s_data WHERE Time = @time;" +
@@ -117,7 +117,7 @@ namespace TimetablePro
 
         public void InsertCellsFriday(string s_data, int time, string day, int start, int end, int id)
         {
-            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection con3 = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 con3.Open();
                 string updateParallelAll = "UPDATE Group_Timetable SET Friday=@s_data WHERE Time = @time;" +

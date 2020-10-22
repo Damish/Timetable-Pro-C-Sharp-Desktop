@@ -15,7 +15,7 @@ namespace TimetablePro
     //change class name
     public partial class RoomAllocation : Form
     {
-        SqlConnection sqlcon = new SqlConnection(@"Server=tcp:timetableserver2020.database.windows.net,1433;Initial Catalog=TimetableDB;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        SqlConnection sqlcon = new SqlConnection(@"Server=tcp:timetableserverkisal.database.windows.net,1433;Initial Catalog=timetabledbkisal;Persist Security Info=False;User ID=demo;Password=myAzure1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         //change class name
         public RoomAllocation()
@@ -358,7 +358,10 @@ namespace TimetablePro
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
 
-                    comboBoxLecturer.Items.Add(ds.Tables[0].Rows[i][2]);
+                    comboBoxLecturer.Items.Add(ds.Tables[0].Rows[i][1]);
+                    //previous line 2020.10.20 - 1.27p.m
+                    //comboBoxLecturer.Items.Add(ds.Tables[0].Rows[i][2]);
+                    //now changed
 
                 }
                 sqlcon.Close();
