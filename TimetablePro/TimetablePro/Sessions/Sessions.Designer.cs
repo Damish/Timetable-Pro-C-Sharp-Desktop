@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOpt1 = new System.Windows.Forms.Button();
             this.btnOpt2 = new System.Windows.Forms.Button();
             this.btnOpt3 = new System.Windows.Forms.Button();
@@ -245,26 +245,30 @@
             // 
             // saddbtn
             // 
+            this.saddbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.saddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saddbtn.ForeColor = System.Drawing.Color.Transparent;
             this.saddbtn.Location = new System.Drawing.Point(317, 149);
             this.saddbtn.Margin = new System.Windows.Forms.Padding(4);
             this.saddbtn.Name = "saddbtn";
             this.saddbtn.Size = new System.Drawing.Size(135, 36);
             this.saddbtn.TabIndex = 9;
             this.saddbtn.Text = "Add Sessions";
-            this.saddbtn.UseVisualStyleBackColor = true;
+            this.saddbtn.UseVisualStyleBackColor = false;
             this.saddbtn.Click += new System.EventHandler(this.saddbtn_Click);
             // 
             // sviewbtn
             // 
+            this.sviewbtn.BackColor = System.Drawing.Color.Purple;
             this.sviewbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sviewbtn.Location = new System.Drawing.Point(516, 150);
+            this.sviewbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sviewbtn.Location = new System.Drawing.Point(503, 150);
             this.sviewbtn.Margin = new System.Windows.Forms.Padding(4);
             this.sviewbtn.Name = "sviewbtn";
             this.sviewbtn.Size = new System.Drawing.Size(171, 34);
             this.sviewbtn.TabIndex = 10;
             this.sviewbtn.Text = "View Sessions";
-            this.sviewbtn.UseVisualStyleBackColor = true;
+            this.sviewbtn.UseVisualStyleBackColor = false;
             this.sviewbtn.Click += new System.EventHandler(this.sviewbtn_Click);
             // 
             // ltitle
@@ -285,9 +289,9 @@
             this.lEmp.Location = new System.Drawing.Point(313, 247);
             this.lEmp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lEmp.Name = "lEmp";
-            this.lEmp.Size = new System.Drawing.Size(145, 24);
+            this.lEmp.Size = new System.Drawing.Size(301, 24);
             this.lEmp.TabIndex = 102;
-            this.lEmp.Text = "Enter Group ID :";
+            this.lEmp.Text = "Generate Sessions from Group ID :";
             // 
             // btnGroupID
             // 
@@ -323,33 +327,35 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Size = new System.Drawing.Size(908, 294);
             this.dataGridView1.TabIndex = 121;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Brown;
-            this.button1.Location = new System.Drawing.Point(739, 150);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(728, 150);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 35);
             this.button1.TabIndex = 122;
             this.button1.Text = "Set Parallel Sessions";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Navy;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(963, 150);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(247, 35);
             this.button2.TabIndex = 123;
             this.button2.Text = "Set Consecutive Sessions";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SessionsManagement
